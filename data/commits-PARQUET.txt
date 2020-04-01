@@ -1,0 +1,2164 @@
+8e7dfde1	shangxinli	2020-03-12	Add shangxinli to committers list (#767)
+ab65823a	Shankar Koirala	2020-03-09	[PARQUET-1808]: Replacing multiple String Object creations with StringBuilder (#766)
+d6919280	Shankar Koirala	2020-02-28	PARQUET-1803 Could not find FilleInputSplit in ParquetInputSplit (#761)
+806037c0	Chen, Junjie	2020-02-26	PARQUET-41: Add bloom filter  (#757)
+7469e87d	Gabor Szadovszky	2020-02-26	PARQUET-1784: Column-wise configuration (#754)
+e3afb24a	belugabehr	2020-02-25	PARQUET-1759: InternalParquetRecordReader Use Singleton Set (#743)
+a0c9e696	shangxinli	2020-02-25	PARQUET-1791: Add 'prune' command to parquet-tools (#755)
+583063b4	Terence Yim	2020-02-24	PARQUET-1802: Use job ClassLoader to load CompressionCodec class (#760)
+1eaf16df	Gabor Szadovszky	2020-02-17	PARQUET-1794: Random data generation may cause flaky tests (#758)
+474a2bed	RyanSkraba	2020-02-14	PARQUET-1796: Bump Avro from 1.9.1 to 1.9.2 (#759)
+57f6b46d	Brian Mwambazi	2020-02-12	PARQUET-1790: Add Api for writing DataPageV2 to ParquetFileWriter class (#756)
+3bbf66c2	martinradev	2020-02-12	PARQUET-1622: Add implementation for BYTE_STREAM_SPLIT (#705)
+17bef400	belugabehr	2020-02-10	PARQUET-1782: Use Switch Statement in AvroRecordConverter (#752)
+1577037f	belugabehr	2020-02-03	PARQUET-1751: Fix Protobuf Build Warning (#736)
+18496508	belugabehr	2020-02-03	PARQUET-1737: Replace Test Class RandomStr with Apache Commons Lang (#725)
+438cb3c7	belugabehr	2020-01-26	PARQUET-1749: Use Java 8 Streams for Empty PrimitiveIterator (#734)
+d3e31181	belugabehr	2020-01-26	PARQUET-1710: Use Objects.requireNonNull (#703)
+8c1bc9bc	Gabor Szadovszky	2020-01-16	PARQUET-1765: Invalid filteredRowCount in InternalParquetRecordReader (#747)
+ad07d836	Walid Gara	2020-01-15	PARQUET-1738: Remove unused imports (#726)
+e083fbb5	Yuming Wang	2020-01-13	Update current release version (#733)
+d85a8f5d	belugabehr	2020-01-10	PARQUET-1729: Avoid AutoBoxing in EncodingStats (#717)
+616e35f9	Kengo Seki	2020-01-10	PARQUET-1593: Improve parquet-cli's example usage (#646)
+f0fc29fd	Gabor Szadovszky	2020-01-10	PARQUET-1744: Some filters throws ArrayIndexOutOfBoundsException (#732)
+65eba554	Yuming Wang	2020-01-09	PARQUET-1740: Make ParquetFileReader.getFilteredRecordCount public (#728)
+72738f59	belugabehr	2020-01-09	PARQUET-1735: Clean Up parquet-columns Module (#723)
+ac7840ce	belugabehr	2020-01-08	PARQUET-1725: Replace Usage of Strings.join with JDK Functionality in… (#713)
+e430527c	Chen, Junjie	2020-01-08	PARQUET-1741: Restore APIs to keep backward compatibility (#729)
+ce55c9b2	Gabor Szadovszky	2020-01-07	PARQUET-1703: Update API compatibility check (#709)
+c697d80e	belugabehr	2020-01-05	PARQUET-1730: Use switch Statement in AvroIndexedRecordConverter for Enums (#718)
+a7447f69	belugabehr	2020-01-05	PARQUET-1731: Use JDK 8 Facilities to Simplify FilteringRecordMaterializer (#719)
+cce6fdb3	belugabehr	2020-01-05	PARQUET-1732: Call toArray With Empty Array (#720)
+3d8ce063	belugabehr	2020-01-05	PARQUET-1727: Do Not Swallow InterruptedException in ParquetLoader (#715)
+1e15f604	belugabehr	2020-01-02	PARQUET-1726: Use Java 8 Multi Exception Handling (#714)
+b9f16e50	belugabehr	2020-01-02	PARQUET-1724: Use ConcurrentHashMap for Cache in DictionaryPageReader (#712)
+3b4ecf2c	belugabehr	2020-01-02	PARQUET-1723: Read From Maps without using .contains(...) (#711)
+2c9ccf9c	Ismaël Mejía	2019-12-31	PARQUET-1696: Remove unused hadoop-1 profile (#701)
+4ca29c71	Emmanuel	2019-12-12	[PARQUET-1717] Convert i16 thrift to INT16 logical type instead (#706)
+475b4464	Gabor Szadovszky	2019-12-06	Prepare for next development iteration
+7bd38d17	Gabor Szadovszky	2019-11-13	[maven-release-plugin] prepare for next development iteration
+18519eb8	Gabor Szadovszky	2019-11-13	[maven-release-plugin] prepare release apache-parquet-1.11.0-rc7
+7d474c74	Gabor Szadovszky	2019-11-13	Update CHANGES.md for 1.11.0rc7
+76f90101	shangxinli	2019-11-13	PARQUET-1685: Truncate Min/Max for Statistics (#696)
+e60f5f16	Gabor Szadovszky	2019-11-12	PARQUET-1687: Update release process (#697)
+d1190abe	Gabor Szadovszky	2019-11-12	PARQUET-1691: Build fails due to missing hadoop-lzo (#698)
+19b10aca	Fokko Driesprong	2019-10-26	PARQUET-1499: Add Java 11 to Travis (#596)
+ca7d0e26	Fokko Driesprong	2019-10-25	PARQUET-1496: Update Scala to 2.12 (#693)
+10b926f0	belugabehr	2019-10-23	PARQUET-1444: Prefer ArrayList over LinkedList (#583)
+4648b060	The Alchemist	2019-10-23	PARQUET-XXXX: Minor Javadoc improvements (#667)
+2122a8a8	shangxinli	2019-10-22	PARQUET-1683: Remove unnecessary string conversions (#695)
+2117abcb	Gabor Szadovszky	2019-10-22	PARQUET-1682: Maintain forward compatibility for TIME/TIMESTAMP (#694)
+0c6a650a	Gabor Szadovszky	2019-10-18	PARQUET-1650: Implement unit test to validate column/offset indexes (#675)
+57bd2435	The Alchemist	2019-10-14	PARQUET-0000: Improved formatting (#673)
+52a502eb	The Alchemist	2019-10-14	PARQUET-0000: Fix typo (#666)
+10f57a37	Fokko Driesprong	2019-10-07	PARQUET-1596: PARQUET-1375 broke parquet-cli's to-avro command (#648)
+59ae0346	Fokko Driesprong	2019-10-07	PARQUET-1578: Introduce Lambdas (#641)
+7772644c	Fokko Driesprong	2019-10-06	PARQUET-1673: Upgrade parquet-mr format version to 2.7.0 (#690)
+6db72871	Kengo Seki	2019-10-04	PARQUET-1671: Upgrade Yetus to 0.11.0 (#689)
+600ffba7	Kengo Seki	2019-10-02	PARQUET-1669: Disable compiling all libraries when building thrift (#688)
+7c4d1ec8	RyanSkraba	2019-09-24	PARQUET-1644: Clean up some benchmark code and docs. (#672)
+6e072cfa	Kengo Seki	2019-09-24	PARQUET-1665: Upgrade zstd-jni to 1.4.0-1 (#684)
+0cb5ead0	Ismaël Mejía	2019-09-24	PARQUET-1662: Upgrade Jackson to version 2.9.10 (#683)
+76c40e70	wangshisan	2019-09-24	PARQUET-1542: Merge multiple I/O to one time I/O in method readFooter (#624)
+56f164fe	Ismaël Mejía	2019-09-23	PARQUET-1661: Upgrade to Avro 1.9.1 (#682)
+e9d87163	Kengo Seki	2019-09-22	PARQUET-1601: Add zstd support to parquet-cli to-avro (#653)
+e10a6452	Fokko Driesprong	2019-09-21	PARQUET-1649: Bump Jackson Databind to 2.9.9.3 (#674)
+e0ab7af5	Kengo Seki	2019-09-21	PARQUET-1654: Remove unnecessary options when building thrift (#676)
+be004864	Fokko Driesprong	2019-09-09	PARQUET-1607: Remove duplicate maven-enforcer-plugin (#658)
+14c1e815	belugabehr	2019-09-05	PARQUET-1445: Remove Files.java (#584)
+340d157b	belugabehr	2019-09-05	PARQUET-1530: Remove Dependency on commons-codec (#618)
+0d9bad5f	Nándor Kollár	2019-08-15	PARQUET-1637: Builds are failing because default jdk changed to openjdk11 on Travis (#665)
+8ab68bca	Fokko Driesprong	2019-07-26	Revert "PARQUET-1605: Bump maven-javadoc-plugin from 2.9 to 3.1.0 (#656)"
+93af6b4e	Zack Behringer	2019-07-25	PARQUET-1303 correct ClassCastException for Avro @Stringable fields (#482)
+347178e1	Fokko Driesprong	2019-07-24	PARQUET-1605: Bump maven-javadoc-plugin from 2.9 to 3.1.0 (#656)
+fcc5d1a5	Boudewijn Braams	2019-07-24	PARQUET-1580: Page-level CRC checksum verfication for DataPageV1 (#647)
+14958d40	Fokko Driesprong	2019-07-23	PARQUET-1606: Fix invalid tests scope (#657)
+54d3703b	Kengo Seki	2019-07-23	PARQUET-1600: Fix shebang in parquet-benchmarks/run.sh (#651)
+b34b0774	Gabor Szadovszky	2019-07-17	PARQUET-1488: UserDefinedPredicate throw NPE (#663)
+0861ddff	Fokko Driesprong	2019-07-11	PARQUET-1616: Enable Maven batch mode (#661)
+14874568	Chen, Junjie	2019-07-10	PARQUET-1552: upgrade protoc-jar-maven-plugin to 3.8.0 to fix proxy issue (#659)
+8ff867a2	Alan Jin	2019-07-09	PARQUET-1615: getRecordWriter shouldn't hardcode CREAT mode when new ParquetFileWriter (#660)
+f7e74ba9	Fokko Driesprong	2019-07-08	PARQUET-1604: Bump fastutil from 7.0.13 to 8.2.3 (#655)
+0b909ab3	Fokko Driesprong	2019-07-04	PARQUET-1550: CleanUtil does not work in Java 11 (#654)
+47398be7	Fokko Driesprong	2019-06-03	PARQUET-1375: Upgrade to Jackson 2.9.9 (#616)
+9d6fb45e	Fokko Driesprong	2019-05-30	PARQUET-1576 Bump Apache Avro to 1.9.0 (#638)
+54777b46	Fokko Driesprong	2019-05-30	PARQUET-1556 Use try-with-resource in Apache Avro tests (#639)
+1e5fda53	Nándor Kollár	2019-05-28	PARQUET-1441: SchemaParseException: Can't redefine: list in AvroIndexedRecordConverter (#560)
+882cbf8a	Fokko Driesprong	2019-05-27	PARQUET-1579 Add Github PR template (#642)
+f1a719b2	Masayuki Takahashi	2019-05-27	PARQUET-1534:  [parquet-cli] IllegalArgumentException on Windows (#627)
+c3e1a849	Masayuki Takahashi	2019-05-27	PARQUET-1536: [parquet-cli] Add simple tests for each command (#625)
+96a01489	Fokko Driesprong	2019-05-27	PARQUET-1577 Remove duplicate license (#640)
+222b0918	Zoltan Ivanfi	2019-05-24	PARQUET-1585: Update old external links in the code base (#644)
+63cfb562	Fokko Driesprong	2019-05-09	PARQUET-1555: Bump snappy-java to 1.1.7.3 (#632)
+2c257f05	Fokko Driesprong	2019-05-09	PARQUET-1557: Replace deprecated Apache Avro methods (#636)
+12f3fd2c	Fokko Driesprong	2019-05-01	PARQUET-1558: Use try-with-resource in Apache Avro tests (#634)
+62dcc68a	Fokko Driesprong	2019-04-17	PARQUET-1557: Replace deprecated Apache Avro methods (#633)
+c5561bec	archgroove	2019-04-01	Correct brew formula for thirft (#626)
+811310d0	Gabor Szadovszky	2019-03-19	[maven-release-plugin] prepare for next development iteration
+9756b0e2	Gabor Szadovszky	2019-03-19	[maven-release-plugin] prepare release apache-parquet-1.11.0
+9bf25176	Gabor Szadovszky	2019-03-19	Update CHANGES.md for 1.11.0rc6
+3e3049d0	Gabor Szadovszky	2019-03-19	PARQUET-1544: Possible over-shading of modules (#628)
+ac650407	Gabor Szadovszky	2019-03-13	[maven-release-plugin] prepare for next development iteration
+e85dbd37	Gabor Szadovszky	2019-03-13	[maven-release-plugin] prepare release apache-parquet-1.11.0
+acaf9e64	Gabor Szadovszky	2019-03-13	Update CHANGES.md for 1.11.0rc5
+892dedb2	Gabor Szadovszky	2019-03-13	PARQUET-1531: Page row count limit causes empty pages to be written from MessageColumnIO (#620)
+ab42fe51	Gabor Szadovszky	2019-02-25	Revert "PARQUET-1381: Add merge blocks command to parquet-tools (#512)" (#621)
+f7998934	Gabor Szadovszky	2019-02-25	PARQUET-1533: TestSnappy() throws OOM exception with Parquet-1485 change (#622)
+4cc22dda	Gabor Szadovszky	2019-02-14	[maven-release-plugin] prepare for next development iteration
+22a9f54d	Gabor Szadovszky	2019-02-14	[maven-release-plugin] prepare release apache-parquet-1.11.0
+f2c5b9a6	Gabor Szadovszky	2019-02-14	Update CHANGES.md for 1.11.0rc4
+dcfd53ae	Gabor Szadovszky	2019-02-13	PARQUET-1529: Shade fastutil in all modules where used (#617)
+94618455	Masayuki Takahashi	2019-02-12	PARQUET-1527:  [parquet-tools] cat command throw java.lang.ClassCastException (#612)
+7dcdcdcf	PengchengLiu	2019-02-12	PARQUET-1485: Fix Snappy direct memory leak (#581)
+6901a204	Tim Sell	2019-02-07	PARQUET-1480 INT96 to avro not yet implemented error should mention deprecation (#579)
+714bb450	BELUGABEHR	2019-02-07	PARQUET-1505: Use Java 7 NIO StandardCharsets (#599)
+5bd12655	BELUGABEHR	2019-02-06	PARQUET-1514: ParquetFileWriter Records Compressed Bytes instead of Uncompressed Bytes (#607)
+82935e6d	Fokko Driesprong	2019-02-06	PARQUET-1470: Inputstream leakage in ParquetFileWriter.appendFile (#611)
+3537c88f	Uwe L. Korn	2019-02-05	Add javax.annotation-api dependency for JDK >= 9 (#604)
+51c4cc30	Nicolas Trinquier	2019-02-01	PARQUET-138: Allow merging more restrictive field in less restrictive field (#550)
+1b103da2	Fokko Driesprong	2019-01-31	PARQUET-1518: Use Jackson2 version 2.9.8 in parquet-cli (#609)
+9d1006f8	Fokko Driesprong	2019-01-30	[PARQUET-1507] Bump Apache Thrift to 0.12.0 (#601)
+d9a19621	Ryan Blue	2019-01-28	PARQUET-1510: Fix notEq for optional columns with null values. (#603)
+ddc77471	BELUGABEHR	2019-01-27	PARQUET-1509: Note Hive deprecation in README. (#602)
+00a7a470	Yongyan Wang	2019-01-27	PARQUET-1504: Add an option to convert Int96 to Arrow Timestamp (#594)
+d1e9f15d	BELUGABEHR	2019-01-27	PARQUET-1513: Update HiddenFileFilter to avoid extra startsWith (#606)
+1e62e2e2	BELUGABEHR	2019-01-25	PARQUET-1503: Remove Ints Utility Class (#598)
+f36dd085	Fokko Driesprong	2019-01-25	[PARQUET-1500] Replace Closeables with try-with-resources (#597)
+354fcc2a	Fokko Driesprong	2019-01-24	[PARQUET-1506] Migrate  maven-thrift-plugin to thrift-maven-plugin (#600)
+4b40d96a	Yongyan Wang	2019-01-23	PARQUET-1502: Convert FIXED_LEN_BYTE_ARRAY to arrow type in logicalTypeAnnotation if it is not null (#593)
+ee97f23b	Uwe L. Korn	2019-01-22	PARQUET-1498: Add instructions to install thrift via homebrew (#595)
+e9c28372	wineandcheeze	2019-01-15	PARQUET-1492: Remove protobuf build (#592)
+794d55ee	Jacques Nadeau	2019-01-14	PARQUET-1475: Fix lack of cause propagation in DirectCodecFactory.ParquetCompressionCodecException. (#564)
+87646359	Gabor Szadovszky	2019-01-14	PARQUET-1466: Upgrade to the latest guava 27.0-jre (#559)
+6eb99bdb	nandorKollar	2019-01-14	PARQUET-1280: [parquet-protobuf] Use maven protoc plugin (#506)
+3d8eae78	Zoltan Ivanfi	2019-01-11	PARQUET-1490: Add branch-specific Travis steps (#590)
+63a9fa17	Zoltan Ivanfi	2019-01-09	[maven-release-plugin] prepare for next development iteration
+8be767d1	Zoltan Ivanfi	2019-01-09	[maven-release-plugin] prepare release apache-parquet-1.11.0
+19ad9611	Zoltan Ivanfi	2019-01-09	Update CHANGES.md for 1.11.0 release candidate 3.
+797e32ac	nandorKollar	2019-01-09	PARQUET-1487: Do not write original type for timezone-agnostic timestamps (#585)
+514083f4	Gabor Szadovszky	2019-01-09	PARQUET-1489: Insufficient documentation for UserDefinedPredicate.keep(T) (#588)
+58edbd78	nandorKollar	2019-01-07	PARQUET-1478: Can't read spec compliant, 3-level lists via parquet-proto (#578)
+e7835e02	Zoltan Ivanfi	2018-12-13	[maven-release-plugin] prepare for next development iteration
+a01a4dbb	Zoltan Ivanfi	2018-12-13	[maven-release-plugin] prepare release apache-parquet-1.11.0
+1c2bb326	Zoltan Ivanfi	2018-12-13	Update CHANGES.md for 1.11.0 release candidate 2.
+3cb529cc	nandorKollar	2018-12-13	PARQUET-1476: Don't emit a warning message for files without new logical type (#577)
+94555e1f	Gabor Szadovszky	2018-12-13	PARQUET-1474: Less verbose and lower level logging for missing column/offset indexes (#563)
+63b45f72	Gabor Szadovszky	2018-12-13	PARQUET-1472: Dictionary filter fails on FIXED_LEN_BYTE_ARRAY (#562)
+5881701d	Zoltan Ivanfi	2018-12-04	PARQUET-1462: Allow specifying new development version in prepare-release.sh (#557)
+7ccbe284	Zoltan Ivanfi	2018-11-23	[maven-release-plugin] prepare for next development iteration
+10e63437	Zoltan Ivanfi	2018-11-23	[maven-release-plugin] prepare release apache-parquet-1.11.0
+0098e48b	Zoltan Ivanfi	2018-11-23	PARQUET-1258: Update scm developer connection to github
+fafc4fc8	Zoltan Ivanfi	2018-11-23	PARQUET-1434: Update CHANGES.md for 1.11.0 release candidate 2.
+44c167ea	Gabor Szadovszky	2018-11-23	PARQUET-1461: Third party code does not compile after parquet-mr minor version update (#556)
+ca9a125e	Zoltan Ivanfi	2018-11-21	[maven-release-plugin] prepare for next development iteration
+b873a0ab	Zoltan Ivanfi	2018-11-21	[maven-release-plugin] prepare release apache-parquet-1.11.0
+b60b36a6	Nandor Kollar	2018-11-21	PARQUET-1434: Update CHANGES.md for 1.11.0 release.
+4d9a2fd0	Zoltan Ivanfi	2018-11-21	Revert "Experiment."
+97a880cf	Zoltan Ivanfi	2018-10-26	Experiment.
+a7b5a4b2	Gabor Szadovszky	2018-11-21	PARQUET-1460: Fix javadoc errors and include javadoc checking in Travis checks (#554)
+542ab3e2	nandorKollar	2018-11-19	PARQUET-1407: Avro: Fix binary values returned from dictionary encoding (#552)
+5250dac7	Gabor Szadovszky	2018-11-19	PARQUET-1456: Use page index, ParquetFileReader throw ArrayIndexOutOfBoundsException (#548)
+a69f2b30	Gabor Szadovszky	2018-11-19	PARQUET-1365: Don't write page level statistics (#549)
+3201bd19	Gabor Szadovszky	2018-11-12	PARQUET-1435: Benchmark filtering column-indexes (#536)
+7f561b60	Gabor Szadovszky	2018-11-08	PARQUET-1414: Simplify next row count check calculation (#537)
+ca294f94	nandorKollar	2018-11-07	PARQUET-1452: Deprecate old logical types API (#535)
+b6fd45ee	nandorKollar	2018-11-07	PARQUET-1305: Backward incompatible change introduced in 1.8 (#483)
+1e0760a1	Gabor Szadovszky	2018-11-07	PARQUET-1414: Limit page size based on maximum row count (#531)
+e7db9e20	Gabor Szadovszky	2018-10-18	PARQUET-1201: Column indexes (#527)
+cded3e57	nandorKollar	2018-10-15	PARQUET-1383: Parquet tools should indicate UTC parameter for time/timestamp types (#513)
+716fb6b3	Ryan Gardner	2018-10-10	PARQUET-1440: Parquet-tools: Parse int32 or int64 decimal values to big decimals with the proper scale (#530)
+63003ac2	nandorKollar	2018-10-05	PARQUET-1436: TimestampMicrosStringifier shows wrong microseconds for timestamps before 1970 (#529)
+0d541fc6	nandorKollar	2018-10-04	PARQUET-1388: Nanosecond precision time and timestamp - parquet-mr (#519)
+0569f512	Zoltan Ivanfi	2018-09-25	Revert "PARQUET-1353: Fix random data generator. (#504)"
+a150f245	Gabor Szadovszky	2018-08-22	PARQUET-1399: Move parquet-mr related code from parquet-format
+412685f5	Gabor Szadovszky	2018-09-24	Merge commit '344b56803fea37af84b9c01c9b6dcff586779683' into merge_PARQUET-1399
+797fc6f5	Zoltan Ivanfi	2018-09-21	PARQUET-1418: Run integration tests in Travis (#524)
+411e6724	Zoltan Ivanfi	2018-09-20	PARQUET-1421: InternalParquetRecordWriter logs debug messages at the INFO level (#526)
+93767ca5	Volodymyr Vysotskyi	2018-09-20	PARQUET-1417: BINARY_AS_SIGNED_INTEGER_COMPARATOR fails with IOBE for the same arrays with the different length (#522)
+1f79f9bd	Zoltan Ivanfi	2018-09-18	PARQUET-1353: Fix random data generator. (#504)
+b4198be2	nandorKollar	2018-09-12	PARQUET-1410: Refactor modules to use the new logical type API (#520)
+863a0818	Ekaterina Galieva	2018-09-11	PARQUET-1381: Add merge blocks command to parquet-tools (#512)
+344b5680	Gabor Szadovszky	2018-08-22	PARQUET-1399: Move files to the module directory
+3d8426e9	Zoltan Ivanfi	2018-03-29	[maven-release-plugin] prepare for next development iteration
+59f5c72b	Zoltan Ivanfi	2018-03-29	[maven-release-plugin] prepare release apache-parquet-format-2.5.0
+e846f7aa	Zoltan Ivanfi	2018-03-29	Revert "[maven-release-plugin] prepare release apache-parquet-format-2.5.0"
+06ffe24c	Zoltan Ivanfi	2018-03-29	[maven-release-plugin] prepare release apache-parquet-format-2.5.0
+ba5ad426	Gabor Szadovszky	2018-03-28	PARQUET-1258: Update scm developer connection to github (#90)
+ad3a8d4e	1028332163	2018-03-21	PARQUET-1236: Align version of slf4j-api
+75f0e42f	Gabor Szadovszky	2018-02-13	PARQUET-1201: Implement page indexes
+8293207f	Gabor Szadovszky	2018-01-18	PARQUET-1197: Log rat failures
+40d263ff	Lars Volker	2017-11-13	PARQUET-1145: Add license to .gitignore
+9eae3e87	Ryan Blue	2017-10-17	[maven-release-plugin] prepare for next development iteration
+3df27ee1	Ryan Blue	2017-10-17	[maven-release-plugin] prepare release apache-parquet-format-2.4.0
+6cc4110a	Ryan Blue	2017-10-17	PARQUET-1144: Remove slf4j-nop.
+1b8292ad	Ryan Blue	2017-10-16	[maven-release-plugin] prepare for next development iteration
+56c4fcd1	Ryan Blue	2017-10-16	[maven-release-plugin] prepare release apache-parquet-format-2.4.0
+e281913d	Ryan Blue	2017-10-10	PARQUET-906: Add LogicalType annotation.
+c48cbb12	Zoltan Ivanfi	2017-07-31	PARQUET-1049: Make thrift version a property in pom.xml
+ae52b4da	Julien Le Dem	2017-07-29	PARQUET-371: update thrift dependency to 0.9.3; do not shade slf4j
+73e936cf	Ryan Blue	2016-07-11	PARQUET-609: Add Brotli to parquet's thrift definition
+5008c5a2	Laurent Goujon	2016-01-29	PARQUET-450: Fix several typos in Parquet format documentation
+43f122f8	Ryan Blue	2015-12-14	[maven-release-plugin] prepare for next development iteration
+f6cd4cc2	Ryan Blue	2015-12-14	[maven-release-plugin] prepare release apache-parquet-format-2.3.1
+d692ce3a	Andy Grove	2018-08-19	PARQUET-1390: Upgrade Arrow to 0.10.0
+45e3ce5f	Hyukjin Kwon	2018-08-08	PARQUET-1368: ParquetFileReader should close its input stream for the failure in constructor (#510)
+55e94974	nandorKollar	2018-08-07	PARQUET-1371: Time/Timestamp UTC normalization parameter doesn't work (#511)
+e9e36cdc	nandorKollar	2018-07-09	PARQUET-1335: Logical type names in parquet-mr are not consistent with parquet-format (#503)
+94ae6c84	nandorKollar	2018-07-04	PARQUET-1344: Type builders don't honor new logical types (#500)
+d320a457	Ryan Blue	2018-07-03	PARQUET-1341: Fix null count stats in unsigned-sort columns. (#499)
+dc61e510	Yuming Wang	2018-06-26	PARQUET-1336: PrimitiveComparator should implements Serializable (#497)
+33ee5497	nandorKollar	2018-06-25	PARQUET-1335: Logical type names in parquet-mr are not consistent with parquet-format (#496)
+cc8bdf1d	nandorKollar	2018-06-18	PARQUET-952: Avro union with single type fails with 'is not a group' (#459)
+f2d58718	nandorKollar	2018-06-12	PARQUET-1321: LogicalTypeAnnotation.LogicalTypeAnnotationVisitor#visit methods should have a return value (#493)
+74d650be	Yuming Wang	2018-06-06	[PARQUET-1135][FOLLOW-UP] Update thrift and protoc version in README.md (#488)
+9181e1d5	Gabor Szadovszky	2018-06-05	PARQUET-1309: Parquet Java uses incorrect stats and dictionary filter properties (#490)
+a918c493	nandorKollar	2018-06-04	PARQUET-1317: Fix ParquetMetadataConverter throw NPE (#491)
+3fd2492f	Yuming Wang	2018-06-04	PARQUET-1317: Fix ParquetMetadataConverter throw NPE (#489)
+aed90976	nandorKollar	2018-06-04	PARQUET-1311: Update README.md (#487)
+345e2d54	Gabor Szadovszky	2018-05-31	PARQUET-1304: Release 1.10 contains breaking changes for Hive (#485)
+94a8bf6d	nandorKollar	2018-05-24	PARQUET-1253: Support for new logical type representation (#463)
+a287522a	Gabor Szadovszky	2018-05-17	PARQUET-1294: Update release scripts for the new Apache policy (#475)
+cab63690	nandorKollar	2018-05-15	PARQUET-1296: Travis kills build after 10 minutes, because "no output was received"
+b635beb6	Masayuki Takahashi	2018-05-14	PARQUET-1297: SchemaConverter should not convert from Timestamp(TimeUnit.SECOND) and Timestamp(TimeUnit.NANOSECOND) of Arrow (#477)
+9fa86cca	Nandor Kollar	2018-05-09	PARQUET-1293: Build failure when using Java 8 lambda expressions
+e021734b	Masayuki Takahashi	2018-05-07	PARQUET-1285: [Java] SchemaConverter should not convert from TimeUnit.SECOND and TimeUnit.NANOSECOND of Arrow (#469)
+f8493844	Constantin Muraru	2018-04-26	PARQUET-968 Add Hive/Presto support in ProtoParquet
+af977adc	Masayuki Takahashi	2018-04-21	PARQUET-1128: [Java] Upgrade the Apache Arrow version to 0.8.0 for SchemaConverter
+f9371124	Ryan Blue	2018-04-05	[maven-release-plugin] prepare for next development iteration
+031a6654	Ryan Blue	2018-04-05	[maven-release-plugin] prepare release apache-parquet-1.10.0
+ce4d1c96	Ryan Blue	2018-04-05	PARQUET-1258: Update scm developer connection to github HTTPS.
+0d55abd0	Ryan Blue	2018-04-05	RQUET-1264: Fix javadoc warnings for Java 8.
+150c578e	Ryan Blue	2018-03-30	PARQUET-1264: Fix javadoc 8 problem in VersionGenerator.
+d61d221c	Ryan Blue	2018-03-30	PARQUET-1264: Fix javadoc warnings for Java 8.
+9261c28b	Ryan Blue	2018-03-30	PARQUET-1189: Update CHANGES.md for 1.10.0 release.
+12bbaf35	Ryan Blue	2018-03-30	PARQUET-1263: If file has a config, use it for ParquetReadOptions. (#464)
+d54fad86	Ryan Blue	2018-03-30	PARQUET-1183: Add Avro builders using InputFile and OutputFile. (#460)
+a7ca605e	Gabor Szadovszky	2018-03-29	PARQUET-1258: Update scm developer connection to github (#462)
+0a864299	Gabor Szadovszky	2018-03-19	PARQUET-1246: Ignore float/double statistics in case of NaN
+3d2d4fd1	Julien Le Dem	2018-03-09	PARQUET-1135: upgrade thrift and protobuf dependencies
+b82d9621	Gabor Szadovszky	2018-02-27	PARQUET-1217: Incorrect handling of missing values in Statistics
+8bbc6cb9	Ryan Blue	2018-02-21	PARQUET-787: Limit read allocation size
+ad80bfe5	Zoltan Ivanfi	2018-02-19	PARQUET-1208: Occasional endless loop in unit test
+445cb9dc	Ryan Blue	2018-02-15	PARQUET-1215: Add getFooter to ParquetWriter.
+6a4bbe94	Gabor Szadovszky	2018-01-30	PARQUET-1198: Bump java source and target to java8
+6e0cc729	Zoltan Ivanfi	2018-01-25	PARQUET-1065: Deprecate type-defined sort ordering for INT96 type.
+89aeec02	Gabor Szadovszky	2018-01-22	PARQUET-1170: Logical-type-based toString for proper representeation in tools/logs
+878ebcd0	Nandor Kollar	2018-01-19	PARQUET-1191: Type.hashCode() takes originalType into account but Type.equals() does not
+b80b1844	Gabor Szadovszky	2018-01-18	PARQUET-1197: Log rat failures
+c6764c4a	Gabor Szadovszky	2018-01-12	PARQUET-1025: Support new min-max statistics in parquet-mr
+4d996d1b	Gabor Szadovszky	2018-01-10	PARQUET-386: Printing out the statistics of metadata in parquet-tools
+3783ca44	Nandor Kollar	2018-01-10	PARQUET-1185: TestBinary#testBinary unit test fails after PARQUET-1141
+2adb657a	Lars Volker	2018-01-09	PARQUET-1077: Use long key ids in KEYS file
+9191fbd2	Ryan Blue	2018-01-04	PARQUET-1141: Fix field ID handling
+da3e8eb7	Nandor Kollar	2018-01-04	PARQUET-357: Parquet-thrift generates wrong schema for Thrift binary fields
+8bfd9b4d	Ryan Blue	2017-12-13	PARQUET-1142: Add alternatives to Hadoop classes in the API
+81f48014	Zoltan Ivanfi	2017-11-29	PARQUET-1156: Address dev/merge_parquet_pr.py problems.
+132b2a8c	Ryan Blue	2017-11-14	PARQUET-1143: Update to Parquet format 2.4.0.
+ba7b8ba6	Fokko Driesprong	2017-11-10	PARQUET-1149: Update Avro to 1.8.2
+c532b0e6	Nandor Kollar	2017-11-09	PARQUET-1153: Parquet-thrift doesn't compile with Thrift 0.10.0
+170cfa75	Nandor Kollar	2017-11-09	PARQUET-1152: Parquet-thrift doesn't compile with Thrift 0.9.3
+328c5deb	Nandor Kollar	2017-11-07	PARQUET-1115: Warn users when misusing parquet-tools merge
+d55a572e	Addisu Feyissa	2017-10-10	PARQUET-1133 Add int96 support by returning bytearray, Skip originalType comparison for map types when originalType is null
+ddbeb4dd	Ryan Blue	2017-07-28	PARQUET-777: Add Parquet CLI.
+df9f8d86	Julien Le Dem	2017-06-09	PARQUET-1024: allow for case insensitive parquet-xxx prefix in PR title
+352b9069	Julien Le Dem	2017-06-09	PARQUET-1026: allow unsigned binary stats when min == max
+2d3203b1	Gera Shegalov	2017-06-09	PARQUET-1005: Fix DumpCommand parsing to allow column projection
+9d58b6a8	EllenKletscher	2017-06-07	Parquet-884: Add support for Decimal datatype to Parquet-Pig record reader
+9491d7a6	Andrew Ash	2017-05-16	PARQUET-990 More detailed error messages in footer parsing
+1de41ef4	John Jenkins	2017-05-12	PARQUET-852: Slowly ramp up sizes of byte[] in ByteBasedBitPackingEncoder
+fd7cfed0	Swapnil Shinde	2017-05-12	PARQUET-196: parquet-tools command for row count & size
+a703ee75	dsfcode	2017-05-12	PARQUET-969: Update parquet-tools to convert Decimal datatype to BigD…
+70f28810	Mark Chua	2017-04-21	PARQUET-665 Adds support for proto3
+2fd62ee4	Zoltan Ivanfi	2017-01-26	PARQUET-772: Fix locale-specific test failures.
+3634821f	Zoltan Ivanfi	2017-01-26	PARQUET-806: Parquet-tools silently suppresses error messages
+6fb60857	Gabor Szadovszky	2017-01-26	PARQUET-822: Upgrade java dependencies
+f68dbc3e	Gabor Szadovszky	2017-01-26	PARQUET-825: Static analyzer findings (NPEs, resource leaks)
+89e0607c	Patrick Woody	2016-12-20	PARQUET-801: Allow UserDefinedPredicates in DictionaryFilter
+71cff7c5	Liang-Chi Hsieh	2016-12-08	PARQUET-791: Add missing column support for UserDefinedPredicate
+98c27699	Zoltan Ivanfi	2016-12-07	PARQUET-321: Default maximum block padding to 8MB.
+4fd34e65	Reuben Kuhnert	2016-12-05	PARQUET-220: Unnecessary warning in ParquetRecordReader.initialize
+7987a544	Mark Nelson	2016-12-05	PARQUET-786: 'java -jar', not 'java jar' closes #377, #374
+09d28fe7	Michael Allman	2016-12-05	PARQUET-783: Close the underlying stream when an H2SeekableInputStream is closed
+4453aa3b	Gabor Szadovszky	2016-11-09	PARQUET-765 - Upgrade Avro to 1.8.1
+cf991604	Julien Le Dem	2016-11-09	PARQUET-755: create parquet-arrow module with schema converter
+0ed977ab	Uwe L. Korn	2016-11-07	PARQUET-768: Add Uwe L. Korn to KEYS
+e5cd652a	adeneche	2016-10-26	PARQUET-753: Fixed GroupType.union() to handle original type
+df9d8e41	Niels Basjes	2016-10-26	PARQUET-423: Replace old Log class with SLF4J Logging
+aa416b5e	Ryan Blue	2016-10-18	[maven-release-plugin] prepare for next development iteration
+38262e2c	Ryan Blue	2016-10-18	[maven-release-plugin] prepare release apache-parquet-1.9.0
+ece4b70c	Ryan Blue	2016-10-18	PARQUET-751: Add setRequestedSchema to ParquetFileReader.
+1058b7d9	Ryan Blue	2016-10-13	PARQUET-392: Fix staging instructions in prepare-release.sh.
+0116aa78	Ryan Blue	2016-10-13	PARQUET-392: Fix svn log message in source-release.sh.
+27b9934c	Ryan Blue	2016-10-13	[maven-release-plugin] prepare for next development iteration
+2a99abf7	Ryan Blue	2016-10-13	[maven-release-plugin] prepare release apache-parquet-1.9.0
+31d0d4d6	Ryan Blue	2016-10-13	PARQUET-392: Update CHANGES.md for 1.9.0.
+59ec4f01	Ryan Blue	2016-10-12	PARQUET-743: Fix DictionaryFilter when compressed dictionaries are reused.
+de99127d	Ryan Blue	2016-10-12	PARQUET-686: Do not return min/max for the wrong order.
+06768d91	Niels Basjes	2016-10-10	PARQUET-740: Introduce editorconfig
+a0e6cc32	Niels Basjes	2016-10-07	PARQUET-727: Ensure correct version of thrift is used
+e6da0f68	Gabor Szadovszky	2016-10-05	PARQUET-685 - Deprecated ParquetInputSplit constructor passes paramet…
+07a42d3f	Niels Basjes	2016-10-05	PARQUET-726: Increase max difference of testMemoryManagerUpperLimit to 10%
+b59be865	Ryan Blue	2016-10-03	PARQUET-674: Add InputFile abstraction for openable files.
+e54ca615	Jakub Kukul	2016-09-08	PARQUET-660: Ignore extension fields in protobuf messages.
+044de16c	Ryan Blue	2016-09-08	PARQUET-623: Fix DeltaByteArrayReader#skip.
+6dad1e3b	Julien Le Dem	2016-08-29	PARQUET-696: fix travis build. Broken because google code shut down
+255f1083	flykobe	2016-08-16	PARQUET-460: merge multi parquet files to one file
+898f3d0f	Ryan Blue	2016-08-16	PARQUET-400: Replace CompatibilityUtil with SeekableInputStream.
+c8d78b21	Nezih Yigitbasi	2016-08-15	PARQUET-146: Move Parquet to Java 7
+30aa9101	Piyush Narang	2016-08-11	PARQUET-601: Add support to configure the encoding used by ValueWriters
+b301d127	Alex Levenson	2016-08-05	PARQUET-667: Add back + update committers table
+76a2ac81	Robert Kruszewski	2016-08-03	PARQUET-669: allow reading footers from provided file listing and streams
+ea402bec	djhworld	2016-08-03	PARQUET-668 - Provide option to disable auto crop feature in dump
+5c85b8dd	Michal Gorecki	2016-08-01	PARQUET-511: Integer overflow when counting values in column.
+60b6d5aa	Alex Levenson	2016-07-27	PARQUET-667: Update committers lists to point to apache website
+6a62646b	Ryan Blue	2016-07-17	PARQUET-543: Remove unused boundedint package.
+626014ea	Ryan Blue	2016-07-17	PARQUET-651: Improve Avro's isElementType check.
+a421d952	Ryan Blue	2016-07-15	PARQUET-540: Fix Cascading 3 build thrift and SLF4J.
+42662f87	Ryan Blue	2016-07-15	PARQUET-389: Support predicate push down on missing columns.
+02ce9b09	Nihed MBAREK	2016-07-15	PARQUET-663: Update README.md
+e036d60d	Ryan Blue	2016-07-13	PARQUET-654: Add option to disable record-level filtering.
+bd0b5af0	Ryan Blue	2016-06-30	PARQUET-612: Add compression codec to FileEncodingsIT.
+7f8e952a	Piyush Narang	2016-06-30	PARQUET-642: Improve performance of ByteBuffer based read / write paths
+9c40a7bb	Ryan Blue	2016-06-30	PARQUET-645: Fix null handling in DictionaryFilter.
+1f470253	Mark Reddy	2016-06-30	PARQUET-544: Add closed flag to allow for closeable contract adherence
+da69d4b7	Reuben Kuhnert	2016-05-05	PARQUET-367: "parquet-cat -j" doesn't show all records.
+c3f3830f	Ryan Blue	2016-05-05	PARQUET-372: Do not write stats larger than 4k.
+39a3cd0f	Nezih Yigitbasi	2016-04-25	PARQUET-560: Synchronize writes to the finishCalled variable
+2f22533e	Ryan Blue	2016-04-22	PARQUET-569: Separate metadata filtering for ranges and offsets.
+3dd2210e	Ryan Blue	2016-04-22	PARQUET-548: Add EncodingStats.
+8bcfe6c5	Vassil Lunchev	2015-03-24	PARQUET-225: Add support for INT64 delta encoding.
+74194433	Tom White	2015-07-07	PARQUET-327. Show statistics in the dump output.
+36ce032b	Piyush Narang	2016-04-20	PARQUET-585: Slowly ramp up sizes of int[]s in IntList to keep sizes small when data sets are small
+6b24a1d1	Ryan Blue	2016-04-20	PARQUET-358: Add support for Avro's logical types API.
+82b8ecc3	Liwei Lin	2016-04-19	PARQUET-484: Warn when Decimal is stored as INT64 while could be stored as INT32
+dc08bb8e	Kaufman Ng	2016-04-19	PARQUET-584 show proper command usage when there's no arguments
+ac62c1c2	Piyush Narang	2016-04-16	PARQUET-580: Switch int[] initialization in IntList to be lazy
+d4021487	Michael Allman	2016-04-16	PARQUET-581: Fix two instances of the conflation of the min and max row
+e9928c94	Nezih Yigitbasi	2016-03-25	PARQUET-571: Fix potential leak in ParquetFileReader.close()
+4b1ff8f4	Ryan Blue	2016-03-09	PARQUET-384: Add dictionary filtering.
+1f91c79d	proflin	2016-03-05	PARQUET-528: Fix flush() for RecordConsumer and implementations
+fb46b941	Daniel Weeks	2016-02-26	PARQUET-397: Implement Pig predicate pushdown
+c44f982e	proflin	2016-02-21	PARQUET-529: Avoid evoking job.toString() in ParquetLoader
+944291b7	Liwei Lin	2016-02-15	PARQUET-431: Make ParquetOutputFormat.memoryManager volatile
+6c9ca4d4	proflin	2016-02-15	PARQUET-430: Change to use Locale parameterized version of String.toUpperCase()/toLowerCase
+c26fa788	Cheng Lian	2016-02-06	PARQUET-385 PARQUET-379: Fixes strict schema merging
+a4acf533	Nezih Yigitbasi	2016-02-06	PARQUET-509: Fix args passed to string format calls
+0a711ebc	Ryan Blue	2016-02-03	PARQUET-415: Fix ByteBuffer Binary serialization.
+06a46899	Ryan Blue	2016-02-03	PARQUET-410: Fix hanging subprocess call in merge script.
+63d5ae78	Liwei Lin	2016-02-01	PARQUET-495: Fix mismatches in Types class comments
+57694790	Cyrille Chépélov (TP12)	2016-01-31	PARQUET-480: Update for Cascading 3.0
+af9fd052	proflin	2016-01-29	PARQUET-432: Complete a todo for method ColumnDescriptor.compareTo()
+c38386d6	Ryan Blue	2016-01-28	PARQUET-393: Update to parquet-format 2.3.1.
+30ee10d2	proflin	2016-01-12	PARQUET-422: Fix a potential bug in MessageTypeParser where we ignore…
+84b2b741	proflin	2016-01-12	PARQUET-421: Fix mismatch of javadoc names and method parameters in m...
+37f72dc0	Ryan Blue	2016-01-12	PARQUET-212: Implement LIST read compatibility rules in Thrift
+368588b5	Ryan Blue	2016-01-07	PARQUET-413: Fix Java 8 test failure.
+fbb2c9e7	Sergio Pena	2015-12-17	PARQUET-404: Replace git@github.com.apache for HTTPS URL on dev/README.md to avoid permission issues
+367fe13b	Nezih Yigitbasi	2015-12-16	PARQUET-318: Remove unnecessary object mapper
+fa7588c4	Thomas Friedrich	2015-12-12	PARQUET-334: UT test failure with Pig 0.15
+49169033	Ryan Blue	2015-12-11	PARQUET-353: Release compression resources.
+b45c4bdb	Ryan Blue	2015-12-08	PARQUET-382: Add methods to append encoded data to files.
+56326400	Daniel Weeks	2015-12-08	PARQUET-99: Add page size check properties
+a24d624a	Ryan Blue	2015-12-08	PARQUET-305: Update logging to SLF4J.
+dcd1c33f	Ryan Blue	2015-12-08	PARQUET-352: Add object model property to file footers.
+f2615d9a	Reuben Kuhnert	2015-12-08	PARQUET-349: VersionParser does not handle versions missing 'build' section
+14097c64	Ryan Blue	2015-12-04	PARQUET-387: Improve NPE message when avro arrays contain null.
+e32aa6fe	Sergio Pena	2015-12-04	PARQUET-398: Add 'spena' information to dev/COMMITTERS.md
+f4918bb0	Cheng Lian	2015-12-03	PARQUET-398: Updates dev/COMMITTERS.md
+63083047	Chris Bannister	2015-11-30	PARQUET-396: Extend ParquetReader.Builder<T>
+efafa619	Sergio Pena	2015-11-19	PARQUET-378: Add thoroughly parquet test encodings
+09129877	Ryan Blue	2015-11-17	PARQUET-380: Fix build when using thrift 0.9.0.
+440882c6	Ryan Blue	2015-11-17	PARQUET-364: Fix compatibility for Avro lists of lists.
+6b605a4e	Jason Altekruse	2015-11-04	PARQUET-77: ByteBuffer use in read and write paths
+5a45ae3b	Mingyu Kim	2015-10-29	PARQUET-241: Fix ParquetInputFormat.getFooters() order
+d5eb8634	Ryan Blue	2015-10-27	PARQUET-369: Add shaded SLF4J NOP binding.
+5294c64b	Ryan Blue	2015-10-19	PARQUET-373: Fix flaky MemoryManager tests.
+b1ea059a	Alex Levenson	2015-10-13	PARQUET-381: Add feature to merge metadata (summary) files, and control which files are generated
+c3819688	Reuben Kuhnert	2015-09-18	PARQUET-355: Add Statistics Test for Parquet Columns
+0637e2fb	Nezih Yigitbasi	2015-09-17	PARQUET-360: Handle all map key types with cat tool's json dump
+66e39fc7	Luciano Resende	2015-09-14	PARQUET-375: Update current release version in README.md
+415761dc	Alex Levenson	2015-09-14	Revert "PARQUET-376: Tolerate square brackets in PR titles"
+d24ecb32	Alex Levenson	2015-09-14	PARQUET-376: Tolerate square brackets in PR titles
+f203d809	Ryan Blue	2015-09-11	PARQUET-363: Allow empty schema groups.
+9962a0fd	Ryan Blue	2015-09-11	PARQUET-335: Remove Avro check for MAP_KEY_VALUE.
+04f524d5	Ryan Blue	2015-08-20	PARQUET-361: Add semver prerelease logic.
+2c90a9da	Ryan Blue	2015-08-20	PARQUET-356: Update LICENSE files for code from ElephantBird.
+01fbf81e	Tianshuo Deng	2015-08-20	PARQUET-343 Caching nulls on group node to improve write performance on wide schema sparse data
+3f36b7b5	Laurent Goujon	2015-08-20	PARQUET-362 - Fix parquet buffered writer being oversensitive to union schema changes
+2f956f46	Tianshuo Deng	2015-08-05	PARQUET-341 improve write performance for wide schema sparse data
+b86f68e3	Alex Levenson	2015-07-31	PARQUET-346: Minor fixes for PARQUET-350, PARQUET-348, PARQUET-346, PARQUET-345
+454fc365	Nezih Yigitbasi	2015-07-28	PARQUET-342: Updates to be Java 6 compatible
+83406b73	Chris Bannister	2015-07-20	PARQUET-340: MemoryManager: max memory can be truncated
+1dd5cec0	Alex Levenson	2015-07-17	[maven-release-plugin] prepare for next development iteration
+4aba4dae	Alex Levenson	2015-07-17	[maven-release-plugin] prepare release apache-parquet-1.8.1
+07cefb82	Alex Levenson	2015-07-17	Update CHANGES for 1.8.1 release
+8da94563	Alex Levenson	2015-07-16	PARQUET-339: Add Alex Levenson to KEYS file
+8714dd03	Alex Levenson	2015-07-16	PARQUET-336: Fix ArrayIndexOutOfBounds in checkDeltaByteArrayProblem
+f79c9365	Jake Donham	2015-07-16	PARQUET-337 handle binary fields in set/map/list in parquet-scrooge
+8a2c6186	Alex Levenson	2015-07-16	PARQUET-338: Fix pull request example in README
+be9f3cb2	Alex Levenson	2015-07-14	PARQUET-331: Surface subprocess stderr in merge script
+fcd56828	Tianshuo Deng	2015-07-13	PARQUET-279 : Check empty struct in compatibility checker
+abfe3559	Ryan Blue	2015-07-11	[maven-release-plugin] prepare for next development iteration
+0fda28af	Ryan Blue	2015-07-11	[maven-release-plugin] prepare release apache-parquet-1.8.0
+8f898dad	Ryan Blue	2015-07-11	PARQUET-292: Update CHANGES.md for 1.8.0.
+4c7d7523	asingh	2015-07-11	PARQUET-329: Restore ThriftReadSupport#THRIFT_COLUMN_FILTER_KEY
+043fcde3	Ryan Blue	2015-07-09	PARQUET-246: File recovery and work-arounds
+f4e754e6	Thomas Friedrich	2015-07-03	PARQUET-324: row count incorrect if data file has more than 2^31 rows
+013b445e	Sergio Pena	2015-07-03	PARQUET-152: Add validation on Encoding.DELTA_BYTE_ARRAY to allow FIX…
+c334a1bc	Ryan Blue	2015-07-01	PARQUET-290: Add data model to Avro reader builder
+2f2c8b1c	Ryan Blue	2015-07-01	PARQUET-289: Allow ParquetReader.Builder subclasses.
+a747456b	Ryan Blue	2015-07-01	PARQUET-308: Add ParquetWriter#getDataSize accessor.
+c7720ca4	Ryan Blue	2015-07-01	PARQUET-325: Always use row group size when padding is 0.
+9fde6534	Ryan Blue	2015-07-01	PARQUET-320: Fix semver problems for parquet-hadoop.
+e3b95020	asingh	2015-06-30	PARQUET-251: Binary column statistics error when reuse byte[] among rows
+e6ee42e9	Nezih Yigitbasi	2015-06-30	PARQUET-316: Fix the benchmark module
+1f3e72fa	Steven She	2015-06-25	PARQUET-317: Fix writeMetadataFile crash when a relative root path is used
+cb045627	Ryan Blue	2015-06-25	PARQUET-248: Add ParquetWriter.Builder.
+5c2ba72f	Alex Levenson	2015-06-24	PARQUET-284: Clean up ParquetMetadataConverter
+46448e93	Alex Levenson	2015-06-24	PARQUET-201: Fix ValidTypeMap being overly strict with respect to OriginalTypes
+412ab966	Ryan Blue	2015-06-22	PARQUET-306: Add row group alignment
+89321a2d	Nezih Yigitbasi	2015-06-22	PARQUET-311: Fix NPE when debug logging metadata
+29283b77	Nezih Yigitbasi	2015-06-22	PARQUET-314: Fix broken equals implementations
+079bcd03	Alex Levenson	2015-06-18	PARQUET-297: Tests for PR 213 (Version generator)
+ad443210	Konstantin Shaposhnikov	2015-06-18	PARQUET-297: generate Version class using parquet-generator
+1c160685	Alex Levenson	2015-06-18	PARQUET-264: Remove remaining references to parquet being an incubator project
+5f48f19e	Konstantin Shaposhnikov	2015-06-17	PARQUET-309: remove unnecessary compile dependency on parquet-generator
+faf54213	Ryan Blue	2015-06-17	PARQUET-263: Release changes from parquet-1.7.0 branch
+4590f14e	Alex Levenson	2015-06-17	PARQUET-246: fix incomplete state reset in DeltaByteArrayWriter.reset()
+3052d4eb	Ryan Blue	2015-06-16	PARQUET-178: Remove SLF4J META-INF from binary artifacts.
+75f07158	Ryan Blue	2015-04-28	PARQUET-265: Update POM for Parquet TLP.
+2e62764c	Christian Rolf	2015-06-05	PARQUET-266: Add support for lists of primitives to Pig schema converter
+918609f2	Ryan Blue	2015-06-04	PARQUET-286: Update String support to match upstream Avro.
+d6f082b9	Ryan Blue	2015-06-01	PARQUET-285: Implement 3-level lists in Avro
+4b5cda5a	Yash Datta	2015-06-01	PARQUET-151: Skip writing _metadata file in case of no footers since schema cannot be determined.
+33a22026	Alex Levenson	2015-05-26	[maven-release-plugin] prepare for next development iteration
+213e952d	Alex Levenson	2015-05-26	[maven-release-plugin] prepare release parquet-1.8.0rc1
+dd92a9db	asingh	2015-05-26	PARQUET-223: Add builders for MAP and LIST types
+8769d0f2	Ryan Blue	2015-05-21	PARQUET-262: Restore semver checks.
+ded56ffd	Alex Levenson	2015-05-19	PARQUET-287: Keep a least 1 column from union members when projecting thrift unions
+181affd5	dongche1	2015-05-19	PARQUET-164: Add a counter and increment when parquet memory manager kicks in
+a458e1a2	Ryan Blue	2015-05-18	PARQUET-243: Add Avro reflect support
+60edcf9d	Tianshuo Deng	2015-05-15	PARQUET-278 : enforce non empty group on MessageType level
+1dbcdf2e	Ben Pence	2015-05-15	PARQUET-274: Updates URLs to link against the apache user instead of Parquet on github
+136c5ffe	Cheng Lian	2015-05-15	PARQUET-253: Fixes Javadoc of AvroSchemaConverter
+7680fae1	Cheng Lian	2015-05-15	PARQUET-254: Fixes exception message
+e5d9c6c7	Ryan Blue	2015-05-14	PARQUET-265: Update POM files for Parquet TLP.
+c7d56cff	Tianshuo Deng	2015-05-12	PARQUET-273 : remove usage of ReflectiveOperationException to support JAVA6
+9500c773	Ben Pence	2015-05-07	PARQUET-276: Updates CONTRIBUTING file with new repo info
+b8aae90d	Ben Pence	2015-05-06	PARQUET-272: Updates docs description to match data model
+890b387d	Tianshuo Deng	2015-05-04	PARQUET-252 : support nested container type for parquet-scrooge
+7fc79983	Alex Levenson	2015-04-30	PARQUET-229 Add a strict thrift projection API with backwards compat support
+22c6d087	Alex Levenson	2015-04-30	PARQUET-269: Restore scrooge-maven-plugin to version 3.17.0
+98f54c15	Nalezenec, Lukas	2015-04-30	PARQUET-175 reading custom protobuf class
+9993450a	Alex Levenson	2015-04-29	PARQUET-227 Enforce that unions have only 1 set value, tolerate bad records in read path
+b287d35f	Brett Stime	2015-04-29	PARQUET-271: Fixes parquet-tools java examples
+1be38782	Brett Stime	2015-04-29	PARQUET-270: Adds a legend for meta output to readme.md
+9d744f71	Ryan Blue	2015-04-29	PARQUET-268: Downgrade scrooge-maven-plugin.
+4f7c704d	Ryan Blue	2015-04-28	PARQUET-245: Only run tests in Travis CI if build succeeds.
+7c423983	Ryan Blue	2015-04-27	PARQUET-211: Update version for 1.8.0 development.
+b10870e4	Ryan Blue	2015-04-27	PARQUET-23: Rename to org.apache.parquet.
+720b988f	Tianshuo Deng	2015-04-27	Revert "PARQUET-252 : Support nests container types for scrooge support"
+f28aa710	Tianshuo Deng	2015-04-27	PARQUET-252 : Support nests container types for scrooge support
+e1019172	Ryan Blue	2015-04-16	PARQUET-211: Set version for 1.7.0-incubating development.
+4f660778	Ryan Blue	2015-04-07	PARQUET-211: Set version to 1.6.0 for release.
+828ff75c	Ryan Blue	2015-04-07	PARQUET-211: 1.6.0 release changes
+b6136293	Ryan Blue	2015-04-07	PARQUET-239: Make AvroParquetReader#builder static.
+920192a5	Ryan Blue	2015-04-07	PARQUET-235: Fix parquet.metadata compatibility.
+f272a6e9	Ryan Blue	2015-04-07	PARQUET-234: Add ParquetInputSplit methods for compatibility.
+4950ad86	Ryan Blue	2015-04-07	PARQUET-242: Fix AvroReadSupport.setAvroDataSupplier.
+ff7a4863	Ryan Blue	2015-04-06	Revert "PARQUET-220: Remove unnecessary warnings initializing ParquetRecordReader"
+bfb31450	Konstantin Shaposhnikov	2015-04-06	PARQUET-220: Remove unnecessary warnings initializing ParquetRecordReader
+27ba6813	Ryan Blue	2015-04-03	PARQUET-230: Add build instructions to README.
+4ed0bdf1	Ryan Blue	2015-03-31	PARQUET-214: Fix Avro string regression.
+0ab00135	Neville Li	2015-03-31	PARQUET-210: add JSON support for parquet-cat
+9a92f397	Nezih Yigitbasi	2015-03-31	PARQUET-165: Update parquet version in the benchmark module
+4fea3ea6	Nezih Yigitbasi	2015-03-31	PARQUET-165: Add a new parquet-benchmark module
+b8f5d89e	Ferdinand Xu	2015-02-24	PARQUET-189: Support building parquet with thrift 0.9.0
+fd3085ed	Neville Li	2015-03-24	PARQUET-204: add parquet-schema directory support
+cb7f6a8c	Alex Levenson	2015-03-13	[maven-release-plugin] prepare for next development iteration
+ec6f200b	Alex Levenson	2015-03-13	[maven-release-plugin] prepare release parquet-1.6.0rc7
+2e3c0535	Tianshuo Deng	2015-03-13	PARQUET-197 : Gen parquet metadata from cascading
+9ee3a161	Alex Levenson	2015-03-13	PARQUET-217 Use simpler heuristic in MemoryManager
+77826fda	Alex Levenson	2015-03-12	PARQUET-215 Discard records with unrecognized union members in the thrift write path
+b58789c5	Ryan Blue	2015-03-11	PARQUET-180: Update use of TBinaryProtocol#setReadLength.
+031a762d	Ryan Blue	2015-03-11	PARQUET-172: Add parquet-thrift binary tests.
+5acc6a55	Viktor Szathmáry	2015-03-10	PARQUET-97: make ProtoParquetReader#builder static
+a0c77b6a	Ryan Blue	2015-03-09	PARQUET-111: Update headers in parquet-tools, remove NOTICE.
+cd89c888	Alex Levenson	2015-03-06	[maven-release-plugin] prepare for next development iteration
+ba431424	Alex Levenson	2015-03-06	[maven-release-plugin] prepare release parquet-1.6.0rc6
+3fc28541	Ryan Blue	2015-03-06	PARQUET-193: Implement nested types compatibility rules in Avro
+12ee6b44	Tianshuo Deng	2015-03-06	PARQUET-208: Revert PARQUET-197
+a7155a8d	Alex Levenson	2015-03-05	[maven-release-plugin] prepare for next development iteration
+b2623f12	Alex Levenson	2015-03-05	[maven-release-plugin] prepare release parquet-1.6.0rc5
+2d1eaefb	Alex Levenson	2015-03-05	PARQUET-202 Typo in the connection info in the pom prevents publishing an RC
+5851e6da	Tianshuo Deng	2015-03-05	PARQUET-197 : fix parquet-cascading not writing parquet metadata file
+25834942	Tianshuo Deng	2015-03-05	PARQUET-162: ParquetThrift should throw when unrecognized columns are passed to the column projection API
+998d6507	Mariappan Asokan	2015-03-04	PARQUET-134 patch - Support file write mode
+ea81e9aa	Ryan Blue	2015-03-04	PARQUET-186: Fix Precondition performance problem in SnappyUtil.
+d084ad29	Alex Levenson	2015-03-04	PARQUET-160: avoid wasting 64K per empty buffer.
+fa8957d7	Colin Marc	2015-03-04	PARQUET-187: Replace JavaConversions.asJavaList with JavaConversions.seqAsJavaList
+36a02dc5	Ryan Blue	2015-03-04	PARQUET-188: Change column ordering to match the field order.
+c82f7037	Ryan Blue	2015-03-04	PARQUET-192: Fix map null encoding
+f1b54876	Ryan Blue	2015-03-04	PARQUET-191: Fix map Type to Avro Schema conversion.
+4f87e0f4	choplin	2015-02-26	PARQUET-190: fix an inconsistent Javadoc comment of ReadSupport.prepareForRead
+23fd7368	Ryan Blue	2015-02-11	[maven-release-plugin] prepare for next development iteration
+db35a4ce	Ryan Blue	2015-02-11	[maven-release-plugin] prepare release apache-parquet-format-2.3.0-incubating
+2726dc5d	Ryan Blue	2015-02-11	PARQUET-185: Update release scripts and POM.
+f48bca05	Ryan Blue	2015-02-09	PARQUET-164: Add warning when scaling row group sizes.
+807915b4	Yash Datta	2015-02-09	PARQUET-116: Pass a filter object to user defined predicate in filter2 api
+2c23ff7e	Ryan Blue	2015-02-06	[maven-release-plugin] prepare for next development iteration
+89f9a7a2	Ryan Blue	2015-02-06	[maven-release-plugin] prepare release apache-parquet-format-2.3.0
+e9f2b904	Ryan Blue	2015-02-06	[maven-release-plugin] prepare for next development iteration
+bf8c7fd3	Ryan Blue	2015-02-06	[maven-release-plugin] prepare release apache-parquet-format-2.2.0
+6827f850	Ryan Blue	2015-02-06	Revert "[maven-release-plugin] prepare release parquet-format-2.2.0"
+fc5f1f88	Ryan Blue	2015-02-06	[maven-release-plugin] prepare release parquet-format-2.2.0
+ec9612fe	Ryan Blue	2015-02-06	PARQUET-111: Update LICENSE and pom.
+ce65dfb3	Ryan Blue	2015-02-05	PARQUET-139: Avoid reading footers when using task-side metadata
+05adc21b	Daniel Weeks	2015-02-05	PARQUET-177: Added lower bound to memory manager resize
+668d031d	Colin Marc	2015-02-05	PARQUET-181: Scrooge Write Support (take two)
+80417356	Cheng Lian	2015-02-03	PARQUET-173: Fixes `StatisticsFilter` for `And` filter predicate
+3df3372a	Ryan Blue	2015-02-02	PARQUET-111: Updates for apache release
+a635f214	Ryan Blue	2015-01-30	Update Travis CI link in README.md.
+32a9c6d4	Jim Carroll	2015-01-29	PARQUET-157: Divide by zero fix
+b4380f20	Neville Li	2015-01-29	PARQUET-142: add path filter in ParquetReader
+e505e1fe	Chris Albright	2015-01-29	PARQUET-124: normalize path checking to prevent mismatch between URI and ...
+d7dd228d	Taro L. Saito	2015-01-29	PARQUET-133: Upgrade snappy-java to 1.1.1.6
+0751f97b	Laurent Goujon	2015-01-28	PARQUET-174: Replaces AssertionError constructor introduced in Java7
+4bf9be34	Yash Datta	2015-01-26	PARQUET-136: NPE thrown in StatisticsFilter when all values in a string/binary column trunk are null
+d70fdbc4	Cheng Lian	2015-01-23	PARQUET-168: Fixes parquet-tools command line option description
+52f3240d	Tianshuo Deng	2015-01-12	PARQUET-141: upgrade to scrooge 3.17.0, remove reflection based field info inspection...
+23db4eb8	dongche1	2014-12-29	PARQUET-108: Parquet Memory Management in Java
+0fcfe617	Ryan Blue	2014-12-18	PARQUET-23: Refactor parquet-format to org.apache names.
+8e2ea92e	Ryan Blue	2014-12-16	PARQUET-150 Update merge script issue id matching.
+b7a82a91	Wolfgang Hoschek	2014-12-11	PARQUET-145 InternalParquetRecordReader.close() should not throw an exception if initialization has failed
+ccc29e4d	julien	2014-12-04	PARQUET-117: implement the new page format for Parquet 2.0
+b5f6a3bd	Josh Wills	2014-12-02	PARQUET-140: Allow clients to control the GenericData instance used to read Avro records
+ad06e611	julien	2014-11-25	PARQUET-52: refactor fallback mechanism
+3aa6f117	Brock Noland	2014-11-20	PARQUET-114: Sample NanoTime class serializes and deserializes Timestamp incorrectly
+d105819a	Ryan Blue	2014-11-18	PARQUET-132: Add type parameter to AvroParquetInputFormat.
+251a495d	elif dede	2014-11-17	PARQUET-135: Input location is not getting set for the getStatistics in ParquetLoader when using two different loaders within a Pig script.
+92e6d716	julien	2014-11-07	PARQUET-122: make task side metadata true by default
+f1da5e92	Tom White	2014-11-03	PARQUET-121: Allow Parquet to build with Java 8
+a29815ab	Matt Massie	2014-11-03	PARQUET-123: Enable dictionary support in AvroIndexedRecordConverter
+ccfca8f7	Daniel Weeks	2014-10-29	PARQUET-106: Relax InputSplit Protections
+31fb4dfe	Tianshuo Deng	2014-10-21	PARQUET-105: use mvn shade plugin to create uber jar, support meta on a folder
+3633dee0	Ryan Blue	2014-10-01	PARQUET-109: Update NOTICE, add binary LICENSE.
+be1222ef	Ryan Blue	2014-10-01	PARQUET-107: Add option to disable summary metadata.
+da912992	Ryan Blue	2014-10-01	PARQUET-64: Add new OriginalTypes in parquet-format 2.2.0.
+0b17cbee	Tianshuo Deng	2014-09-29	PARQUET-104: Fix writing empty row group at the end of the file
+bf20abbf	Colin Marc	2014-09-25	PARQUET-96: fill out some missing methods on parquet.example classes
+3a082e8e	julien	2014-09-25	PARQUET-90: integrate field ids in schema
+0c4f13a8	julien	2014-09-25	PARQUET-101: fix meta data lookup when not using task.side.metadata
+59c58d0b	Ryan Blue	2014-09-23	PARQUET-82: Check page size is valid when writing.
+0eb96379	Ryan Blue	2014-09-22	PARQUET-89: Add hadoop-2 test profile for Travis CI.
+3dc223cc	Daniel Weeks	2014-09-22	PARQUET-92: Pig parallel control
+9cdcf3bb	Alex Levenson	2014-09-22	PARQUET-94: Fix bug in ParquetScroogeScheme constructor, minor cleanup
+29633178	Ryan Blue	2014-09-16	PARQUET-72: Fix NOTICE
+501e8fea	julien	2014-09-10	[maven-release-plugin] prepare for next development iteration
+316b5682	julien	2014-09-10	[maven-release-plugin] prepare release parquet-1.6.0rc2
+8d878afb	julien	2014-09-10	PARQUET-24: enforce JIRA prefix
+fbe458f8	julien	2014-09-10	PARQUET-88: fix pre-version enforcement
+f637c445	Tianshuo Deng	2014-09-10	PARQUET-87: Add API for projection pushdown on the cascading scheme level
+24119cc8	julien	2014-09-09	upgrade scalatest_version to depend on scala 2.10.4
+5f39948b	Tianshuo Deng	2014-09-08	update scala 2.10
+5dafd127	julien	2014-09-05	PARQUET-84: Avoid reading rowgroup metadata in memory on the client side.
+647b8a70	Ryan Blue	2014-09-04	PARQUET-63: Enable dictionary encoding for FIXED.
+f8b06df7	Tianshuo Deng	2014-09-03	do ProtocolEvents fixing only when there is required fields missing in the requested schema
+f2d88f21	julien	2014-09-03	[maven-release-plugin] prepare for next development iteration
+149ef7a4	julien	2014-09-03	[maven-release-plugin] prepare release parquet-format-2.2.0-rc1
+f8bc8d1c	Ryan Blue	2014-09-03	PARQUET-72: Update POM to use ASF parent.
+f6608e6d	julien	2014-09-03	PARQUET-85: add license headers
+78de104a	Ryan Blue	2014-09-02	PARQUET-72: Prepare for Apache release
+97964f35	julien	2014-08-29	PARQUET-79: add a streaming Thrift API, to enable processing the metadata as we read it and skipping unnecessary fields.
+7a105068	dvryaboy	2014-08-28	PARQUET-8: bump scrooge-maven-plugin version
+d3cd97a8	Daniel Weeks	2014-08-28	PARQUET-75: Fixed string decode performance issue
+8474f6d8	julien	2014-08-28	PARQUET-80: upgrade semver plugin version to 0.9.27
+02abe096	julien	2014-08-22	PARQUET-11: Reduce memory pressure when reading footers
+84ebe4c8	Eric Snyder	2014-08-20	PARQUET-66: Upcast blockSize to long to prevent integer overflow.
+792b1490	julien	2014-08-20	PARQUET-67: mechanism to add extra metadata in the footer
+54bb9832	Ryan Blue	2014-08-20	PARQUET-62: Fix binary dictionary write bug.
+45e58102	Julien Le Dem	2014-08-20	PARQUET-69: Committer doc
+7b415faa	Daniel Weeks	2014-08-20	Parquet-70: Fixed storing pig schema to udfcontext for non projection case and moved...
+7af955a0	Alex Levenson	2014-08-20	PARQUET-50: Re-Enable the semver enforcer
+0d497c45	Alex Levenson	2014-08-18	PARQUET-73: Add support for FilterPredicates to cascading schemes
+08a3c6a7	julien	2014-08-12	[maven-release-plugin] prepare for next development iteration
+b86b01b1	julien	2014-08-12	[maven-release-plugin] prepare release parquet-1.6.0rc1
+3a396d3a	Ryan Blue	2014-08-04	PARQUET-59: Fix parquet-scrooge test on hadoop-2.
+01484551	Cheng Lian	2014-08-01	PARQUET-13: The `-d` option for `parquet-schema` shouldn't have optional argument
+0793e49b	Brock Noland	2014-07-31	PARQUET-57 - Update dev README to clarify two points
+21d871b5	James Scott	2014-07-30	PARQUET-56: Added an accessor for the Long column type.
+b0e26ee6	Alex Levenson	2014-07-30	Only call put() when needed in SchemaCompatibilityValidator#validateColumn()
+ad32bf0f	Alex Levenson	2014-07-29	Add a unified and optionally more constrained API for expressing filters on columns
+fc2c29df	Matthieu Martin	2014-07-29	PARQUET-19: Fix NPE when an empty file is included in a Hive query that uses CombineHiveInputFormat
+17864dfc	Daniel Weeks	2014-07-28	Column index access support
+4a07b3f5	Sandy Ryza	2014-07-23	PARQUET-25. Pushdown predicates only work with hardcoded arguments.
+f2842386	Daniel Weeks	2014-07-18	PARQUET-22: Backport of HIVE-6938 adding rename support for parquet
+fb010489	Ryan Blue	2014-07-18	PARQUET-18: Fix all-null value pages with dict encoding.
+f6c02e2c	Tom White	2014-07-18	PARQUET-21: Fix reference to 'github-apache' in dev docs
+5dffe352	Matthieu Martin	2014-07-18	PARQUET-4: Use LRU caching for footers in ParquetInputFormat.
+2d8ebdbe	Tom White	2014-07-16	PARQUET-9: Filtering records across multiple blocks
+9c2fab44	Julien Le Dem	2014-07-11	PARQUET-6: Create documentation on how to contribute.
+4ad7303d	WangTao	2014-07-10	Minor fix
+9ad5485c	Daniel Weeks	2014-06-24	PARQUET-2: Adding Type Persuasion for Primitive Types
+859b6b4b	Julien Le Dem	2014-06-20	PARQUET-3: tool to merge pull requests based on Spark
+b767ac4e	Julien Le Dem	2014-06-02	Update README.md
+402749f0	Julien Le Dem	2014-05-27	Merge pull request #85 from Parquet/field_id
+dd98249a	julien	2014-05-27	Merge branch 'master' into field_id
+ee0b98ce	Julien Le Dem	2014-05-27	Merge pull request #388 from fs111/master
+a05afe26	Julien Le Dem	2014-05-22	Merge pull request #387 from ambiata/fix-writeclass
+01d5157a	Tianshuo Deng	2014-05-22	Update CHANGES.md
+b2f0fae0	Tianshuo Deng	2014-05-21	[maven-release-plugin] prepare for next development iteration
+79977453	Tianshuo Deng	2014-05-21	[maven-release-plugin] prepare release parquet-1.5.0
+fd8d18f2	Tianshuo Deng	2014-05-21	Merge pull request #399 from egonina/stats
+54f9b104	Katya Gonina	2014-05-21	Cleaning up + testing small & large values
+4fee0a7c	Katya Gonina	2014-05-21	Bug fix - resetting stats after writing page. Fixed unit test to test reading footer
+e4991ffe	Katya Gonina	2014-05-21	Merge branch 'master' of https://github.com/Parquet/parquet-mr into stats
+7e4346b2	Katya Gonina	2014-05-21	merging with fix_null_stats branch
+8091a1b5	Tianshuo Deng	2014-05-20	fix null stats
+b70509dd	Aniket Mokashi	2014-05-20	Merge pull request #397 from dcw-netflix/requested-schema-pruning
+fb7dba1a	Daniel Weeks	2014-05-20	Updated test and remove shortcut return statement in loader
+24076a4a	Daniel Weeks	2014-05-20	Fixed issue with column pruning when using requested schema
+d5a8f9fa	Julien Le Dem	2014-05-19	Merge pull request #389 from dcw-netflix/pad-schema
+10dc714b	Daniel Weeks	2014-05-19	Added test for null padding
+4d42afba	Tianshuo Deng	2014-05-19	Merge pull request #392 from egonina/stats
+70bb0ea0	Katya Gonina	2014-05-16	fixes for converting from bytes, toString() methods, writing stats to Footer, unit testing for MAX/MIN_VALUE
+cc288228	Daniel Weeks	2014-05-13	Added padding for columns not found in file schema
+05b4e7c6	Julien Le Dem	2014-05-12	Merge pull request #338 from egonina/stats
+882740f0	Andre Kelpe	2014-05-12	return NullCounter when read via Cascading, but not within a cluster side job
+041146e6	Maxwell Swadling	2014-05-12	Fixed hadoop WriteSupportClass loading
+c98d8af5	Katya Gonina	2014-05-09	adding back the parquet-hadoop methods that don't have statistics parameters, for backward comp
+2678e394	Katya Gonina	2014-05-09	Merge branch 'master' of https://github.com/Parquet/parquet-mr into stats
+ff830a95	Katya Gonina	2014-05-09	previous version to 1.4.2
+96b94e1b	Julien Le Dem	2014-05-08	Merge pull request #351 from rdblue/350-fix-int96-dictionary
+7d335d8b	Julien Le Dem	2014-05-08	Merge pull request #378 from Parquet/tweak_semver
+d08313cb	julien	2014-05-08	add release 1.4.3 to changelog
+bcd2ec5d	julien	2014-05-08	remove unnecessary version number in parquet-scrooge
+0c740e01	julien	2014-05-08	remove exclude for Split
+9f75dd1f	Tom White	2014-05-08	Merge pull request #355 from rdblue/decimal
+638c0446	julien	2014-05-07	update version
+db31a49a	julien	2014-05-07	upgrade semver and add exclude for shaded stuff
+0189ff17	Ryan Blue	2014-04-18	Fix more code review finds.
+c825e89c	Ryan Blue	2014-04-18	Remove unchecked casts from Types.Builder.
+acaac8bb	Ryan Blue	2014-04-15	Implement code review changes.
+86501c23	Ryan Blue	2014-04-15	Add INT32 and INT64 as supported types for DECIMAL.
+9ef22e63	Ryan Blue	2014-04-14	Fix maximum precision calculation, account for sign bit.
+5c807055	Ryan Blue	2014-04-12	Update documentation and formatting.
+73d7558b	Ryan Blue	2014-04-12	Simplify Types API by moving repetition.
+299e0ca7	Ryan Blue	2014-04-12	Add Types builder API documentation.
+63ffdce4	Ryan Blue	2014-04-11	Add test for decimal with unsupported primitive types.
+3af02db8	Ryan Blue	2014-04-11	Add more tests for type builders.
+a1d7260a	Ryan Blue	2014-04-11	Fix primitive type equality for fixed with different lengths.
+163bf6bd	Ryan Blue	2014-04-11	Add support for DECIMAL type annotation.
+50701e7d	julien	2014-05-07	Merge branch 'master' into tweak_semver
+57b01315	Julien Le Dem	2014-05-07	Merge pull request #336 from lukasnalezenec/protobuf
+31df4fa3	Tianshuo Deng	2014-05-06	[maven-release-plugin] prepare for next development iteration
+70a00125	Tianshuo Deng	2014-05-06	[maven-release-plugin] prepare release parquet-format-2.1.0
+346b387a	Julien Le Dem	2014-05-05	Merge pull request #337 from tongjiechen/issue324
+cb3e5146	Lukas	2014-05-05	protobuf 2.5 instalation script for Travis - remove make check
+51065930	Lukas	2014-05-04	protobuf 2.5 instalation script for Travis - fix
+af74b795	Lukas	2014-05-04	protobuf 2.5 instalation script for Travis - pushd/popd
+636457c0	Lukas	2014-05-04	protobuf 2.5 instalation script for Travis - build fix
+5d1a66a9	Lukas	2014-05-04	protobuf 2.5 instalation script for Travis
+0e334ca3	Ryan Blue	2014-04-30	Use parameterized to test with and without dictionary.
+00e794a1	Tianshuo Deng	2014-04-29	[maven-release-plugin] prepare for next development iteration
+3f25ad97	Tianshuo Deng	2014-04-29	[maven-release-plugin] prepare release parquet-1.4.3
+6aed5288	Tianshuo Deng	2014-04-29	Merge pull request #381 from Parquet/fix_concurency_problem
+9a38aecc	julien	2014-04-29	fix metadata concurency problem
+f6a2218a	julien	2014-04-25	configure semver to enforce semantic versioning
+78491a40	Katya Gonina	2014-04-23	adding 1.4.1 as previous version
+3e90b41a	Katya Gonina	2014-04-23	Merge branch 'master' of https://github.com/Parquet/parquet-mr into stats
+7640224b	Katya Gonina	2014-04-23	Adding back the Page() and writePage() methods for backward-compatibility The methods now pass an empty Stats object downstream
+76d05fa7	Tianshuo Deng	2014-04-23	Update CHANGES.md
+10a0af6b	Tianshuo Deng	2014-04-23	[maven-release-plugin] prepare for next development iteration
+c9445a3d	Tianshuo Deng	2014-04-23	[maven-release-plugin] prepare release parquet-1.4.2
+c0b96220	Julien Le Dem	2014-04-21	Merge pull request #359 from mping/patch-1
+8aeea149	Julien Le Dem	2014-04-21	Merge pull request #335 from tongjiechen/master
+93d11c53	Julien Le Dem	2014-04-21	Merge pull request #365 from Parquet/generate_splits_by_min_max_size
+ac2b15eb	Tianshuo Deng	2014-04-21	change name to checkBelongingToANewHDFSBlock
+72dbbdc4	Tianshuo Deng	2014-04-21	Merge pull request #353 from Parquet/bugfix_failed_convert_to_scrooge_struct_when_enum_is_optional
+bba221d7	Tianshuo Deng	2014-04-21	format
+9f672d69	Tianshuo Deng	2014-04-21	use mid point of a row group to decide to create a split or not
+05c3e270	Miguel Ping	2014-04-21	ensure SimpleRecord#getValues() is unmodifiable
+70707e4b	Tianshuo Deng	2014-04-18	use getStartingPos for BlockMetadata, which returns the startingPos for the first Column
+9705f490	Tianshuo Deng	2014-04-18	1. check row groups are sorted; 2. add getStartingPos for BlockMetadata, which returns the startingPos for the first Column
+00d631c1	Tianshuo Deng	2014-04-18	make SplitInfo contain the hdfsBlock
+8e348e60	Tianshuo Deng	2014-04-18	create a getStartingPos in ColumnChunkMetaData
+4c870b0f	dvryaboy	2014-04-18	Merge pull request #362 from nealsid/master
+a85b7fdd	Tianshuo Deng	2014-04-18	better message
+83e34bec	Tianshuo Deng	2014-04-18	add non-negative check in generateSplits method
+ac816d91	Tianshuo Deng	2014-04-18	min split size default to 0
+9814332c	Tianshuo Deng	2014-04-17	add more tests so the hdfsSize is not multiple of rowGroup size
+7845cc76	Tianshuo Deng	2014-04-17	1. remove unused readSupportClass parameter from generateSplit method; 2. double check split min max to be postive in the getSplits method; 3. explicit import java.util.xx in test
+fca4cc9f	Tianshuo Deng	2014-04-17	move parseMessageType out of the loop
+2056bfab	Tianshuo Deng	2014-04-17	separate out getParquetInputSplit method in the SplitInfo class, reduce LOC in the generateSplit method
+83493c59	Tianshuo Deng	2014-04-17	maxSplitSize should always be positive
+23958b8f	Tianshuo Deng	2014-04-17	check maxSplit size must be greater or equal to minSplitSize
+dd8c32a4	Tianshuo Deng	2014-04-17	fix missing space
+0a96b2c6	Tianshuo Deng	2014-04-17	local variable of hdfsBlock
+6b7bc541	Julien Le Dem	2014-04-17	Merge pull request #366 from Parquet/avoid_convert_thrift_scrooge_class_when_projection_is_not_specified
+eeae127a	Julien Le Dem	2014-04-17	Merge pull request #367 from Parquet/ioexception
+b55eea04	julien	2014-04-17	make ParquetFileWriter throw IOException in invalid state case
+f4a0900b	Tianshuo Deng	2014-04-17	remove unused code
+3321b673	Tianshuo Deng	2014-04-17	fix enum to be upper case
+796b7dd3	Tianshuo Deng	2014-04-17	do not call schema converter to generate projected schema when the projectionFilterStrubg or projectionSchemaStr is specified
+5d06526d	Tianshuo Deng	2014-04-16	generate splits by min max size, and align to HDFS block when possible
+79a4ac84	Julien Le Dem	2014-04-16	Merge pull request #352 from Parquet/ParquetThriftStorer
+3fad8160	Neal Sidhwaney	2014-04-15	Fix output bug during parquet-dump command
+d093f497	julien	2014-04-15	reverse codec changes
+110fe216	julien	2014-04-15	fix test runtime dep missing from pig
+f8877f16	julien	2014-04-14	cleanup log messages for default codec
+f5c3151d	Miguel Ping	2014-04-15	Expose values in SimpleRecord
+9ef1be66	julien	2014-04-14	cleanup log messages in tests
+de0bfe3a	julien	2014-04-14	cleanup log messages in tests
+ddca03c2	julien	2014-04-14	cleanup log messages in tests
+6417baed	Tianshuo Deng	2014-04-10	1. upgrade scrooge dep to 3.12.1  2. fix bug when an enum field is optional, scroogeSchemaConverter would fail
+67c1e113	julien	2014-04-09	use own test fixtures
+0943978a	julien	2014-04-09	headers
+a13ae411	julien	2014-04-08	cleanup
+b8149e92	julien	2014-04-08	ParquetThriftStorer
+41df1905	Julien Le Dem	2014-04-08	Merge pull request #349 from Parquet/null_header
+f98de758	julien	2014-04-08	adding comments
+93359c0f	Katya Gonina	2014-04-08	Added length check for comparing two byte arrays
+bad0012a	Tianshuo Deng	2014-04-07	[maven-release-plugin] prepare for next development iteration
+27f71a18	Tianshuo Deng	2014-04-07	[maven-release-plugin] prepare release parquet-1.4.1
+16d38e2d	Ryan Blue	2014-04-07	Fix bug #350, fixed length argument out of order.
+05327c1c	Katya Gonina	2014-04-04	Added hashCode() method for Statistics class
+30810ff6	julien	2014-04-04	fix header bug
+3f5de761	Julien Le Dem	2014-04-04	Merge pull request #344 from szehon/master
+f5edd0a7	Julien Le Dem	2014-04-03	Merge pull request #347 from Parquet/check_read_length_avoid_oom
+5b8af1f8	Tianshuo Deng	2014-04-03	set reading length in ThriftBytesWriteSupport to avoid potential OOM caused by corrupted data
+ce2301e2	Julien Le Dem	2014-04-03	Merge pull request #346 from Parquet/compress_kv_pairs_in_split
+f9a86768	Dmitriy Ryaboy	2014-04-02	stop using strings and b64 for compressed input splits
+6aeaa526	Julien Le Dem	2014-04-02	Merge pull request #345 from epishkin/cascading_2.5.3
+e1b48003	Oleksii Iepishkin	2014-04-02	set cascading version to 2.5.3
+253eb6a1	Szehon Ho	2014-04-02	select * from parquet hive table containing map columns runs into exception. Issue #341.
+5207422b	Aniket Mokashi	2014-04-01	Merge pull request #342 from Parquet/compress_kv_pairs_in_split
+c54cad5e	Dmitriy Ryaboy	2014-04-01	compress kv pairs in ParquetInputSplits
+156b186b	tongjiechen	2014-04-01	remove duplicate code
+47ff4ab3	tongjiechen	2014-04-01	Merge branch 'issue324' of github.com:tongjiechen/parquet-mr into issue324
+82ec5842	tongjiechen	2014-04-01	issue #324 remove additional tab
+07c54722	tongjiechen	2014-04-01	Merge branch 'issue324' of github.com:tongjiechen/parquet-mr into issue324
+73455367	tongjiechen	2014-04-01	Merge branch 'issue324' of github.com:tongjiechen/parquet-mr into issue324
+9f439456	Katya Gonina	2014-04-01	Refactored the *Statistics classes to reuse more code. Added Binary compareTo methods
+e8d9763c	tongjiechen	2014-04-01	Merge branch 'master' of https://github.com/Parquet/parquet-mr into issue324
+125529bb	tongjiechen	2014-03-26	 issue #324, move ParquetStringInspector to org.apache.hadoop.hive.serde2.objectinspector.primitive package
+44f31c53	Tianshuo Deng	2014-04-01	Update CHANGES.md
+616f7783	Tianshuo Deng	2014-04-01	Update CHANGES.md
+594c47ea	Katya Gonina	2014-04-01	Added licence to new files
+670c9406	Katya Gonina	2014-04-01	Merge branch 'master' of github.com:egonina/parquet-mr into stats
+db13f194	Tianshuo Deng	2014-04-01	[maven-release-plugin] prepare for next development iteration
+73d66174	Tianshuo Deng	2014-04-01	[maven-release-plugin] prepare release parquet-1.4.0
+7b5e2ecf	Katya Gonina	2014-04-01	Addresses some initial comments. Javadocs, removed StatsHelper
+5ba0ff1e	tongjiechen	2014-03-29	Merge branch 'master' of github.com:tongjiechen/parquet-mr
+860e123b	tongjiechen	2014-03-25	remove originalType check for typeEquals of GroupType and add tests for HiveSchemaConverter
+621cf4e9	Katya Gonina	2014-03-27	Added statistics to Parquet pages and rowGroups
+05dea981	tongjiechen	2014-03-26	 issue #324, move ParquetStringInspector to org.apache.hadoop.hive.serde2.objectinspector.primitive package
+ee00e61b	Lukas	2014-03-26	protobuf dependency version changed from 2.4.1 to 2.5.0 - commit fix
+ba941199	Lukas	2014-03-26	protobuf dependency version changed from 2.4.1 to 2.5.0
+3d4311fd	tongjiechen	2014-03-25	remove originalType check for typeEquals of GroupType and add tests for HiveSchemaConverter
+737a5d5d	tongjiechen	2014-03-24	issue #290, hive map conversion to parquet schema
+9fdafc0e	Aniket Mokashi	2014-03-24	Merge pull request #333 from Parquet/compress_schemas_in_split
+4246d18a	Dmitriy Ryaboy	2014-03-23	close gzip stream in finally
+d0e548fe	Dmitriy Ryaboy	2014-03-23	a bit of jar size optimization
+1920abc2	Dmitriy Ryaboy	2014-03-23	compress schemas in input splits
+0b5116a6	Julien Le Dem	2014-03-20	Merge pull request #329 from Parquet/fix_file_system_resolution
+9899e5ba	julien	2014-03-20	fix filesystem resolution
+eb77222f	Julien Le Dem	2014-03-07	Merge pull request #320 from posix4e/master
+a08d2570	Alex Newman	2014-03-07	Spelling fix
+459b29b2	Jonathan Coveney	2014-03-06	Merge pull request #319 from Parquet/fix_changelog
+deb5e5d0	julien	2014-03-06	oauth based authentication; fix grep change
+3cfea0a6	Julien Le Dem	2014-03-05	Merge pull request #310 from wesleypeck/merge_parquet_tools
+b722e7bd	Julien Le Dem	2014-02-28	Merge pull request #314 from rdblue/312-fix-avro-array-of-optional
+2d5563b5	Julien Le Dem	2014-02-28	Merge pull request #311 from tomwhite/avro-null-default-values-bug
+e3923592	Aniket Mokashi	2014-02-28	Merge pull request #316 from rdblue/thrift-prefix
+f93c9cff	Tianshuo Deng	2014-02-28	Update cascading doc with Scrooge projection down.
+6063921a	Julien Le Dem	2014-02-28	Merge pull request #285 from mickaellcr/cascading_sink
+d3565789	Julien Le Dem	2014-02-28	Merge pull request #264 from lukasnalezenec/protobuf
+132f75d8	Tom White	2014-02-27	Merge pull request #293 from rdblue/int96-support
+8cc3e29c	Tom White	2014-02-27	Merge pull request #313 from rdblue/295-add-conf
+5e74bbed	Ryan Blue	2014-02-24	Add Configuration constructor in thrift writer for #295.
+603c0dc9	Ryan Blue	2014-02-25	Fix avro schema conv for arrays of optional type for #312.
+a5d2de14	Ryan Blue	2014-02-24	Add avro constructors with Configuration for #295.
+af2380fb	Ryan Blue	2014-02-14	Add NanoTime to example.
+2403257f	Ryan Blue	2014-02-14	Use toStringUsingUTF8 to fix tests.
+3fc099fd	Ryan Blue	2014-02-14	Factoring out common Binary impl in dictionary writer.
+d7c7395b	Ryan Blue	2014-02-14	Merge Fixed dictionary with Binary dictionary.
+6b2eef9d	Ryan Blue	2014-02-14	Delegate fixed and int96 types to convertBINARY.
+56387e33	Ryan Blue	2014-02-11	Remove int96 references from RecordConsumer and Converters.
+34b90d7b	Ryan Blue	2014-02-10	Removing Int96 class, using Binary instead.
+77a355af	Ryan Blue	2014-02-03	Extending example and group classes for int96.
+7043a646	Ryan Blue	2014-02-03	Initial int96 implementation.
+509e2688	Mickaël Lacour	2014-02-24	Better writing of a loop
+000659a2	Lacour Mickaël	2014-02-24	Merge pull request #1 from jalkjaer/cascading_sink
+70eada47	jalkjaer	2014-02-22	NULL tuples cause NPE when writing
+b07b1601	Tianshuo Deng	2014-02-21	Merge pull request #262 from Parquet/scrooge_schema_converter
+c7e892cb	Tianshuo Deng	2014-02-21	merge master
+e237fc49	Tom White	2014-02-20	Don't shade Jackson since Avro exposes Jackson classes in its public API for representing default values for fields.
+ed08077d	Tom White	2014-02-19	Don't fail if no default value specified for a new value in the read schema.
+7b0778c4	Julien Le Dem	2014-02-20	Merge pull request #297 from brockn/master
+712e6d79	Brock Noland	2014-02-18	fix compile error in previous commit
+588f868a	Wesley Peck	2014-02-18	Merge branch 'merge_parquet_tools' of github.com:wesleypeck/parquet-mr into merge_parquet_tools
+8cc8bdc0	Wesley Peck	2014-02-18	Merge the parquet-tools project into parquet-mr.
+81028366	Wesley Peck	2014-02-18	Merge the parquet-tools project into parquet-mr.
+7593e65a	Tom White	2014-02-12	Add explicit blank namespaces to account for change in AVRO-1295 in Avro 1.7.5.
+555837ad	Tom White	2014-01-22	Support field renaming for Avro read schemas, by means of field aliases.
+c48e8c13	Brock Noland	2014-02-18	HIVE-6456 - Implement Parquet schema evolution
+cad7f56b	Ryan Blue	2014-02-14	Update poms to use thrift.exectuable property.
+29fe0e0e	Tom White	2014-02-14	Merge pull request #303 from tomwhite/avro-read-schema-aliases
+3151b2f7	Julien Le Dem	2014-02-13	Merge pull request #299 from tomwhite/avro-fill-in-default-values
+de7ae6be	Tom White	2014-02-12	Add explicit blank namespaces to account for change in AVRO-1295 in Avro 1.7.5.
+808de5d9	Tom White	2014-01-22	Support field renaming for Avro read schemas, by means of field aliases.
+cc59a407	Tom White	2014-02-12	Don't deep copy immutable primitive types.
+76bbf4a8	Mickael Lacour	2014-01-27	[CASCADING] Provide the sink implementation in order to write some parquet files with ParquetTupleScheme
+6496bcc8	Julien Le Dem	2014-02-11	Merge pull request #298 from Parquet/bugfix_reorder_thrift_fields_causing_writting_nulls
+5dccd0cd	Tianshuo Deng	2014-02-11	format
+0d111b1d	Tianshuo Deng	2014-02-11	remove fieldCount from marker
+94d703c7	Tom White	2014-01-15	Fill in default values for new fields in the read schema that were not in the write schema.
+02f50f7e	Tianshuo Deng	2014-02-10	rename var
+1be4d6c9	Tianshuo Deng	2014-02-10	bugfix: reorder fields in thrift struct caused writting nulls. fixed it by keeping track of which fields are being written in each level, and only write nulls when current level is finished in MessageColumnIO
+c54e6d5f	Nong Li	2014-02-10	Merge pull request #82 from Parquet/exclude_thrift_source_from_jar
+3f37ca2a	julien	2014-02-10	exclude thrift source from jar
+083c5131	Brock Noland	2014-02-10	Convert ParquetHiveSerDe back to SerDe interface to support Hive 0.10
+38241cc7	Brock Noland	2014-02-10	Ports HIVE-5783 to the parquet-hive module so that patches can be ported between the two code bases with ease. Note that the code base in Hive itself should be considered the golden copy and any changes made there and then ported to the parquet-hive module.
+045343dd	Lukas	2014-02-07	Merge remote-tracking branch 'upstream/master' into protobuf
+68b53144	Tianshuo Deng	2014-02-06	better error messages, create ParquetScroogeInputFormat class
+137b1e29	Julien Le Dem	2014-02-04	Merge pull request #289 from allanyan/master
+3d7d9ad1	Julien Le Dem	2014-02-04	Merge pull request #292 from esammer/master
+644bf006	Julien Le Dem	2014-02-04	Merge pull request #282 from tomwhite/avro-default-read-schema
+aadaae5b	Tom White	2014-02-04	Revert change making field final that failed compatibility test.
+0185b491	Tom White	2014-02-04	Minor changes following Julien's review
+ab54b702	Tom White	2014-01-21	Add tests for reading Parquet files using the default Avro schema.
+e29d26be	Tom White	2014-01-16	Use a default Avro read schema when none specified in Parquet-Avro.
+01bba929	Tom White	2014-01-15	Support promotion of int, long and float to wider types.
+be43f884	Tom White	2013-12-18	Make setting requested projection and avro schema more independent, so that you only need to set the Avro schema if it is different to the writer's schema.
+f2f8e42e	Alex Kozlov	2013-12-16	Fix to read a new avro schema...
+83bb4b89	E. Sammer	2014-02-02	Added ParquetWriter() that takes an instance of Hadoop's Configuration.
+a1b7a315	allanyan	2014-01-30	use utility method from Configuration class to load class to avoid ClassNotFoundException
+8ecb0b22	allanyan	2014-01-30	first use current thread's classloader to load a class, if current thread does not have a classloader, use the class's current classloader to load a class. This will make sure a class not packaged in parquet but on classpath loaded properly. Otherwise, for example, if you set your own ReadSupport class to the Configuration object and expect it to be loaded by ParquetInputFormat, it will fail and throw ClassNotFoundException.
+024d5abf	Lukas	2014-01-29	build fix - deleted package
+b1a67742	Lukas	2014-01-29	version 1.3.3-SNAPSHOT + shade plugin
+5ffaba99	Lukas	2014-01-29	Maven shade plugin removed
+c8b7ba82	Lukas	2014-01-29	Merge remote branch 'upstream/master' into protobuf
+b929d196	dvryaboy	2014-01-28	Merge pull request #280 from aniket486/junit_framework_to_org
+2d9cf95d	Aniket Mokashi	2014-01-27	make setup calls static in tests
+02f7707e	Lukas	2014-01-26	ProtoMessageConverter case
+5b1b79c7	Lukas	2014-01-26	javadoc
+496e3fd0	Lukas	2014-01-26	Scalar Converters are part of Message converter
+8cc4cecd	Lukas	2014-01-25	New ProtoWriteSupport
+6edfa7e6	Lukas	2014-01-25	ProtoWriteSupport unit tests
+e4329cde	Aniket Mokashi	2014-01-23	move from junit3 to junit4
+d00eb4e6	Aniket Mokashi	2014-01-23	Merge branch 'master' of github.com:Parquet/parquet-mr into junit_framework_to_org
+942cfe26	Lukas	2014-01-19	Dictionary enum conversion
+3c0ab7a9	Lukas	2014-01-19	List cannot be empty
+da17462e	Lukas	2014-01-19	Matching parquet and pbfields by index
+b25de981	Aniket Mokashi	2014-01-17	style: junit.framework to org.junit
+bbacdf0a	Lukas	2014-01-16	storage of repeated fields without extra level - missing protobuffer
+6763f71b	Lukas	2014-01-16	storage of repeated fields without extra level
+a2691a74	Lukas	2014-01-16	Exception message
+a8be8125	Lukas	2014-01-15	Readme.md - mark Protobuf support as in dev
+21faa3d8	dvryaboy	2014-01-13	Merge pull request #270 from ledbit/master
+c00409ae	ledbit	2014-01-11	exclude ParquetInputSplit from semver check which seems to have an issue with inherited method check
+81f33a66	ledbit	2014-01-11	Merge remote branch 'upstream/master'
+4b517aec	Julien Le Dem	2014-01-09	Merge pull request #80 from gerashegalov/master
+d40381af	Gera Shegalov	2014-01-08	Upgrade maven-shade-plugin to 2.1 to compile with mvn 3.1.1
+471a693e	Julien Le Dem	2014-01-08	1.3.2
+ac8968ec	ledbit	2014-01-08	prettify a few lines
+9bdaff93	dvryaboy	2014-01-08	Add code of conduct to Readme.md
+f012db02	Tianshuo Deng	2014-01-08	[maven-release-plugin] prepare for next development iteration
+0dfb067a	Tianshuo Deng	2014-01-08	[maven-release-plugin] prepare release parquet-1.3.2
+8fb0b022	Julien Le Dem	2014-01-07	Update CHANGES.md
+b2184b84	Julien Le Dem	2014-01-07	add 1.3.1
+ff621946	Julien Le Dem	2014-01-07	Merge pull request #271 from Parquet/fix_bug_enum_last_value_exception
+40f9b24c	Tianshuo Deng	2014-01-07	name fix
+46b1ad00	Tianshuo Deng	2014-01-07	fix bug: when enum index being written is the last index defined in the Enum, a DecodingSchemaMismatchException is thrown. maintain enum loopup table in EnumType
+8c8cbde7	dvryaboy	2014-01-07	Merge pull request #268 from Parquet/add_semver_checks
+c1298b7a	Chris Aniszczyk	2014-01-07	Force <previousVersion>
+66641659	ledbit	2014-01-06	fix MapredParquetInputFormat exception issue caused by ParquetInputSplit extending FileSplit
+af880ec5	ledbit	2014-01-06	Make ParquetInputSplit extend FileSplit
+5c6876ac	ledbit	2014-01-06	Revert "Make ParquetInputSplit extend FileSplit"
+f232e779	Ledion Bitincka	2014-01-06	Make ParquetInputSplit extend FileSplit
+09914752	Lukas	2014-01-06	Code style - small fixes
+2207cb95	Lukas	2014-01-06	switches on enums
+81ab4266	Lukas	2014-01-06	Make package java.parquet.proto.converters (mostly) package protected
+c1e86d80	Dmitriy Ryaboy	2014-01-05	remove snapshots=false from maven central xml
+3830a154	Dmitriy Ryaboy	2014-01-05	add maven central as a repo to work around Travis build issues with semver
+880da33d	Dmitriy Ryaboy	2014-01-05	ignore jackson packaging changes w.r.t semver
+bc610e51	Lukas	2014-01-05	pom version 1.3.2-SNAPSHOT
+4dae164f	Lukas	2014-01-05	unused method in TestUtils
+da964207	Dmitriy Ryaboy	2014-01-03	Merge branch 'master' of github.com:Parquet/parquet-mr into add_semver_checks
+283293fa	Julien Le Dem	2014-01-03	Merge pull request #269 from laurentgo/fix-parquet-jackson-parent-version
+55ebcac5	Laurent Goujon	2014-01-03	Bumps parquet-jackson parent version
+063edb4f	dvryaboy	2014-01-03	Merge pull request #260 from laurentgo/add-parquet-jackson-module
+b752260c	Lukas	2014-01-03	ElephantBird 4.4 + hadoop client dependency
+954f39b8	Lukas	2014-01-03	new ElephantBird (4.3) + correct dependencies.
+a906f0fe	Aniket Mokashi	2014-01-03	[maven-release-plugin] prepare for next development iteration
+9199f3e6	Aniket Mokashi	2014-01-03	[maven-release-plugin] prepare release parquet-1.3.1
+5f57e463	Dmitriy Ryaboy	2014-01-03	bump maven-enforcer to 1.3.1 and remove some xml cruft
+79cc35df	Aniket Mokashi	2014-01-03	Merge pull request #267 from Parquet/handler_only_handle_ignored_fields
+7dac8157	Aniket Mokashi	2014-01-03	Merge pull request #266 from aniket486/upgrade_eb_4.4
+2e43df55	Dmitriy Ryaboy	2014-01-02	fixes #265: add semver validation checks to non-bundle builds
+622a4000	Tianshuo Deng	2014-01-02	handler only handle ignored field, exception during will be thrown as SkippableException
+0261cd6a	Aniket Mokashi	2014-01-02	upgrade parquet-mr to elephant-bird 4.4
+e4e9fc27	Julien Le Dem	2014-01-02	Update CHANGES.md
+31e4b068	Lukas	2014-01-01	Url to main parquet repo
+8ed45d07	Lukas	2013-12-29	Unnecessary unboxing
+63b710da	Lukas	2013-12-29	Code cleanup - Enum comparsions
+7c0d2903	Lukas	2013-12-27	Code cleanup
+36c3b66f	Tianshuo Deng	2013-12-26	format
+b9e272ae	Tianshuo Deng	2013-12-26	fix test
+0fb01731	Tianshuo Deng	2013-12-26	merge master
+ebc87de7	Tianshuo Deng	2013-12-26	format
+1d1dd2fa	Tianshuo Deng	2013-12-26	1. refactor: maket ThriftSchemaConverter pluggable, can use ThriftStructConverter or ScroogeStructConvert to convert class to ThriftType 2. support scrooge read projection pushdown 3. add scroogeReadSupport
+565638f8	Tianshuo Deng	2013-12-26	refactor
+47cd5723	Lukas	2013-12-27	Method ProtoParquetInputFormat.setRequestedProjection signature
+c7c39c3f	Lukas	2013-12-27	Repeated Messages test
+1f4a9db0	Lukas	2013-12-27	Code cleanup
+c8188f32	Lukas	2013-12-27	pom - latest version
+919db0ba	Lukas	2013-12-26	Consistent naming protoXYZ
+d708c7da	Lukas	2013-12-26	parquet-protobuf added to root pom.xml
+a717bbf2	Lukas	2013-12-26	merge
+94b2ec0b	Lukas	2013-12-26	delete .idea directory
+99b7e52a	Lukas	2013-12-26	new root directory
+b273684b	Lukas	2013-12-26	ConverterTest
+985002ee	Lukas	2013-12-26	Code cleanup
+96f23001	Lukas	2013-12-26	#projection test - fix - cannot use inner class as mapper
+5997bf5c	Lukas	2013-12-26	#projection test
+f7a90232	Lukas	2013-12-26	correct byte[] storage
+a609147c	Tianshuo Deng	2013-12-23	[maven-release-plugin] prepare for next development iteration
+87864cbd	Tianshuo Deng	2013-12-23	[maven-release-plugin] prepare release parquet-1.3.0
+ee6d8822	Laurent Goujon	2013-12-23	Renames jackson.shade.prefix property to shade.prefix (part2)
+1ef3e9fd	Laurent Goujon	2013-12-20	Adds README with some explanations
+8926033d	Laurent Goujon	2013-12-20	Replaces org.codehaus.jackson groupId with corresponding maven property
+1e691678	Laurent Goujon	2013-12-20	Renames jackson.shade.prefix property into shade.prefix
+cc8375c1	Julien Le Dem	2013-12-20	Merge pull request #258 from Parquet/optimize_scan
+2b80e47b	Laurent Goujon	2013-12-20	Merge branch 'master' into add-parquet-jackson-module
+e91cda90	Aniket Mokashi	2013-12-20	Merge pull request #259 from Parquet/delta_strings
+9af41250	Aniket Mokashi	2013-12-20	turn on parquet 2.0 flags
+30adb126	Laurent Goujon	2013-12-20	Adds small comment
+dc7addc3	Aniket Mokashi	2013-12-20	update with correct junit imports
+3c91e46c	julien	2013-12-20	refactor dictionary page handling
+124f2ed8	julien	2013-12-20	Merge branch 'master' into optimize_scan
+3013b9f1	Julien Le Dem	2013-12-20	Merge pull request #249 from Parquet/metadata_opt
+7def49cd	Laurent Goujon	2013-12-20	Adds parquet-jackson module to jackson-dependent modules
+f2e607ef	julien	2013-12-20	add unit test
+52ffcfe6	Lukas	2013-12-21	remove commented code
+51ca71a6	Lukas	2013-12-21	remove old package info
+1f75813a	Lukas	2013-12-21	junit test for enum schema conversion
+82b889c0	lukasnalezenec	2013-12-20	Merge pull request #1 from Parquet/master
+017d0886	Aniket Mokashi	2013-12-20	minor javadoc changes
+5051acc8	Aniket Mokashi	2013-12-20	fix minor typo in Encoding reader
+c1b61613	Aniket Mokashi	2013-12-20	add delta length byte arrays and delta byte arrays encodings
+13942364	Lukas	2013-12-20	CodeStyle
+16b2f736	Lukas	2013-12-20	ProtoSchemaConverter Code Style
+dba65be4	Lukas	2013-12-20	tests for Input and Output Formats
+861016bc	Lukas	2013-12-20	Removing hadoop-core dependency conflict
+a4aef0d5	Laurent Goujon	2013-12-20	Initial commit
+27372823	julien	2013-12-20	optimize consecutive row groups scans
+ffcc0b85	Brock Noland	2013-12-20	Merge pull request #257 from brockn/master
+978e3966	Lukas	2013-12-20	ProtoSchemaConverterUnitTest
+74269e42	Aniket Mokashi	2013-12-19	Merge pull request #253 from Parquet/delta_int
+290385c8	Tianshuo Deng	2013-12-19	format
+d617084a	Tianshuo Deng	2013-12-19	formatting and license header
+c8177853	Tianshuo Deng	2013-12-19	delta int bin pack
+a68c8fc9	Julien Le Dem	2013-12-19	Merge pull request #254 from Parquet/parquet_2.0_writer
+f61331e1	Brock Noland	2013-12-19	In HIVE-5783 we will need a bundle jar to depend on that does not include the Hive Serde since Hive trunk will contain the Hive Serde.
+4a186840	Aniket Mokashi	2013-12-19	changes for code review comments - enum as params, shortname for writerversion
+956ad077	Julien Le Dem	2013-12-19	Merge pull request #256 from brockn/master
+f2e7baae	Brock Noland	2013-12-19	Resolves issue #251 by doing additional checks if Hive returns "Unknown" as a version.
+cf9a3677	Tianshuo Deng	2013-12-18	Merge pull request #252 from Parquet/refactor_error_handler
+d185966b	Tianshuo Deng	2013-12-18	pom version fix
+67a7a9d2	Aniket Mokashi	2013-12-18	Add writer version flag to parquet and make initial changes for supported parquet 2.0 encodings
+0888bdea	julien	2013-12-18	adress comments
+392a8018	Tianshuo Deng	2013-12-18	refactor
+313c3005	Tianshuo Deng	2013-12-17	[maven-release-plugin] prepare for next development iteration
+da066e78	Tianshuo Deng	2013-12-17	[maven-release-plugin] prepare release parquet-1.2.11
+18012a0d	Aniket Mokashi	2013-12-17	Merge pull request #250 from Parquet/pretty_print_json_for_compatibility_checker
+a34507d5	Tianshuo Deng	2013-12-17	pretty_print_json_for_compatibility_checker
+884a5e5f	dvryaboy	2013-12-17	Merge pull request #243 from Parquet/parquet_cascading_doc
+f21fb315	Julien Le Dem	2013-12-17	Merge pull request #248 from tomwhite/hadoop-2-compatibility-fixes
+e83778a2	julien	2013-12-17	make summary files read in parallel; improve memory footprint of metadata
+ea9fd204	Tom White	2013-12-17	Fix syntax error in test that Pig 0.12 complains about.
+0df24f07	Tom White	2013-12-17	Rename ParquetInputFormat#addInputPathRecursively to avoid clash with non-static Hadoop 2 method of same name on FileInputFormat.
+0a01dae7	Tom White	2013-12-17	Use ContextUtil in tests to avoid dependency on parts of new MR API that are incompatible between MR1 and MR2.
+0743b605	Tianshuo Deng	2013-12-16	Update CHANGES.md
+5f13c8c2	Tianshuo Deng	2013-12-16	[maven-release-plugin] prepare for next development iteration
+aad047a8	Tianshuo Deng	2013-12-16	[maven-release-plugin] prepare release parquet-1.2.10
+cd00dc89	Tianshuo Deng	2013-12-16	Merge pull request #247 from Parquet/fix/detect_extra_field_when_index_is_not_start_from_zero
+e94b392e	Tianshuo Deng	2013-12-16	format
+e29c2dfa	Tianshuo Deng	2013-12-16	fix when field index is greater than zero
+f5eb89d4	Julien Le Dem	2013-12-15	Merge pull request #244 from Parquet/feature/error_handler
+bdf5d6b5	Julien Le Dem	2013-12-15	Merge pull request #187 from davidzchen/plumb_original_type
+da4b7fd7	Tianshuo Deng	2013-12-15	refactor
+564f370e	Tianshuo Deng	2013-12-15	add tests, fix bug
+3d4513f0	Tianshuo Deng	2013-12-15	add checkEnum
+8269a6f5	Tianshuo Deng	2013-12-13	handle extra field in data
+e36b2f0b	Tianshuo Deng	2013-12-11	implement error handler
+652b0fe0	David Z. Chen	2013-12-14	Merge branch 'master' into plumb_original_type
+314ac2b9	Julien Le Dem	2013-12-14	Merge pull request #245 from Parquet/integrate_parquet_format_2
+5bb9e8d9	julien	2013-12-13	integrate parquet format 2.0
+891cc3ae	julien	2013-12-13	[maven-release-plugin] prepare for next development iteration
+aa442465	julien	2013-12-13	[maven-release-plugin] prepare release parquet-format-2.0.0
+c5900384	Lukas	2013-12-12	Obsolete test removed
+05172536	Lukas	2013-12-12	TestUtils refactoring
+83f06463	Lukas	2013-12-12	pom.xml version 1.2.10-SNAPSHOT
+08a204dd	Lukas	2013-12-12	Depricated init override removed
+e2d819c2	Lukas	2013-12-12	Loading correct pbClass to ProtoSchemaConverter
+17146c31	David Z. Chen	2013-12-11	Merge branch 'master' into plumb_original_type
+a3474811	julien	2013-12-11	improve changelog
+59601d78	Julien Le Dem	2013-12-11	Update CHANGES.md
+847df8f3	julien	2013-12-11	fix changelog
+955cd7eb	Tianshuo Deng	2013-12-11	plural for records
+99798b59	Tianshuo Deng	2013-12-10	fix grammar
+9df136c5	Tianshuo Deng	2013-12-10	fix typo
+8e23c246	Tianshuo Deng	2013-12-09	add parquet cascading integration documentation
+e5ed117a	Tianshuo Deng	2013-12-09	Update CHANGES.md
+a6f140cf	Tianshuo Deng	2013-12-09	[maven-release-plugin] prepare for next development iteration
+eb4966f0	Tianshuo Deng	2013-12-09	[maven-release-plugin] prepare release parquet-1.2.9
+7436d8f4	Tianshuo Deng	2013-12-09	add source to parquet-hive-binding
+600e7c98	Tianshuo Deng	2013-12-09	Merge pull request #242 from Parquet/upgrade_eb_to_4_3
+22282a97	Aniket Mokashi	2013-12-09	upgrade elephant-bird version to 4.3
+bb9d8980	Aniket Mokashi	2013-12-09	Merge pull request #240 from Parquet/fix_loader_cache
+3f75f0e1	dvryaboy	2013-12-09	Merge pull request #233 from fs111/master
+c73754b5	Andre Kelpe	2013-12-09	use latest stable release of cascading: 2.5.1
+54308f7f	dvryaboy	2013-12-08	Merge pull request #241 from brockn/master
+760367b9	Brock Noland	2013-12-08	Update reference to 0.10 in Hive012Binding javadoc and remove some trailing whitespace I noticed when while updating the javadoc.
+c95cb214	Julien Le Dem	2013-12-06	Merge pull request #239 from Parquet/hive_fix_null_maps
+aca1d8b8	Julien Le Dem	2013-12-06	Merge pull request #234 from Parquet/optimize_chunk_scan
+090d5429	Julien Le Dem	2013-12-06	Update CHANGES.md
+ca01d15d	julien	2013-12-06	make the cache use a SoftReference
+a39ad4cd	julien	2013-12-06	fix loader cache
+92a47b2d	Remy Pecqueur	2013-12-06	Fix hive map and array inspectors with null containers
+e8796802	Julien Le Dem	2013-12-05	Merge pull request #237 from Parquet/handle_codec_not_found
+8958626f	Tianshuo Deng	2013-12-05	Merge branch 'master' into handle_codec_not_found
+3db0d58d	Tianshuo Deng	2013-12-05	Merge pull request #238 from Parquet/fix_version
+73e3d08b	Tianshuo Deng	2013-12-05	Merge pull request #77 from Parquet/fix_plugin_versions
+08107362	julien	2013-12-05	fix pom version caused by bad merge
+0b49e8ad	julien	2013-12-05	update mvn shade plugin instead
+dbf495cb	julien	2013-12-05	fix plugin name
+2e3a3701	Tianshuo Deng	2013-12-05	restore getCompression methods in ParquetOutputFormat for compatibility
+f7b2cd78	Tianshuo Deng	2013-12-05	make CodecConfig a factory
+d920ce21	julien	2013-12-05	fix plugin versions
+491481e9	Julien Le Dem	2013-12-05	Merge pull request #235 from Parquet/not_write_pig_meta_data_only_when_pig_is_not_avaliable
+5a04096a	Tianshuo Deng	2013-12-04	license header
+0b61cd9d	Tianshuo Deng	2013-12-04	Merge branch 'not_write_pig_meta_data_only_when_pig_is_not_avaliable' into handle_codec_not_found
+716a030d	Tianshuo Deng	2013-12-04	remove lzo test and lzo dependency
+7641febd	Julien Le Dem	2013-12-04	Merge pull request #227 from brockn/master
+407a52d5	Tianshuo Deng	2013-12-04	fix missing codec
+8b0d05c5	Julien Le Dem	2013-12-04	Merge pull request #229 from Parquet/changelog_tool
+6fa653b0	Julien Le Dem	2013-12-04	Merge pull request #236 from Parquet/make_cascading_a_provided_dependency
+70f29c7f	Tianshuo Deng	2013-12-04	add cascading dependency to scrooge, and add cascading.version propertie in project pom
+3b829a21	Tianshuo Deng	2013-12-03	refactor get codec logic to remove duplication in DeprecatedParquetOutputFormat
+7fa1b6a0	Tianshuo Deng	2013-12-03	make cascading a provided dependency
+7dfd4362	Tianshuo Deng	2013-12-03	format
+e1ce0632	Tianshuo Deng	2013-12-03	check if pig is loaded when writing pig metadata
+476b8ea8	David Z. Chen	2013-12-03	Merge branch 'master' into plumb_original_type
+b297c73c	julien	2013-12-03	optimize chunk scan; fix compressed size
+3b4ae5eb	Tianshuo Deng	2013-12-02	Merge branch 'master' of https://github.com/Parquet/parquet-mr
+6cb038c7	Tianshuo Deng	2013-11-27	[maven-release-plugin] prepare for next development iteration
+842500e7	Tianshuo Deng	2013-11-27	[maven-release-plugin] prepare release parquet-1.2.8
+e1d335b4	Tianshuo Deng	2013-11-27	[maven-release-plugin] prepare for next development iteration
+c2499dae	Tianshuo Deng	2013-11-27	[maven-release-plugin] prepare release parquet-1.2.8
+c31a6be5	Tianshuo Deng	2013-11-27	Merge pull request #228 from Parquet/glob_files_for_parquet_tuple_scheme
+4d13df5a	Tianshuo Deng	2013-11-27	encapuslate getFooter into a separate method
+60c65126	Brock Noland	2013-11-27	Updates Hive 0.12 compatability patch by adressing all comments from Julien's review plus a few additional cleanups, specifically:
+d7994dca	julien	2013-11-26	add changelog tool
+d7c8467f	Julien Le Dem	2013-11-26	Merge pull request #224 from dave2718/master
+f18bc490	Tianshuo Deng	2013-11-26	enable globing files for parquetTupleScheme, refactor unit tests and remove binary test fixture
+d2ccc72c	Brock Noland	2013-11-26	Breaks parquet-hive up into several submodules, creating infrastructure to handle various versions of Hive going forward.
+493bb9fd	dave2718	2013-11-22	Changing read and write methods in ParquetInputSplit so that they can deal with large schemas (avoiding use of writeUTF and readUTF which are limited to 65536 characters).
+f5874715	Aniket Mokashi	2013-11-20	[maven-release-plugin] prepare for next development iteration
+ab7959d9	Aniket Mokashi	2013-11-20	[maven-release-plugin] prepare release parquet-1.2.7
+e0c5ac84	Aniket Mokashi	2013-11-20	Merge pull request #223 from Parquet/dictionary_reset
+f4ad9dfc	Aniket Mokashi	2013-11-20	refactor encoded values changes and test that resetDictionary works
+8e1110b1	Julien Le Dem	2013-11-20	Merge pull request #222 from Parquet/fix_dic_fallback_page_cutting
+6b5d2d13	Tianshuo Deng	2013-11-20	fix bug: set raw data size to 0 after reset
+de81ee89	julien	2013-11-20	changelog for 1.2.5 and 1.2.6
+94240182	julien	2013-11-19	[maven-release-plugin] prepare for next development iteration
+014f5833	julien	2013-11-19	[maven-release-plugin] prepare release parquet-1.2.6
+61af0b95	Julien Le Dem	2013-11-19	Merge pull request #221 from Parquet/cleanup_dependencies
+e54735a9	julien	2013-11-19	Merge branch 'master' into cleanup_dependencies
+1028fb9d	julien	2013-11-19	make pig, hadoop and log4j jars provided
+700c2239	Julien Le Dem	2013-11-19	Merge pull request #220 from brockn/master
+bbfa4ac9	Brock Noland	2013-11-19	Address comments on pull request
+0334948e	Brock Noland	2013-11-19	parquet-hive should ship and uber jar
+f4d6e17d	David Z. Chen	2013-11-15	Merge branch 'master' into plumb_original_type
+31aaa530	Julien Le Dem	2013-11-14	Merge pull request #213 from aniket486/parquet_format_pom_refactor
+0b3400ad	Julien Le Dem	2013-11-13	Merge pull request #215 from Parquet/binary_equals
+8af5a22f	Nong Li	2013-11-13	Fix Binary.equals().
+4daff700	Aniket Mokashi	2013-11-11	group parquet-format version in one property
+402e96df	Lukas	2013-11-09	Wrong merge
+48491555	Julien Le Dem	2013-11-06	Merge pull request #210 from wesleypeck/fixwriter
+59bd08b9	Wesley Peck	2013-11-06	One of the constructors in ParquetWriter ignores the enable dictionary and validating flags.
+6e900419	David Z. Chen	2013-11-05	Merge branch 'master' into plumb_original_type
+7c2785f9	Julien Le Dem	2013-11-05	Merge pull request #202 from Parquet/hive_requested_schema
+f479aeee	Julien Le Dem	2013-11-04	Merge pull request #208 from Parquet/improve_dic_fall_back
+0d47734c	Remy Pecqueur	2013-11-04	Add test on DeprecatedParquetInputFormat.getSplit()
+40ae3fbe	Lukas	2013-11-03	artifact version changed to 1.2.5, unused dependencies removed.
+1bec97fa	Lukas	2013-11-03	Projections in read support
+090a2a41	Lukas	2013-11-03	Code Cleanup
+2e78704e	Lukas	2013-11-03	Code cleanup
+a7de264f	Lukas	2013-11-03	Specification of written protobuffer class in output format
+198f5540	Tianshuo Deng	2013-11-01	revert revert.. use rawDataByteSize as buffered size in DictionaryValuesWriter
+7427a895	Tianshuo Deng	2013-11-01	revert fixing page cutting, fix bug, raw data size should be long
+66900aad	Tianshuo Deng	2013-11-01	more comment
+edfd7d96	Tianshuo Deng	2013-11-01	return raw data size as bufferSize in dictionaryValuesWriter
+492da11c	Tianshuo Deng	2013-11-01	remove hash lookup and unused comments
+65ca5ed8	Lukas	2013-11-01	Copyrights in converters
+1278cde6	Tianshuo Deng	2013-10-31	remove unused import
+d33aa40c	Tianshuo Deng	2013-10-31	bug fix: separate fallBackDictionaryEncodedData to a method, will always be called when fallbacking to plainEncoding
+bee67550	Tianshuo Deng	2013-10-31	improve binary fallback
+c9b768f4	Tianshuo Deng	2013-10-31	improve long fallback
+245d43ea	Tianshuo Deng	2013-10-31	use primitve array for int, float , double, get rid of auto boxing,unboxing
+b84e2726	Aniket Mokashi	2013-10-31	Merge pull request #207 from Parquet/fix_offset
+3c99aa31	Tianshuo Deng	2013-10-31	improve fallback for double
+55a451c7	Lukas	2013-10-31	Merge branch 'master' of https://github.com/lukasnalezenec/parquet-protobuf
+d942b454	Tianshuo Deng	2013-10-30	format
+1afdf14f	Tianshuo Deng	2013-10-30	minor fix, the length used in RLEValuesReader
+4d55b597	Tianshuo Deng	2013-10-29	improve fallback for float
+be6a4aee	Tianshuo Deng	2013-10-29	fix bug: reverse dictionary lookup for fallbacking to plain encoding
+11f30faf	Tianshuo Deng	2013-10-29	fix bug, add rawDataByteSize for dictionaryValuesWriter to decide if fall back to Plain encoding or not
+1a4bb6a3	Julien Le Dem	2013-10-29	Merge pull request #206 from Parquet/PoweredBy
+81a1af0c	Tianshuo Deng	2013-10-29	improve fallback for IntDictionaryWriter
+70a433b5	Julien Le Dem	2013-10-29	Update PoweredBy.md
+12a1cd76	Julien Le Dem	2013-10-29	Update PoweredBy.md
+75a61022	Julien Le Dem	2013-10-29	Update PoweredBy.md
+6f1e8126	Julien Le Dem	2013-10-29	Update PoweredBy.md
+05c0f060	Julien Le Dem	2013-10-29	Delete PoweredBy
+9a91418b	Julien Le Dem	2013-10-29	Create PoweredBy.md
+170797fa	Julien Le Dem	2013-10-29	Create PoweredBy
+9c5bdb69	Aniket Mokashi	2013-10-28	[maven-release-plugin] prepare for next development iteration
+a6aa8f76	Aniket Mokashi	2013-10-28	[maven-release-plugin] prepare release parquet-1.2.5
+e337bd2f	Lukas	2013-10-27	Protobuf conversion over Java types
+46494530	David Z. Chen	2013-10-25	Merge branch 'master' into plumb_original_type
+a34df077	Julien Le Dem	2013-10-24	Merge pull request #204 from aaghevli/ParquetLoader.inputFormatCache
+c5ce1fa1	Arash Aghevli	2013-10-24	fix comment, remove size
+3b63d132	Arash Aghevli	2013-10-24	fix comment
+be83477f	Julien Le Dem	2013-10-24	Merge pull request #203 from Parquet/check_null_for_enum_write_protocol
+a148e160	Julien Le Dem	2013-10-24	Merge pull request #205 from fs111/master
+8edc1029	Tianshuo Deng	2013-10-24	throw ParquetEncodingException
+21efc9be	Andre Kelpe	2013-10-24	use cascading 2.2.0
+cf1f4426	Arash Aghevli	2013-10-23	use a new string in order to enforce weak reference on the key
+93780e02	Arash Aghevli	2013-10-23	use a new string in order to enforce weak reference on the key
+5f29f437	Arash Aghevli	2013-10-23	use a new string in order to enforce weak reference on the key
+ab4cb69e	Arash Aghevli	2013-10-23	Make the ParquetLoader.inputFormatCache HashMap a WeakHashMap in order to free memory for long running processes that do not leverage caching
+dd536a42	lukasnalezenec	2013-10-23	Delete todo.txt
+dfa27b41	Lukas	2013-10-23	Merge branch 'master' of https://github.com/lukasnalezenec/parquet-protobuf
+5c46f055	Lukas	2013-10-23	initial commit
+8edc893e	lukasnalezenec	2013-10-23	Initial commit
+005bc68b	Tianshuo Deng	2013-10-23	add null check for EnumWriteProtocol
+94359182	Remy Pecqueur	2013-10-23	Fix requested schema when recreating splits in hive
+a736c628	David Z. Chen	2013-10-18	Merge branch 'master' into plumb_original_type
+a905704e	Aniket Mokashi	2013-10-18	Merge pull request #199 from Parquet/simplify_tuple_write
+5601394e	julien	2013-10-18	make static field final
+f52d35ba	Julien Le Dem	2013-10-18	Merge pull request #164 from Parquet/dictionary_changes
+0a76cc29	julien	2013-10-18	Fix #198: simplify TupleWriteSupport constructor
+a991eff8	julien	2013-10-18	Merge branch 'master' into dictionary_changes
+c9146a6e	Julien Le Dem	2013-10-18	Merge pull request #196 from Parquet/hive_fixes
+22cf7fe9	Remy Pecqueur	2013-10-17	Inspect keys only for a few types in parquet hive maps
+90645004	Remy Pecqueur	2013-10-11	Add some javadoc to clarify
+4bdaec06	Remy Pecqueur	2013-10-10	Fix #177: Inspect key when accessing maps
+c5f68c51	Remy Pecqueur	2013-10-10	Extract primitive inspectors and instantiate them only once
+d9e5f0bc	Remy Pecqueur	2013-10-02	Implement correctly Settable inspectors
+d4eeeccf	Julien Le Dem	2013-10-16	Merge pull request #197 from Parquet/issue-193
+256a3a1e	Nong Li	2013-10-15	Fix issue 193: RLE decoder reading past the end of the stream.
+cf0ee72e	Julien Le Dem	2013-10-14	Merge pull request #188 from fnothaft/master
+73c86295	Frank Austin Nothaft	2013-10-14	Misunderstood previous comment. Fixed binary predicate.
+10f266ae	Frank Austin Nothaft	2013-10-14	Cleaning method signature for binary case.
+82f882f1	David Z. Chen	2013-10-12	Merge branch 'master' into plumb_original_type
+422dfe05	Frank Austin Nothaft	2013-10-11	Updated files to add applyFunctionToBinary, and add specific interfaces for primitive types.
+26605981	Julien Le Dem	2013-10-10	Update README.md
+763dfde3	Remy Pecqueur	2013-10-02	Fix for columns list missing from the conf
+50bd1448	Rémy Pecqueur	2013-10-10	Merge pull request #194 from Parquet/hive_perf
+20201427	julien	2013-10-09	refactor serde to remove some unecessary boxing and include dictionary awareness
+04ad0c44	Julien Le Dem	2013-10-08	Merge pull request #190 from wesleypeck/fix_dvw_npe
+ff55567c	Tianshuo Deng	2013-10-08	Update CHANGES.md
+6dc4732c	Tianshuo Deng	2013-10-08	[maven-release-plugin] prepare for next development iteration
+da05b136	Tianshuo Deng	2013-10-08	[maven-release-plugin] prepare release parquet-1.2.4
+eff1e5f9	Tianshuo Deng	2013-10-08	Merge pull request #192 from Parquet/comment_fix
+09bcb1bf	Tianshuo Deng	2013-10-08	fix comment
+82052b89	Julien Le Dem	2013-10-08	Merge pull request #191 from Parquet/compatibility_checker
+5cad37ba	Tianshuo Deng	2013-10-08	remove unused command from CompatibilityRunner, add comment for rules used in compatibility checking, add license header
+dc425e48	Tianshuo Deng	2013-10-07	show field name when they are not compatible
+820fb751	Tianshuo Deng	2013-10-07	remove unused test
+0d259796	Tianshuo Deng	2013-10-07	Merge branch 'master' of https://github.com/Parquet/parquet-mr into compatibility_checker
+714335de	Tianshuo Deng	2013-10-07	compare json
+fd2935b0	David Z. Chen	2013-10-07	Merge branch 'master' into plumb_original_type
+0a36e35c	Wesley Peck	2013-10-07	Fixes #189: NPE in DictionaryValuesWriter.
+3edf60dc	Frank Austin Nothaft	2013-10-03	Manually merged in conflicts in TestFiltered.java.
+64921da0	Frank Austin Nothaft	2013-10-03	Merge branch 'master' of github.com:fnothaft/parquet-mr
+8be341f6	Frank Austin Nothaft	2013-09-27	Removing predicate functions to prepare for pushing or/not filters. Limits number of features pushed.
+c6a4d187	Frank Austin Nothaft	2013-09-26	Added unit tests for predicates. Got predicates compiling, and passing on tests.
+eb35ba80	Frank Austin Nothaft	2013-09-17	Added functionality to allow users to implement functions to be used as predicates.
+308c1b41	Frank Austin Nothaft	2013-09-17	Added two boolean options for record filters.
+cfd63fd6	Frank Austin Nothaft	2013-10-03	Fixed issue with test case that was causing runtime error. Was trying to call getInteger on long...
+fd3b05cf	Julien Le Dem	2013-10-03	release 1.2.3
+1326c003	julien	2013-10-03	[maven-release-plugin] prepare for next development iteration
+b168fd1c	julien	2013-10-03	[maven-release-plugin] prepare release parquet-1.2.3
+1ae67725	julien	2013-10-03	add dummy file to generate source jar
+c1ac1af4	Aniket Mokashi	2013-10-03	Merge pull request #186 from Parquet/pig_BUNDLE
+5303197f	David Z. Chen	2013-10-03	Merge changes from master.
+e40dcfb9	Julien Le Dem	2013-10-03	Merge pull request #181 from davidzchen/fixed_len_byte_array
+989e9dc1	David Z. Chen	2013-10-03	Plumb OriginalType through to ConvertedType in file in ParquetMetadataConverter.
+7c6ba3e7	David Z. Chen	2013-10-03	Merge changes from master.
+1e61b401	julien	2013-10-03	fix version
+b3b0bbb6	julien	2013-10-03	fix indent
+7247538c	Tianshuo Deng	2013-10-03	compatibility runner print more detailed info
+5adf79f3	Julien Le Dem	2013-10-03	Merge pull request #180 from davidzchen/fix_avro_utf8_map_keys
+ff4d13a7	julien	2013-10-03	add null check
+e3292ed2	julien	2013-10-03	Merge branch 'master' of github.com:Parquet/parquet-mr into pig_BUNDLE
+9652d97f	julien	2013-10-03	add parquet-pig-bundle
+fdb07254	Tianshuo Deng	2013-10-02	add tests for list set map
+2ed9b503	Tianshuo Deng	2013-10-02	fail when required field is added
+2731c0fe	Tianshuo Deng	2013-10-02	refactor tests
+2b62da3e	Tianshuo Deng	2013-10-02	requirement check
+6f0f2362	Tianshuo Deng	2013-10-02	fix tests
+0d39e1ce	Tianshuo Deng	2013-10-02	add compatibility report
+64b2f726	Tianshuo Deng	2013-10-02	fix
+2fb1f7d7	Tianshuo Deng	2013-10-02	accept visitor
+5427f443	Tianshuo Deng	2013-10-02	list checker
+5bf61278	Tianshuo Deng	2013-10-02	SetChecker
+001e3dee	Tianshuo Deng	2013-10-02	map checker
+bd311f54	Tianshuo Deng	2013-10-02	fix_test
+8856e451	Tianshuo Deng	2013-10-02	todos
+5bd87b1c	Tianshuo Deng	2013-10-02	check compatible
+f325418d	Tianshuo Deng	2013-10-02	generate_json
+6d9d2b33	Tianshuo Deng	2013-10-02	add test
+4e6863aa	Tianshuo Deng	2013-10-02	add checker
+d24f4a7a	Tianshuo Deng	2013-10-02	fix
+2ffde6ad	Tianshuo Deng	2013-10-01	Merge pull request #172 from colinmarc/cascading-tbase-write-support
+a8d99d9b	Colin Marc	2013-10-01	add an assertion to check the output created by reading with ParquetTBaseScheme
+9aad6416	David Z. Chen	2013-10-01	Move reflection checks for specific Avro Fixed type into FieldFixedConverter constructor.
+753473cd	David Z. Chen	2013-10-01	Change syntax for fixed_len_byte_array to placing length parameter after type name rather after field name.
+e20c490b	Julien Le Dem	2013-10-01	Merge pull request #184 from wesleypeck/parquet_reader_projection
+a146ebb1	Julien Le Dem	2013-10-01	Merge pull request #183 from wesleypeck/fix_timeread
+a258aae6	Julien Le Dem	2013-10-01	Merge pull request #182 from wesleypeck/fix_maven_version
+bb52d33b	Julien Le Dem	2013-10-01	Merge pull request #179 from fnothaft/master
+7802a9ab	Wesley Peck	2013-10-01	Update ParquetReader to take Configuration as a constructor argument.
+6ec199d4	Wesley Peck	2013-10-01	Disable the time read counter check in DeprecatedInputFormatTest.
+0ad94f95	Wesley Peck	2013-10-01	Fix a maven warning about a missing version number.
+a2895bfe	David Z. Chen	2013-09-30	Remove print statement.
+3778e45f	Frank Austin Nothaft	2013-09-29	Pulling in clean modifications for adding ColumnPredicate functions.
+2c5e07f0	David Z. Chen	2013-09-27	Add support to AvroWriteSupport for writing out records with maps containing Utf8-type keys.
+b49018bb	Frank Austin Nothaft	2013-09-27	Merging in changes from main repository that I have forked from to minimize work after pull request.
+52c32a3a	Frank Austin Nothaft	2013-09-27	Removing predicate functions to prepare for pushing or/not filters. Limits number of features pushed.
+1ee42327	David Z. Chen	2013-09-27	Merge changes from master that fix handling empty Avro arrays and maps.
+4b2cb263	Frank Austin Nothaft	2013-09-26	Added unit tests for predicates. Got predicates compiling, and passing on tests.
+835f12ea	Tianshuo Deng	2013-09-26	refactor code
+bfcb1208	Tianshuo Deng	2013-09-26	implemented map with nested structure, TODO: tests failing since the default requirement can not be determined
+6ffc1b9f	Tianshuo Deng	2013-09-26	implemented conversion for enum
+d0fc6a0d	David Z. Chen	2013-09-25	Correct schema syntaxes for TestHiveSchemaConverter.
+5410381c	Tianshuo Deng	2013-09-25	convert set and unit tests
+f45b384e	Tianshuo Deng	2013-09-25	convert list and unit tests
+d9ced33e	Tianshuo Deng	2013-09-25	test optional map
+9cd67375	David Z. Chen	2013-09-25	Add comments to new files.
+0822e326	Tianshuo Deng	2013-09-25	add unit test for primitive value for maps
+5ab6cccf	Julien Le Dem	2013-09-25	Merge pull request #169 from davidzchen/fix_avro_empty_maps_arrays
+49f3ad17	David Z. Chen	2013-09-25	Add support for reading FIXED_LEN_BYTE_ARRAY to Pig support.
+6a6613fc	Tianshuo Deng	2013-09-25	tests all primitive key types in map
+ca7da658	Tianshuo Deng	2013-09-25	basic support for map
+5e0dba75	Tianshuo Deng	2013-09-25	upgrade scrooge to 3.9
+976c68ac	David Z. Chen	2013-09-25	Merge branch 'master' into fixed_len_byte_array
+24d72673	David Z. Chen	2013-09-25	Remove print statements.
+a79eab75	David Z. Chen	2013-09-25	Complete support for supporting FIXED_LEN_BYTE_ARRAY for Avro SpecificRecord. Add syntax to specify type length for FLBA type fields to MessageTypeParser.
+e31d46c4	Tianshuo Deng	2013-09-24	merge master
+12d41ac6	David Z. Chen	2013-09-23	De-fluffify inadvertently added whitespace changes.
+1b326b7f	David Z. Chen	2013-09-23	Fix reflection for converting fixed Binary to Avro SpecificFixed. Ensure that FIXED values are written using the FLBA PlainValuesReader when dictionary is enabled.
+8e4278b4	Colin Marc	2013-09-22	missing test resources
+3b7359b3	David Z. Chen	2013-09-22	Re-enable tests for writing FIXED for Avro Specific records. Preliminary end-to-end for writing FIXED but write is still not completely correct yet.
+458dd70f	Colin Marc	2013-09-20	remove redundant test
+3105009f	Colin Marc	2013-09-20	add read and write tests for ParquetTBaseScheme
+e242085a	Colin Marc	2013-09-20	add an empty constructor for ParquetTBaseScheme (which only works for reads)
+e6fab068	David Z. Chen	2013-09-20	Document why FIXED_LEN_BYTE_ARRAY is not supported with Avro specific schema right now.
+bc31bdab	Tianshuo Deng	2013-09-20	Update CHANGES.md
+e6ebda95	Tianshuo Deng	2013-09-20	Update CHANGES.md
+3b5d32bc	David Z. Chen	2013-09-20	Add new Vin field to Avro TestSpecificInputOutputFormat.
+06884044	Tianshuo Deng	2013-09-20	[maven-release-plugin] prepare for next development iteration
+b7a39c54	Tianshuo Deng	2013-09-20	[maven-release-plugin] prepare release parquet-1.2.2
+51d33328	Julien Le Dem	2013-09-20	Merge pull request #174 from Parquet/readability
+46940015	Aniket Mokashi	2013-09-20	Merge pull request #175 from Parquet/pig_projection_pushdown
+a73e73c8	Aniket Mokashi	2013-09-20	changes as per code review comments for test
+ebe07c6f	Aniket Mokashi	2013-09-20	changes as per code review comments
+e37cd2b7	David Z. Chen	2013-09-19	Add fixed field to parquet-avro TestSpecificReadWrite.
+3e02a841	David Z. Chen	2013-09-19	Merge branch 'master' into fixed_len_byte_array
+cc59cb82	David Z. Chen	2013-09-19	Use ValuesWriter and ValuesReader specific to FIXED_LEN_BYTE_ARRAY rather than overloading on a FixedBinary class.
+6da75945	Aniket Mokashi	2013-09-19	fix problem with projection pushdown in parquetloader
+20f3f46c	Tianshuo Deng	2013-09-19	continue renaming
+310e5517	Colin Marc	2013-09-19	throw the writeSupportClass as part of the exception message if instantiation fails
+bbf34480	Colin Marc	2013-09-19	add overloaded getFooConfiguration(JobContext) methods to ParquetOutputFormat
+108509fc	Julien Le Dem	2013-09-19	Merge pull request #173 from Parquet/better_log_messages
+1c99a117	Tianshuo Deng	2013-09-19	rename variables for readability
+a48f56f8	David Z. Chen	2013-09-19	Re-add FIXED_LEN_BYTE_ARRAY to oneOfEach and plumb through FIXED support for example Group. Test still fails and need to solve read issues.
+8305bdb1	David Z. Chen	2013-09-19	Add FixedBinary type by creating a wrapper class around Binary and plumb FixedBinary through for read and write support for FIXED_LEN_BYTE_ARRAY. Undo change to add FIXED field to oneOfEach schema for parquet-column TestColumnIO for now.
+bce04ebc	Julien Le Dem	2013-09-18	add 1.2.0 and 1.2.1
+1c9c19cf	Julien Le Dem	2013-09-18	Merge pull request #171 from Parquet/scrooge_tests
+f98cd399	julien	2013-09-18	shade fastutil and keep only used classes
+562e8111	julien	2013-09-18	make binary dictionary encoding use fastutils; fix tests
+e8c2a399	julien	2013-09-18	better log messages
+201d80c5	David Z. Chen	2013-09-18	Merge branch 'fixed_len_byte_array' of https://github.com/davidzchen/parquet-mr into fixed_len_byte_array
+08b45b0c	David Z. Chen	2013-09-18	Add fixed_len_byte_array to oneOfEach in TestColumnIO.
+4f1493b0	David Z. Chen	2013-09-17	Fix broken tests. Test failures encountered previously were due to broken tests.
+f8ac0f01	David Z. Chen	2013-09-17	Initial end-to-end write and read support for Avro FIXED fields without runtime exceptions, but still with data representation issues.
+0f9e39b7	Tianshuo Deng	2013-09-17	Merge pull request #165 from Parquet/distinguish_recoverable_exception
+038a4002	Tianshuo Deng	2013-09-17	update scrooge to 3.8.0
+232d521d	Tianshuo Deng	2013-09-17	use class.getName
+58051d06	Frank Austin Nothaft	2013-09-17	Added functionality to allow users to implement functions to be used as predicates.
+1f630137	Frank Austin Nothaft	2013-09-17	Added two boolean options for record filters.
+4e82ab63	David Z. Chen	2013-09-17	Add methods to write fixed Binary without prepending length.
+b11e2a00	David Z. Chen	2013-09-16	Plumb type_length for FIXED types through to reading pages.
+5aa7a682	Colin Marc	2013-09-16	accidentally deleted a space
+8b84a9ec	Tianshuo Deng	2013-09-16	specify scala version for scrooge
+dd02df03	Tianshuo Deng	2013-09-16	added map test
+d32e65e7	Tianshuo Deng	2013-09-16	downgrade scrooge version to 3.6.0, which is the latest version on maven central
+9a5eea0c	Tianshuo Deng	2013-09-16	working on map
+234a1cbf	Tianshuo Deng	2013-09-16	extracted key and value type from map and optional map
+e2fec1c3	Tianshuo Deng	2013-09-16	add optional map field to thrift file
+3c65205c	Tianshuo Deng	2013-09-16	field requirement depends on if the getter returns option
+bba97754	Colin Marc	2013-09-15	two unused imports
+34bbb907	Colin Marc	2013-09-15	missing copyright notice
+93d6770b	Colin Marc	2013-09-15	add a simple test for DeprecatedOutputFormat
+521d0812	Colin Marc	2013-09-15	add some convenience methods (from ParquetOutputFormat)
+a00fd5e2	Colin Marc	2013-09-14	remove tests that check that TBaseScheme doesn't support writes
+9ae1d88d	Colin Marc	2013-09-13	add Sink functionality to parquet.cascading.ParquetTBaseScheme
+7adc2642	Colin Marc	2013-09-13	add another getRecordWriter overload
+ce6bfcc1	Colin Marc	2013-09-12	add a DeprecatedParquetOutputFormat to mirror DeprecatedParquetInputFormat
+c1f3512b	Colin Marc	2013-09-12	change some ParquetOutputFormat interfaces to mirror ParquetInputFormat (and be useful for writing a DeprecatedOutputFormat)
+249581dd	Tianshuo Deng	2013-09-16	add TestCase for scrooge schema converter
+78b3f867	Tianshuo Deng	2013-09-16	update scrooge denepdency, add unit tests for reading in scrooge
+2a2696dc	Tianshuo Deng	2013-09-16	format
+ceef9716	Tianshuo Deng	2013-09-16	remove unused compat.thrift
+04784c2e	Tianshuo Deng	2013-09-16	test pass
+dcc0d818	David Z. Chen	2013-09-16	Merge branch 'master' into fixed_len_byte_array
+b4c45d3a	Tianshuo Deng	2013-09-16	fix bug, missing break in thriftSchemaConverter
+3803d2d4	David Z. Chen	2013-09-16	Plumb FIXED type length from Avro schema through to Parquet metadata.
+f6f3eaa0	Tianshuo Deng	2013-09-13	broken tests for scroogeRead
+9d84697a	Tianshuo Deng	2013-09-13	merge master
+bbc0aa71	Tianshuo Deng	2013-09-13	Merge pull request #166 from Parquet/avoid_pruning_required_fields
+99b6dfcc	Tianshuo Deng	2013-09-13	remove julien's TODO
+64e6d82f	Tianshuo Deng	2013-09-13	[style] add spaces around =
+e2d3bb29	Tianshuo Deng	2013-09-13	[style]fix if...else in ConversionPatterns
+a7ba48ba	Tianshuo Deng	2013-09-13	created ScroogeSchemaConverter
+1d928046	David Z. Chen	2013-09-13	Add typeLength to ColumnDescriptor.
+dae37cf2	julien	2013-09-12	[maven-release-plugin] prepare for next development iteration
+92f58ac1	julien	2013-09-12	[maven-release-plugin] prepare release parquet-1.2.1
+1e472d2d	Julien Le Dem	2013-09-12	Merge pull request #167 from Parquet/fix_oom
+015ed30d	julien	2013-09-12	fix oom error dues to bad estimation
+0570f46c	julien	2013-09-12	better fallback mechanism
+d9ce7266	Tianshuo Deng	2013-09-12	add test in scrooge [only maven passed]
+53938337	Tianshuo Deng	2013-09-12	migrated tests to parquet-scrooge [tests passed]
+7b68b473	Tianshuo Deng	2013-09-12	sucess: compile scrooge generated classes in parquet-thrift
+079e2950	Tianshuo Deng	2013-09-11	rename
+2b2837f5	Tianshuo Deng	2013-09-11	refactor matching filter
+ffbdf6dd	Tianshuo Deng	2013-09-11	visitor pattern for schemaConverter
+5ca76713	David Z. Chen	2013-09-10	Re-enable test for fixed type fields in Avro TestReadWrite.
+365d84ef	Tianshuo Deng	2013-09-10	prepare for commit, remove format diff
+d7b00834	David Z. Chen	2013-09-10	Add empty map and array to test Avro schema all-minus-fixed and add empty map and array fields to parquet-avro test that tests fields of all (except fixed) types.
+eff7237c	Tianshuo Deng	2013-09-10	remove converted Type
+073e2029	Tianshuo Deng	2013-09-10	fix test path
+133b2528	julien	2013-09-10	add missing file
+f702fdfb	Tianshuo Deng	2013-09-10	better naming
+b8123893	Tianshuo Deng	2013-09-10	inline some classes
+8aadc0ac	Tianshuo Deng	2013-09-10	fix bug, use a new list for fixed events
+3060f85c	Tianshuo Deng	2013-09-10	added unit tests
+b4a8eb1e	julien	2013-09-10	fix test
+3e160d9c	Tianshuo Deng	2013-09-10	add license headers
+6f374b74	Tianshuo Deng	2013-09-10	store thriftType in converter[fix merge error]
+9a1e2953	Tianshuo Deng	2013-09-10	merge master
+c59e82f5	Tianshuo Deng	2013-09-10	implemented all dummy values
+1bf9d5f3	Tianshuo Deng	2013-09-10	extracted inner classes from ProtocolEventsGenerator
+7dfa864c	Tianshuo Deng	2013-09-10	visitor pattern for string, test passed
+68fa6cd2	Tianshuo Deng	2013-09-10	fill in missing fields, only for str now, will refactor to visitor pattern
+70226b9a	julien	2013-09-10	distinguish recoverable errors
+3c274d17	David Z. Chen	2013-09-09	Merge branch 'master' into fix_avro_empty_maps_arrays
+b3efce20	julien	2013-09-09	fix compilation problems
+c4515dbd	Aniket Mokashi	2013-09-09	[maven-release-plugin] prepare for next development iteration
+4170539b	Aniket Mokashi	2013-09-09	[maven-release-plugin] prepare release parquet-1.2.0
+2de25677	Aniket Mokashi	2013-09-09	Merge pull request #154 from Parquet/add_thrift_validation
+5b36d9c5	julien	2013-09-09	make buffered by default
+05a01060	Aniket Mokashi	2013-09-09	Merge pull request #161 from Parquet/schema_evolution
+d4dbf0b2	Julien Le Dem	2013-09-09	Merge pull request #160 from adityakishore/master
+47116ad7	julien	2013-09-09	fix schema merging
+12d1ac42	julien	2013-09-09	fix noisy warning
+e9f2550a	julien	2013-09-09	parameterize dictionary
+e5cb3c8f	julien	2013-09-09	fix test
+55c14bf9	julien	2013-09-09	javadoc
+147a3f02	Tianshuo Deng	2013-09-08	start! do not check required field, failing test
+7387a615	Tianshuo Deng	2013-09-08	passed all test, fix map, removed tests for pull in required fields
+00a5d5b5	Tianshuo Deng	2013-09-08	migrated to using ThriftStruct for schemaConverter, do not use thriftClass
+cfc91fc7	Tianshuo Deng	2013-09-08	almost there... now working on not to use thrift class, so it's compatible with scrooge
+60a3468f	julien	2013-09-07	fix test
+80c3a2a7	julien	2013-09-07	Merge branch 'master' into schema_evolution
+8fa09f0f	Aniket Mokashi	2013-09-07	Merge pull request #163 from Parquet/thrift_perf
+8c51a420	julien	2013-09-07	better error message
+26d09f4b	julien	2013-09-07	javadoc
+6f25a0f2	David Z. Chen	2013-09-07	Correctly handle Avro records with empty maps and arrays.
+9594bba4	julien	2013-09-06	address review comments
+0cedaf25	julien	2013-09-06	remove debugging code from hot path
+50feb336	David Z. Chen	2013-09-06	Fix tests for reading and writing Avro records with empty arrays and maps.
+eb156658	David Z. Chen	2013-09-05	Add test cases for reading/writing Avro records with empty arrays and maps.
+1a711f05	julien	2013-09-06	turn off projection from scrooge
+7f08eeed	julien	2013-09-06	add license headers
+2043741b	Tianshuo Deng	2013-09-06	add thrift idl for testing
+8faaaf08	Tianshuo Deng	2013-09-06	support projection on only key of a map
+f0d30dfb	Tianshuo Deng	2013-09-06	refactor schema converter
+f369a13e	julien	2013-09-05	validate output
+c32be9e4	julien	2013-09-05	thrift schema evolution support
+848fa8e1	julien	2013-09-05	support schema evolution
+b045ac18	Aditya Kishore	2013-09-04	Resource leak in parquet.hadoop.ParquetFileReader.readFooter(Configuration, FileStatus)
+6b96924e	Julien Le Dem	2013-09-04	Merge pull request #155 from Parquet/manual_pushdown_for_thrift_read_support
+6dfd9755	Julien Le Dem	2013-09-04	Merge pull request #159 from Parquet/counter_for_mapred
+e371fbb2	Tianshuo Deng	2013-09-04	add comment
+bb068590	Tianshuo Deng	2013-09-04	add license and comment
+00065cd7	Tianshuo Deng	2013-09-04	change filter key name to parquet.thrift.column.filter, remove extra filter parameter from ThriftSchemaConverter
+d20e5f2c	Tianshuo Deng	2013-09-04	fix tests
+459a8a19	Tianshuo Deng	2013-09-04	make counter works in DeprecatedInputFormat, which is used by cascading
+57b1e0fa	Aniket Mokashi	2013-08-30	Merge pull request #156 from Parquet/fix_site
+874e4702	Tianshuo Deng	2013-08-30	indent fix, remove tabs
+3553c025	Tianshuo Deng	2013-08-30	add site target to update-github-site profile
+30359b46	Tianshuo Deng	2013-08-29	remove TODOs and fix format
+17e25114	Tianshuo Deng	2013-08-29	Merge branch 'master' of https://github.com/Parquet/parquet-mr into manual_pushdown_for_thrift_read_support
+ec463291	Tianshuo Deng	2013-08-29	use globbing syntax to specify manual pushdown in ThriftReadSupport
+bde6493d	Julien Le Dem	2013-08-29	Merge pull request #153 from Parquet/fix_projection_required_field
+c023d63e	julien	2013-08-28	improve thrift error message
+413418e3	Julien Le Dem	2013-08-28	added release 1.1.1
+69ef1f44	Tianshuo Deng	2013-08-28	fix file path
+91c17112	Tianshuo Deng	2013-08-28	fix projection on required fields and refactored unit tests for column IO
+0784dc9c	Aniket Mokashi	2013-08-27	[maven-release-plugin] prepare for next development iteration
+945d1bd5	Aniket Mokashi	2013-08-27	[maven-release-plugin] prepare release parquet-1.1.1
+c8ba085b	Aniket Mokashi	2013-08-27	Merge pull request #150 from Parquet/add_thrift_validation
+71a6d880	julien	2013-08-27	add better error message
+8a8354b7	julien	2013-08-27	add better error message
+7b2ef260	julien	2013-08-27	add thrift validation on read
+bbae83da	Julien Le Dem	2013-08-27	Create CHANGES.md
+62cc2c29	Aniket Mokashi	2013-08-26	[maven-release-plugin] prepare for next development iteration
+bee8378a	Aniket Mokashi	2013-08-26	[maven-release-plugin] prepare release parquet-1.1.0
+4b4fb0e5	Aniket Mokashi	2013-08-26	Merge pull request #145 from aniket486/stats_loader
+aab7b4b6	Aniket Mokashi	2013-08-26	code review comments for stats
+4202efbe	Aniket Mokashi	2013-08-25	Merge pull request #149 from aniket486/change_block_size
+808a90d9	Aniket Mokashi	2013-08-25	changing default block size to 128mb
+c76880d8	Julien Le Dem	2013-08-22	Merge pull request #146 from Parquet/hive_nested_types
+8cc147b3	Remy Pecqueur	2013-08-21	Add map and list to in/outputformat unit tests
+e5b767ab	Remy Pecqueur	2013-08-20	Add some nested type tests and fix Map handling
+b5006812	Aniket Mokashi	2013-08-21	add getStatistics method to parquetloader
+c22a3572	Julien Le Dem	2013-08-21	Merge pull request #144 from aniket486/map_support
+9adb8e24	Aniket Mokashi	2013-08-21	code review changes
+8f93adfd	Aniket Mokashi	2013-08-20	Map key fields should allow other types than strings
+d2878f8b	Aniket Mokashi	2013-08-20	Merge pull request #143 from Parquet/fix_empty_encoding_col_metadata
+f61a123d	Tianshuo Deng	2013-08-20	Merge branch 'master' of https://github.com/Parquet/parquet-mr into fix_empty_encoding_col_metadata
+37bd05d2	Julien Le Dem	2013-08-19	Merge pull request #142 from Parquet/fix_total_size_row_group
+fb670693	Tianshuo Deng	2013-08-19	fix space format
+77bede55	Tianshuo Deng	2013-08-19	add test
+92ce68dd	Tianshuo Deng	2013-08-19	fixed
+09bfe990	Julien Le Dem	2013-08-19	Merge pull request #124 from Parquet/serde
+4d1b3e06	Tianshuo Deng	2013-08-19	add unit test
+42ad7014	Tianshuo Deng	2013-08-19	fix test file path
+9ef85a0e	Tianshuo Deng	2013-08-19	merge
+cb6d3d23	Aniket Mokashi	2013-08-18	Merge pull request #141 from Parquet/hraven_counters
+35c419cd	Tianshuo Deng	2013-08-16	remove public Constants
+3bebb9a1	Tianshuo Deng	2013-08-16	fix
+f8e26585	Tianshuo Deng	2013-08-16	fix incrementCounter getConfiguration method to support 2.0
+397b4c9b	Tianshuo Deng	2013-08-15	formatting
+1323e4f8	Tianshuo Deng	2013-08-15	Merge branch 'master' of https://github.com/Parquet/parquet-mr into hraven_counters
+d4ef8d95	Julien Le Dem	2013-08-15	Merge pull request #140 from Parquet/partial_schema_for_group_read_support
+4288aa65	Tianshuo Deng	2013-08-15	formatting
+c2697261	Tianshuo Deng	2013-08-15	formatting
+9394c097	Tianshuo Deng	2013-08-15	fix test
+ea62ffe1	Tianshuo Deng	2013-08-15	add unit test
+ccf32c7c	Tianshuo Deng	2013-08-15	remove comments
+2cc9321b	Tianshuo Deng	2013-08-15	add test for no benchmark counters
+43ad5e52	Tianshuo Deng	2013-08-15	fix test
+a274684f	Tianshuo Deng	2013-08-15	added 3 counters to parquet for benchmarking bytes read and time spent
+c9b213cf	Julien Le Dem	2013-08-15	Merge pull request #123 from Parquet/snappy_codec
+6ff02643	Tianshuo Deng	2013-08-15	Implemented partial schema for GroupReadSupport
+3fb938b9	Julien Le Dem	2013-08-14	Merge pull request #138 from Parquet/fix_column_metadata_size
+af45d9cc	Tianshuo Deng	2013-08-14	fix bug of wrong column metadata size
+ce8c1a42	Julien Le Dem	2013-08-13	Merge pull request #118 from Parquet/refactor_column_reader
+99673f2f	Julien Le Dem	2013-08-13	Merge pull request #127 from atkeano/dictionary_encodings
+12bc29a4	julien	2013-08-13	split out method to facilitate the inliner job
+87228ebd	keano	2013-08-13	refactoring dictionary encoding for non string types after comments #127
+3fad4bd1	Julien Le Dem	2013-08-13	Merge pull request #133 from atkeano/maven_build_errors
+39348557	keano	2013-08-13	update plugin versions for maven aether migration - fixes #125
+28da58cd	Nong Li	2013-08-06	Fix Snappy compressor in parquet-hadoop.
+8d666110	keano	2013-08-12	adding dictionary encoding for long,double,int,float
+3c869369	Julien Le Dem	2013-08-09	Merge pull request #120 from Parquet/rle_fix
+3a3b73a6	Julien Le Dem	2013-08-09	Merge pull request #126 from Parquet/unit_tests_for_parquet_cascading
+e4269e64	Tianshuo Deng	2013-08-09	remove blank lines
+f327ecff	Tianshuo Deng	2013-08-09	format
+7e16d31a	Tianshuo Deng	2013-08-09	better format
+f17b83c6	Tianshuo Deng	2013-08-09	added unit tests for parquet cascading
+05c73c48	Aniket Mokashi	2013-08-09	[maven-release-plugin] prepare for next development iteration
+8ffe30de	Aniket Mokashi	2013-08-09	[maven-release-plugin] prepare release parquet-1.0.1
+35c6dc69	Aniket Mokashi	2013-08-09	removing github-pages-site target before releasing
+a9e2c7d5	Nong Li	2013-08-07	Fix Short and Byte types in Hive SerDe.
+1fc0698e	Nong Li	2013-08-06	Fix RLE bug with partial literal groups at end of stream.
+6232dafa	julien	2013-08-07	fix javadoc
+5a259265	Aniket Mokashi	2013-08-07	Merge pull request #121 from Parquet/fix_wrong_record_converter_class
+a54414c9	Tianshuo Deng	2013-08-07	use Mockito to mock varibles in test, fix format and variable name
+86ae4f87	Tianshuo Deng	2013-08-07	fix wrong converter: use TBaseRecordConverter for ParquetTBaseScheme; Add unit test for getting correct record converter
+2a32f349	Aniket Mokashi	2013-08-06	Merge pull request #119 from Parquet/thrift_05_compatible
+c1261797	Tianshuo Deng	2013-08-06	remove raw type for ParquetTbaseScheme to support thrift0.5; remove scalding dependency
+26932a54	dvryaboy	2013-08-05	Minor README.md fix
+aa530c19	julien	2013-08-03	Merge branch 'master' of github.com:Parquet/parquet-mr into refactor_column_reader
+f8dd2088	julien	2013-08-03	simplify end of page count
+ecb2daca	julien	2013-08-03	refactro column reader
+ac0caa0f	Julien Le Dem	2013-07-30	Update README.md
+aca56156	Julien Le Dem	2013-07-30	Update README.md
+78481ad0	julien	2013-07-29	[maven-release-plugin] prepare for next development iteration
+6eec81d8	julien	2013-07-29	[maven-release-plugin] prepare release parquet-1.0.0
+bb74d3d1	julien	2013-07-29	add description
+62180722	julien	2013-07-29	move github site to profile
+97cf75f8	julien	2013-07-29	[maven-release-plugin] prepare for next development iteration
+32dbb4a1	julien	2013-07-29	[maven-release-plugin] prepare release parquet-format-1.0.0
+46aa59c9	julien	2013-07-29	revert back to SNAPSHOT
+22891410	Julien Le Dem	2013-07-29	Merge pull request #113 from aniket486/master
+a6e3fe7e	Aniket Mokashi	2013-07-28	upgrading scrooge runtime version to 3.1.1
+3c55f589	Julien Le Dem	2013-07-26	Merge pull request #112 from tomwhite/issue-64-mr-indept
+09ba2fb2	Julien Le Dem	2013-07-26	Merge pull request #111 from aniket486/master
+82579c96	Aniket Mokashi	2013-07-26	Merge pull request #108 from Parquet/elephant_bird_compatible
+7d1fe784	Tianshuo Deng	2013-07-26	remove space, add braces for readability
+504833e3	Tom White	2013-07-26	Make reader independent
+a7c42f93	Tom White	2013-07-26	Make writer independent
+7a4b5626	Aniket Mokashi	2013-07-25	add if debug statements to parquetloader
+c4e8d261	Tianshuo Deng	2013-07-25	optimize code format, add log info to indicate boolean will be convert to int when compatible mode is on
+eac5aecf	Tianshuo Deng	2013-07-25	1. return compatible schema when compatible flag is set. 2. tupleConverter set to return IntegerConverter when flag is set
+0e8f1f7a	Aniket Mokashi	2013-07-25	Merge pull request #107 from Parquet/change_default_block_size
+265ef240	Tianshuo Deng	2013-07-25	Merge branch 'master' of https://github.com/Parquet/parquet-mr into fix_boolean_default_value_for_tuple_converter
+4bc24334	Tianshuo Deng	2013-07-25	[fix validation script] when boolean value is null, set it to 0 for being compatible.
+b8576b9c	Julien Le Dem	2013-07-25	Update README.md
+8a62bb35	julien	2013-07-25	fix doc
+b7fe532f	julien	2013-07-25	Merge branch 'master' of github.com:Parquet/parquet-mr into change_default_block_size
+0fbd0267	Julien Le Dem	2013-07-25	Merge pull request #105 from Parquet/ThriftParquetWriter
+be492044	julien	2013-07-25	change default page size and add some doc
+67b8423a	julien	2013-07-24	ThriftParquetReader and ThriftParquetWriter
+273ecd40	Julien Le Dem	2013-07-23	Update Hive support status
+92c450a9	Julien Le Dem	2013-07-23	Merge pull request #28 from mickaellcr/parquet-hive
+61f22602	Sam Ritchie	2013-07-23	Merge pull request #95 from Parquet/doc
+a2ec5cb9	Julien Le Dem	2013-07-23	Merge pull request #102 from Parquet/how_to_contribute
+ed9eec87	dvryaboy	2013-07-23	Add "how to contribute" to README.md
+4cf6ae1b	Mickael Lacour	2013-06-25	Code review
+2525587f	Remy Pecqueur	2013-06-21	Update getSplits in DeprecatedParquetInputFormat
+26360f35	Mickael Lacour	2013-06-21	Minor changes
+bf7263b0	Mickael Lacour	2013-06-20	Try to fix travis build
+eccbba1c	Mickael Lacour	2013-06-20	Improve speed for queries like count(0), in which we only need the number of lines
+21b0d978	Mickael Lacour	2013-06-19	Update with advices from Julien
+3089e834	Mickael Lacour	2013-06-19	Manage count 0
+82fff8c8	Remy Pecqueur	2013-06-19	Clean up ReadSupport init
+0ec089dc	Remy Pecqueur	2013-06-18	Add metadata in ReadContext instead of Split
+bb6e2ff8	Mickael Lacour	2013-06-18	Hadoop 2.0 compatibility, hive 0.10
+543cdc2c	Remy Pecqueur	2013-06-17	Fix the size of the value array
+8234945c	Mickael Lacour	2013-06-13	Remove unused parameters
+3ee49a5e	Mickael Lacour	2013-06-11	Change MapWritable to ArrayWritable (perfomance improved !)
+174c26ae	Remy Pecqueur	2013-06-10	Correct fix to CombineHive
+cee774c3	Remy Pecqueur	2013-06-10	Fix more combine stuff
+cc6754ce	Remy Pecqueur	2013-06-07	Fix CombineHive bug
+41981533	Mickael Lacour	2013-06-04	Fix compile with abstract methods
+f2d9e81b	Mickael Lacour	2013-06-04	update hadoop version
+d6157297	Mickael Lacour	2013-05-17	Add unit test for storage
+74be5285	Remy Pecqueur	2013-05-02	Add full support for array and map reading
+1dc42f0b	Mickael Lacour	2013-05-02	Improve the pull request following advices from Julien
+33e0131f	Mickael Lacour	2013-04-30	Add some unit test in order to test :
+bd826ec8	Mickael Lacour	2013-04-23	Add a simple unit test for ParquetSerDe
+6c219a5f	Mickael Lacour	2013-04-23	Fix Short object for Hive (use short for short instead of byte :))
+7f534d52	Mickael Lacour	2013-04-23	Implement a basic version of the SerDeStats object for ParquetHiveSerDe
+910e7cd9	Mickael Lacour	2013-04-23	Add equals and hashcode methods to BinaryWritable
+126da3ca	Mickael Lacour	2013-04-18	Give selected columns to ParquetInputFormat : Done
+ebf76d4d	Mickael Lacour	2013-04-18	Indentation : retab to 2 spaces. Nothing else.
+1ada3d2b	Mickael Lacour	2013-04-17	Some improvements on the hive implementation :
+07e54a53	Mickael Lacour	2013-04-16	rename one parameter
+b4d1c714	Remy Pecqueur	2013-04-16	Can read some complex types
+4fe18c53	Remy Pecqueur	2013-04-15	Can write complex types
+f5ca27b0	Mickael Lacour	2013-04-16	Improve column reading
+fcc88f3e	Remy Pecqueur	2013-04-10	Add support for CombineHiveInputFormat
+2471e518	Remy Pecqueur	2013-04-09	Remove any K,V from DeprecatedXXFormat
+c7a8eafa	Mickael Lacour	2013-04-08	Start implementation parquet for hive :
+8c1032d8	dvryaboy	2013-07-22	Merge pull request #97 from Parquet/improve_memory_usage_of_metadata
+435b13bc	Julien Le Dem	2013-07-22	Merge pull request #98 from massie/matt-pushdown
+c1d67ee5	Matt Massie	2013-07-20	Add support for predicate pushdown in ParquetInputFormat
+62c3155a	dvryaboy	2013-07-22	Merge pull request #96 from massie/master
+964e5da6	Matt Massie	2013-07-18	Add support for schema projection in Avro
+f7d09877	julien	2013-07-19	fix compilation issue with 1.6
+54ac6b40	julien	2013-07-19	license headers
+6b5b8b21	julien	2013-07-19	improve memory usage of metadata
+4643a5cf	julien	2013-07-18	add coverage report to site
+aedcddec	julien	2013-07-17	fix pom conf for github pages
+a80029ee	julien	2013-05-01	try github site integration
+f46bdafe	Julien Le Dem	2013-07-17	Merge pull request #93 from Parquet/add_buffer_to_protocol_pipe_in_master
+dd20df13	Julien Le Dem	2013-07-17	Merge pull request #87 from Parquet/reduce_size_of_split
+3f19ce3d	julien	2013-07-12	reduce size of splits
+de0d0cbe	Julien Le Dem	2013-07-17	Merge pull request #94 from massie/avro-specific
+aa0bc139	Matt Massie	2013-07-17	Add Avro specific support to AvroParquet{Input,Output}Format
+02d5ed25	julien	2013-07-17	fix merge conflict
+9f41d31a	Julien Le Dem	2013-07-17	Merge pull request #86 from aniket486/load_pushdown
+c2ad7647	Julien Le Dem	2013-07-17	Merge pull request #90 from aniket486/list_recursive
+61f2c86a	julien	2013-07-17	add buffer to protocol pipe
+39217427	Aniket Mokashi	2013-07-15	small fixes for hadoop2 failure
+5a5bb7f2	Aniket Mokashi	2013-07-15	initial commit for recursive listing
+d8e6ba34	Aniket Mokashi	2013-07-14	added code review changes
+91fa2c41	Julien Le Dem	2013-07-12	Update README.md
+3b9e6d8d	Julien Le Dem	2013-07-12	Update README.md
+7e31eecc	Julien Le Dem	2013-07-12	Merge pull request #89 from Parquet/filtered_reader
+ef2aa8e5	julien	2013-07-12	Merge branch 'master' into filtered_reader
+feecf58f	Aniket Mokashi	2013-07-12	adding tests and removing comments
+80e72a5a	dvryaboy	2013-07-11	Merge pull request #85 from Parquet/reduce_memory_usage_of_metadata
+64814a6e	julien	2013-07-11	make fields final
+5214a653	Aniket Mokashi	2013-07-11	minor fixes and refactor
+fc56631a	Aniket Mokashi	2013-07-11	Initial checkin for load pushdown
+79a31062	julien	2013-07-11	reduce memory usage of metadata
+4de27444	julien	2013-07-11	fix bad merge
+6030c9ec	Julien Le Dem	2013-07-11	Merge pull request #84 from Parquet/splits_report_actual_length
+6bf05979	Julien Le Dem	2013-07-11	Merge pull request #80 from Parquet/encodings
+9a5d5978	Julien Le Dem	2013-07-11	Merge pull request #83 from atkeano/thrift_read_projections
+adb46b69	julien	2013-07-11	make splits report actual length
+43dc88d4	keano	2013-07-11	adding projection support for thrift types
+ab5d3a18	Aniket Mokashi	2013-07-10	[maven-release-plugin] prepare release parquet-format-1.0.0-t2
+33c8dc5d	Aniket Mokashi	2013-07-10	Merge pull request #81 from Parquet/fix_schema_compatibility
+806b5481	julien	2013-07-09	fix for schema compatibility
+f1da1c71	dvryaboy	2013-07-09	Merge pull request #79 from Parquet/split_plain_reader
+89d6b171	julien	2013-07-09	refactored bit packing
+653a4cf5	julien	2013-07-08	collapse small classes into one class
+caa8e511	julien	2013-07-08	split Plain reader so that the reader knows what type it's reading
+80a449d1	Jacob	2013-07-06	Updated from master
+f52a26e1	Jacob	2013-07-06	Renamed checkValueRead.
+c4b14fbc	Jacob	2013-07-06	Adding APL headers and test for union schema creation.
+5fc67280	Julien Le Dem	2013-07-03	Merge pull request #74 from Parquet/fix_dictionary_decoding
+992a47e5	julien	2013-07-03	fix call to converter
+3afe6477	Julien Le Dem	2013-07-02	Merge pull request #75 from Parquet/schema_compatibility
+18122b43	julien	2013-07-02	Merge branch 'master' into schema_compatibility
+efc59829	julien	2013-07-02	fix schema compat
+364b4a03	Julien Le Dem	2013-07-02	Merge pull request #72 from Parquet/schema_compatibility
+707bdf04	julien	2013-07-02	add negative tests
+96bf78d8	Julien Le Dem	2013-07-02	Merge pull request #71 from Parquet/update_readme
+94afb195	julien	2013-07-02	fix dictionary decoding bug when more than one encoding is used
+c98f4670	Aniket Mokashi	2013-07-01	Merge pull request #73 from aniket486/write_no_data_for_no_RL_DL
+29ba92ce	Dmitriy Ryaboy	2013-07-01	add a bit more pig detail
+7b470794	Aniket Mokashi	2013-07-01	Should not write data if the RL/DL is all zeroes
+08b7aebb	julien	2013-07-01	support for schema compatibility
+6a0dffd6	Dmitriy Ryaboy	2013-06-30	fix readme links
+e2e8edb6	Dmitriy Ryaboy	2013-06-30	small updates to README with feature matrix and other improvements
+1d7a5c33	Jacob	2013-07-01	Fixing after code reviews
+be8e4e95	Jacob	2013-06-30	Merge remote-tracking branch 'upstream/master'
+2519b95f	Julien Le Dem	2013-06-29	Merge pull request #70 from Parquet/snappy
+7b742900	Nong Li	2013-06-28	Fixed test case.
+e440108d	Nong Li	2013-06-27	Add support for snappy compression.
+29252443	Nong Li	2013-06-25	Merge pull request #46 from Parquet/alexlevenson/update-readme-rle-4bytes
+3848f32b	Alex Levenson	2013-06-24	undo release changes
+8463ba14	Alex Levenson	2013-06-24	[maven-release-plugin] prepare for next development iteration
+080b9533	Alex Levenson	2013-06-24	[maven-release-plugin] prepare release parquet-format-1.0.0-t2
+483dd9f3	dvryaboy	2013-06-23	Merge pull request #67 from svzdvd/master
+ac5cbd1a	Jacob	2013-06-23	Implmented more efficient skip algorithm
+8285b62c	Jacob	2013-06-23	Fixed bug querying on Name,Url
+f3ed65be	Davide Savazzi	2013-06-23	fix ValueStat max value
+48bb48e6	Jacob	2013-06-22	Added avro specific functionality
+61239a0a	Jacob	2013-06-22	Added avro specific functionality
+ef5c143d	Jacob	2013-06-22	Added avro specific functionality
+5f0f929e	Jacob	2013-06-22	Added filtering functionality
+ff109bc9	Julien Le Dem	2013-06-19	Merge pull request #65 from Parquet/ReadSupport_specific_info_in_split
+1a30dcce	Alex Levenson	2013-06-18	Merge pull request #66 from Parquet/alexlevenson/fix-rle-comments
+04ac202c	Julien Le Dem	2013-06-18	Merge pull request #62 from Parquet/fix_dic_decoding_bug
+f7fbed18	Alex Levenson	2013-06-18	fix comments
+e27f8719	Aniket Mokashi	2013-06-18	Merge pull request #63 from Parquet/alexlevenson/fix-rle-4byte-length
+4950149f	Aniket Mokashi	2013-06-18	Merge pull request #61 from aniket486/master
+c4c77ba0	julien	2013-06-18	add support for ReadSupport specific info in split
+c3596a9d	Alex Levenson	2013-06-17	Add support for 4 byte length written at the beginning of rle columns
+a2b7a657	julien	2013-06-17	when there is more than one row group the converter will get multiple dictionaries set
+c7734462	Aniket Mokashi	2013-06-17	ability to read version number from parquet jar Version utility
+7e3ef9fe	Julien Le Dem	2013-06-08	Merge pull request #60 from Parquet/fix_bit_packing_encoding_bug
+e0a5920b	julien	2013-06-07	Merge branch 'master' of github.com:Parquet/parquet-mr into fix_bit_packing_encoding_bug
+b7f69461	Alex Levenson	2013-06-06	Merge pull request #58 from Parquet/alexlevenson/RLE-bit-packing-hybrid
+1d13a61a	Alex Levenson	2013-06-06	create and use checkedCast()
+6e651662	julien	2013-06-06	fix bit packing encoding bug
+3ff63fd2	Alex Levenson	2013-06-05	Merge branch 'master' into alexlevenson/RLE-bit-packing-hybrid
+2dbd0d23	Alex Levenson	2013-06-05	Remove logic for valueCount > Integer.MAX_VALUE
+e70652e2	Julien Le Dem	2013-06-05	Merge pull request #59 from Parquet/dictionary_encoding_format_adjustment
+7cf85cb4	Alex Levenson	2013-06-04	Fix RunLengthBitPackingHybridValuesReader
+aed1dca4	julien	2013-06-04	dictionary encoding header is now bitWidth instead of max dictionary entry id
+c2115825	Julien Le Dem	2013-06-03	Merge pull request #53 from Parquet/add_validation_setting
+af0ccf9c	julien	2013-06-03	better error message and javadoc
+47824efd	julien	2013-06-03	Merge branch 'master' of github.com:Parquet/parquet-mr into add_validation_setting
+d7fe1a5d	Alex Levenson	2013-06-03	Use RLE for repetition / definition levels
+cd6a02d2	Alex Levenson	2013-06-03	Merge branch 'master' into alexlevenson/RLE-bit-packing-hybrid
+abb6e364	Alex Levenson	2013-06-03	Address first round of comments
+14e05746	Julien Le Dem	2013-06-03	Merge pull request #57 from Parquet/bit_packing_lsb_first
+ded5bec1	Alex Levenson	2013-05-31	cleanup comments
+99853be9	Alex Levenson	2013-05-31	Merge branch 'master' into alexlevenson/RLE-bit-packing-hybrid
+63ed7191	Alex Levenson	2013-05-31	Fixup / rename RLEDecoder, fix tests
+65fb8d3e	Alex Levenson	2013-05-31	move unpack
+24f65240	Alex Levenson	2013-05-30	End to end test
+c9c1080b	Alex Levenson	2013-05-30	Add bit packing overflow test
+cd3a1238	Alex Levenson	2013-05-29	Start tests for rle hybrid
+71bd4e2e	julien	2013-05-29	bit packing support for LE
+c71cb25c	Julien Le Dem	2013-05-29	Merge pull request #55 from laserson/fastavro
+27d1c2c4	Alex Levenson	2013-05-29	Add javadoc to ByteUtils
+d29eeb57	Alex Levenson	2013-05-29	cleanup preconditions
+2ffdab72	Alex Levenson	2013-05-29	Add test for setByte()
+0f9eee5f	Alex Levenson	2013-05-29	Cleanup
+b3e94326	Alex Levenson	2013-05-29	First pass at RLE hybrid
+0a7c59aa	Uri Laserson	2013-05-28	Speed up Avro string parsing
+9a30c8fd	Julien Le Dem	2013-05-23	Merge pull request #40 from Parquet/dictionary_encoding
+5cedb4af	julien	2013-05-23	license headers
+38d8a68b	julien	2013-05-23	Merge branch 'master' of github.com:Parquet/parquet-mr into dictionary_encoding
+5c2034a0	julien	2013-05-22	license headers
+25d8ff20	julien	2013-05-22	javadoc and cleanup
+f9784bf7	julien	2013-05-21	remove unnecessary keywords
+70d3eeba	julien	2013-05-21	better javadoc
+df1ab6f8	julien	2013-05-21	introduce contants
+e85b3c20	julien	2013-05-21	interfaces have public members
+19b369b8	julien	2013-05-21	use checkNotNull
+a5b478ed	julien	2013-05-21	standard ordering of keywords
+427137de	Julien Le Dem	2013-05-20	Merge pull request #54 from massie/master
+05f103b3	Matt Massie	2013-05-18	Fix bug that prevented writing optional Avro records, arrays or maps
+b6d1cb04	julien	2013-05-17	add a validation setting to OutputFormat
+4f4c5c47	Julien Le Dem	2013-05-14	Merge pull request #51 from Parquet/improve_mem_usage_in_write
+5b25bb57	julien	2013-05-14	add constants and doc
+34d0b5d3	Julien Le Dem	2013-05-14	Merge pull request #52 from laserson/getCounter_compat
+a53dde1c	julien	2013-05-14	javadoc and constants
+ea3eb7b2	Uri Laserson	2013-05-14	Removed getCounter for compatibility
+d0cc3a96	julien	2013-05-13	check initial size
+7f7fa721	Julien Le Dem	2013-05-13	Merge pull request #48 from laserson/choose_compression
+0add8d86	julien	2013-05-13	add constant and override annotations
+34a8fb00	Uri Laserson	2013-05-13	Propagated default sizes to the OutputFormat
+21bb59da	Uri Laserson	2013-05-10	Oops, forgot about default compression
+11d8e0eb	Uri Laserson	2013-05-10	Added javadocs
+d636d606	Uri Laserson	2013-05-08	Allow setting compressor, block/page size for ParquetWriter
+f7e7dd76	julien	2013-05-11	more unit tests for CapacityByteArrayOutputStream
+0347e7b2	julien	2013-05-10	adjust initial column size
+6a4f8d03	julien	2013-05-10	handle case when value is bigger than slab size
+922f6c50	julien	2013-05-10	add setting to turn dictionary on
+a0e82a87	julien	2013-05-10	add improved memory management in hadoop layer
+90aca3cd	julien	2013-05-10	Merge branch 'master' into improve_mem_usage_in_write
+f334966c	Julien Le Dem	2013-05-10	Merge pull request #50 from Parquet/scale_down_overly_enthusiastic_buffer_size
+b30d7fe0	julien	2013-05-10	reduce rep and def level buffer size. 8MB * 2 * #cols is way too much
+e1aa7984	julien	2013-05-10	improve memory consumption in write
+f0c42cac	Julien Le Dem	2013-05-09	Merge pull request #49 from Parquet/version
+be136d2c	Julien Le Dem	2013-05-08	Update README.md
+cd253598	julien	2013-05-08	add library version to metadata
+306868de	julien	2013-05-08	Merge branch 'master' into version
+45b893c6	julien	2013-05-08	add maven-jar-plugin version
+3e4561b5	Julien Le Dem	2013-05-08	Merge pull request #46 from laserson/public_utils
+09a54d6c	Uri Laserson	2013-05-08	Rolled back one of the public classes
+647825b5	Uri Laserson	2013-05-07	Changed two utility classes to public
+fae4c56c	Julien Le Dem	2013-05-07	Merge pull request #32 from tomwhite/hadoop2
+5ab09189	julien	2013-05-07	update dependencies to hadoop-client
+a67ea4ea	julien	2013-05-06	add test for hadoop2
+a20750a8	Tom White	2013-05-07	Replace JobContext#getConfiguration calls with reflective call.
+0c250380	julien	2013-05-03	read version information from META-INF
+6c1ccb7e	Julien Le Dem	2013-05-03	Merge pull request #45 from Parquet/no_schema_error
+f5ab5ebd	julien	2013-05-03	better error message when schema is unknown
+6c26ece9	Nong Li	2013-05-01	Merge pull request #42 from Parquet/make_total_size_include_headers
+75ead0a3	julien	2013-05-01	turn LOGs back to INFO
+a1fbcfb1	julien	2013-05-01	make total size include header size
+cec7b39e	Julien Le Dem	2013-05-01	Merge pull request #41 from jwills/avro-null-unions
+f3ee0c9b	Julien Le Dem	2013-05-01	Merge pull request #37 from avibryant/cascading-tuples
+c7ebfbb1	Josh Wills	2013-05-01	Fixes based on Julian's feedback
+5ed61624	Avi Bryant	2013-05-01	mvn license:headers
+88690f97	Josh Wills	2013-05-01	Fix Avro Read/Write support to work with the union-null optional value pattern
+59f4b102	Avi Bryant	2013-05-01	Use the standard readFooters in ParquetTupleScheme
+2d4be439	Julien Le Dem	2013-04-30	Merge pull request #25 from Parquet/rle
+68551780	Julien Le Dem	2013-04-30	Update README.md
+9ec35657	Julien Le Dem	2013-04-30	Merge pull request #39 from Parquet/add_git_hash_in_jar
+3dbccbae	julien	2013-04-30	add git hash in jar
+aaa58d36	julien	2013-04-30	code formating and license headers
+634cb777	julien	2013-04-30	fix bug when printing a ByteBuffer based binary would consume the buffer
+3c96e978	Julien Le Dem	2013-04-29	Merge pull request #33 from Parquet/handle_empty_fields_as_nulls
+9222396f	Avi Bryant	2013-04-29	merge
+ffebada1	Avi Bryant	2013-04-29	update ParquetTupleScheme to use DeprecatedParquetInputFormat
+f2ab7a27	Avi Bryant	2013-04-29	Use a simpler serialization for cascading Fields to be compatible with older cascading versions
+1ee87d8f	Avi Bryant	2013-04-28	Treat Fields.UNKNOWN as Fields.ALL
+2f0a779b	Avi Bryant	2013-04-27	short class comment for the TupleScheme
+62df1234	Avi Bryant	2013-04-27	working selective tuple materialization for cascading
+30b461ea	Avi Bryant	2013-04-27	skeleton for an efficient converter from groups to cascading tuples
+d822ef5a	Julien Le Dem	2013-04-29	Merge pull request #35 from avibryant/deprecated-mr2
+d6e38669	Julien Le Dem	2013-04-29	Merge pull request #36 from 0xh3x/master
+c96e7949	julien	2013-04-29	+ needs space
+8cb82ee8	julien	2013-04-29	javadoc
+249e8893	Avi Bryant	2013-04-29	Use a simpler serialization for cascading Fields to be compatible with older cascading versions
+4a8913e0	julien	2013-04-29	update git ignore
+7cb711c2	julien	2013-04-29	Merge branch 'rle' into dictionary_encoding
+fc0c7cdd	julien	2013-04-29	integrate RLE into dictionary encoding
+74157a05	0xh3x	2013-04-29	Fixed potential Integer overflow.
+a49a0e92	Avi Bryant	2013-04-28	don't create a TaskAttemptContext in ParquetReader
+2676de9b	Avi Bryant	2013-04-28	Treat Fields.UNKNOWN as Fields.ALL
+20a4bf72	Avi Bryant	2013-04-28	DeprecatedParquetInputFormat is not abstract
+5e82439e	Avi Bryant	2013-04-28	fix up cascading and scrooge to use DeprecatedParquetInputFormat
+1f0a8a25	Avi Bryant	2013-04-28	replace DeprecatedContainerInputFormat with DeprecatedParquetInputFormat, should build under MR2
+593a105c	Avi Bryant	2013-04-27	short class comment for the TupleScheme
+065a3c90	Avi Bryant	2013-04-27	working selective tuple materialization for cascading
+6b867e50	Avi Bryant	2013-04-27	skeleton for an efficient converter from groups to cascading tuples
+43dcb039	julien	2013-04-26	Merge branch 'master' into dictionary_encoding
+05505456	julien	2013-04-26	Merge branch 'master' into rle
+5db276f1	julien	2013-04-26	cleanup import
+7c0f1a67	julien	2013-04-26	rename fromSequence to concat
+3f097514	julien	2013-04-26	making empty fields illegal
+1db1018e	julien	2013-04-26	turn on validation for generate TPCH
+280cea3b	julien	2013-04-26	make the API treat empty fields the same as missing fields to avoid confusion
+4c11b662	julien	2013-04-26	typo
+e5484323	julien	2013-04-25	add new line
+7cb782c3	julien	2013-04-25	make a constant for constant value; remove outragous System.out.println()
+b125deea	julien	2013-04-25	make initial capacity a constant
+999b2142	julien	2013-04-25	use BytesUtils.paddedByteCountFromBits everywhere
+67a35774	julien	2013-04-25	make field private; add braces for one line if statements
+a3e8963c	julien	2013-04-25	Merge branch 'rle' into dictionary_encoding
+133d845b	julien	2013-04-25	Merge branch 'master' into rle
+aed56c95	julien	2013-04-25	integrate the new bit packing for perf
+19e0902b	julien	2013-04-25	make converters dictionary aware
+a5d72a44	Julien Le Dem	2013-04-24	Merge pull request #31 from tomwhite/java6-compilation-fixes
+34ce9248	Julien Le Dem	2013-04-24	Merge pull request #26 from tomwhite/avro
+d3c1a34f	Tom White	2013-04-24	Fix compilation with Java 6.
+80adbcd6	Tom White	2013-04-23	Remove -Xlint:unchecked flag from the build for the moment as it causes CI to fail.
+64c45cbe	Tom White	2013-04-22	Add test for nested records following fix in 61d5170844aaf611555a0dd63c5e24af08acf1c8
+5121cd59	Tom White	2013-04-22	Avoid double conversion of bytes for Avro Utf8 instances.
+1605cda9	Tom White	2013-04-22	Avoid copying bytes if ByteBuffer is array-based.
+e365840e	Tom White	2013-04-22	Create generic Parquet reader and writer for object records.
+58d8c52e	Tom White	2013-04-17	Remove incorrect record initialization to compensate for broken support for nested records (not yet fixed).
+e47f3b13	Tom White	2013-04-17	Fix creation of arrays and maps in converters.
+11bb8247	Tom White	2013-04-17	Remove unnecessary level of grouping for array.
+568bd7f6	Tom White	2013-04-17	Add Binary.fromByteBuffer method.
+61a163d3	Tom White	2013-04-17	Honor repetitions correctly.
+42c38a1e	Tom White	2013-04-17	Remove unchecked generics warnings.
+02b283db	Tom White	2013-04-08	Initial support for Avro.
+31b91eec	julien	2013-04-23	address review comments by @squarecog
+feadc9ef	Julien Le Dem	2013-04-23	Merge pull request #24 from Parquet/scrooge_scalding
+d64c883b	julien	2013-04-23	mae dictionary more generic; allow converters to understand dictionaries
+9d2df136	julien	2013-04-22	Merge branch 'master' into dictionary_encoding
+ee4a1b84	dvryaboy	2013-04-22	Merge pull request #30 from Parquet/fix_definition_level_for_nested_required
+f866bb84	julien	2013-04-22	more tests for optional vs required
+1d216467	dvryaboy	2013-04-20	Merge pull request #29 from Parquet/fix_definition_level_for_nested_required
+8b69ad5d	Dmitriy Ryaboy	2013-04-19	address comments from @J_
+61d51708	julien	2013-04-19	fix bug where a required field would not be created at the right level
+aa851eb7	julien	2013-04-19	remove broken reader/writer
+9942ce17	julien	2013-04-19	move simple RLE to generated bit packing
+c2bdea0d	Dmitriy Ryaboy	2013-04-19	address comments from alex l.
+bcdddf76	julien	2013-04-19	implement byte based batch bit packing
+bca04114	Dmitriy Ryaboy	2013-04-18	Merge branch 'master' of github.com:Parquet/parquet-mr into scrooge_scalding
+ee8c25ea	dvryaboy	2013-04-16	Merge pull request #27 from Parquet/make_closeable
+e3e81597	julien	2013-04-16	make things that look like closeables implement Closeable
+b0e9609e	julien	2013-04-16	more tests and bug fixing the Bit packing
+a0926f38	julien	2013-04-15	add both orders as we might want to change our encoding in the future
+4611c477	julien	2013-04-15	writer readers for int based packing
+07c56fcb	julien	2013-04-12	add notice
+f2ff9e85	julien	2013-04-12	add license headers
+f7a47d35	julien	2013-04-12	adapt Lemire's scheme to our value ordering
+4fe082c5	julien	2013-04-11	BitPacking up to 31 bits
+0bb5e935	julien	2013-04-10	first stab at rle encoding
+d5b3b7d8	julien	2013-04-09	better logging
+08c8f820	Dmitriy Ryaboy	2013-04-08	use published EB, fix NPE in ThriftMetaData
+9656ef28	julien	2013-04-05	improve api; improve logs;improve PrintFooter
+07342176	Dmitriy Ryaboy	2013-04-04	add license headers
+9c62f41d	julien	2013-04-04	improve dictionary
+dc585ac1	Dmitriy Ryaboy	2013-04-04	Merge branch 'master' of github.com:Parquet/parquet-mr into scrooge_scalding
+6864d2e3	julien	2013-04-04	Merge branch 'master' into dictionary_encoding
+e9aa5d55	Julien Le Dem	2013-04-04	Merge pull request #22 from Parquet/integrate_format_changes
+5d160420	dvryaboy	2013-04-04	Merge pull request #21 from Parquet/shade_jackson
+8fc53c49	julien	2013-04-04	improve logging
+7025ede2	julien	2013-04-03	Merge branch 'integrate_format_changes' into dictionary_encoding
+a4f133aa	julien	2013-04-03	cleaning methods
+8f9f0c77	julien	2013-04-03	integrate thrift change in format
+efb93bf0	Julien Le Dem	2013-04-03	Merge pull request #35 from Parquet/shading_jar
+d006b51f	Dmitriy Ryaboy	2013-04-03	Merge branch 'shade_jackson' of github.com:Parquet/parquet-mr into scrooge_scalding
+dd8077e5	julien	2013-04-03	adding utility classe to completely hide Thrift
+d7321831	julien	2013-04-03	apply jackson shading to all modules
+3d636267	Dmitriy Ryaboy	2013-04-03	Merge branch 'shade_jackson' of github.com:Parquet/parquet-mr into scrooge_scalding
+dd057cf9	Dmitriy Ryaboy	2013-04-03	merge shade_jackson, fix compilation errors
+9025c87e	julien	2013-04-03	add indirect jackson jar dep
+90b5eae8	Dmitriy Ryaboy	2013-04-03	add scrooge and cascading support
+b41e6e2b	julien	2013-04-03	relocating jackson inside the parquet-thrift jar
+4a69511f	julien	2013-04-03	dictionary encoding
+827a5bc4	julien	2013-04-03	fix dictionary encoding
+e18d38bc	julien	2013-04-02	dictionary encoding
+60a29255	Julien Le Dem	2013-03-29	Merge pull request #20 from Parquet/perf_improvement
+5c60ed84	julien	2013-03-28	remove one array copy
+8246e0bb	julien	2013-03-28	fix perf problem with new String(bytes, offset, length, encoding)
+1b2694e4	julien	2013-03-27	fix offset
+cf5ba492	julien	2013-03-27	fix perf test
+56faa1be	julien	2013-03-27	first stab at dict encoding
+f5b2cb8e	julien	2013-03-27	add better Bytes plain decoder
+c625aa6a	Julien Le Dem	2013-03-27	Merge pull request #19 from Parquet/improve_thrift_perf
+fce6998e	julien	2013-03-21	avoid string decoding recoding
+cc5cd632	Julien Le Dem	2013-03-21	Update README.md
+a4e5f028	Julien Le Dem	2013-03-21	Update README.md
+f9c25b69	Julien Le Dem	2013-03-21	Merge pull request #17 from Parquet/thrift_to_pig_compat2
+696bce44	julien	2013-03-19	use constant for settings
+5dfa1b22	julien	2013-03-19	deal with elephantbird handling of numbers
+cf6dbc38	Julien Le Dem	2013-03-19	Merge pull request #16 from Parquet/update_encodings
+071b8f46	julien	2013-03-19	change ReadSupport api to fix projection support
+e0879089	julien	2013-03-18	integrate elaphantbird 3.0.8
+d81380a3	julien	2013-03-18	add test to ensure enums are equivalent
+4828f1dc	julien	2013-03-18	fix metadata conversion
+df3e94ad	julien	2013-03-15	change default level encoding to bit packed; instanciate reader from page header encoding
+e93e35cf	julien	2013-03-15	fix metadata file in mr mode
+82d5d85e	Julien Le Dem	2013-03-14	Merge pull request #13 from Parquet/thrift_to_pig_compat
+ef0069ee	julien	2013-03-14	incorporate feddback; more tests
+511b1f59	julien	2013-03-14	embed thrift to avoid dependency
+c44ff2de	julien	2013-03-14	cleanup
+65364a46	julien	2013-03-14	fix map of primitive; add thrift to pig compat
+5fe97c8b	julien	2013-03-12	add pig schema in thrift metadata
+de8bc0d1	julien	2013-03-12	fix java 6 compiler compatibility
+241634e6	julien	2013-03-12	better exception when reading unknown field
+bf1b4944	Julien Le Dem	2013-03-12	Merge pull request #10 from Parquet/allow_deploy
+c502c217	julien	2013-03-12	add deploy configuration
+68f4a5d3	Julien Le Dem	2013-03-12	Update README.md
+7a9a7500	Julien Le Dem	2013-03-12	Update NOTICE
+408785a1	julien	2013-03-12	adding back the license header used by the maven plugin
+7d901763	julien	2013-03-12	Merge branch 'master' of github.com:Parquet/parquet-mr
+7bd223ab	julien	2013-03-12	improved OutputFormat javadoc and defaults
+a5249795	Chris Aniszczyk	2013-03-11	Remove the old license.txt
+7a6c7846	Chris Aniszczyk	2013-03-11	Update README.md
+d07c10ec	Chris Aniszczyk	2013-03-11	Fix LICENSE
+4b45e247	julien	2013-03-11	Merge branch 'master' of github.com:Parquet/parquet-mr
+bdec17ea	julien	2013-03-11	integrate Todd's feedback
+bb7d9f66	Julien Le Dem	2013-03-11	Update README.md
+11c34bf2	julien	2013-03-11	Merge branch 'master' of github.com:Parquet/parquet-mr
+dabb797e	Julien Le Dem	2013-03-11	Merge pull request #8 from Parquet/metadata_file
+aa6dca86	julien	2013-03-11	integrate thrift format changes
+37b70415	julien	2013-03-11	better tests for new summary file
+01b195b4	Nong Li	2013-03-04	Update readme
+06627f04	Nong Li	2013-02-20	Thrift file updates.
+c619db10	julien	2013-02-08	Add bool description and miscellaneous cleanup.
+f848e45f	Chris Aniszczyk	2013-01-16	Fix description in POM and more README cleanup
+cb175881	julien	2013-01-16	comments on the thrift file; diagram for the metadata
+a4c107e7	Nong Li	2013-01-12	Updated file description.
+dfd872b6	julien	2013-03-11	javadoc
+f7ba78a7	Julien Le Dem	2013-03-11	Update README.md
+37ad86c2	julien	2013-03-11	removed old doc
+251855be	julien	2013-03-11	better metadata file tests
+12b99b1a	julien	2013-03-11	metadata file in parquet format
+5a52fe12	julien	2013-03-08	fix Filesystem access issues mentioned by Dmitriy
+6e33c3d3	julien	2013-03-08	fix Filesystem access issues mentioned by Dmitriy
+ef6b02c3	julien	2013-03-08	fixed merge issue
+63949a32	Julien Le Dem	2013-03-08	Merge pull request #7 from Parquet/renaming_classes
+6dff626e	dvryaboy	2013-03-08	Merge pull request #6 from Parquet/move_to_twitter_group
+e0dc2f32	julien	2013-03-08	reorganizing packages and deleting old classes
+6b9366b1	julien	2013-03-08	renaming classes and packages based on feedback
+45138bb6	julien	2013-03-08	integrating feedback from Todd; renaming PrimitiveColumnW/R to ValuesW/R
+0703f014	Julien Le Dem	2013-03-08	Merge pull request #4 from Parquet/thrift_fixes
+ed7a0673	julien	2013-03-08	move to groupId com.twitter so that we can publish to maven central
+70abea69	Julien Le Dem	2013-03-08	Merge pull request #5 from mickaellcr/fix_pom
+e1b2f295	Mickael Lacour	2013-03-08	Fix pom.xml
+668d74df	julien	2013-03-07	exception cleanup; creation of parquet.hadoop.api package; thrift from bytes support; bug fixes
+5daf0689	julien	2013-03-06	more thrift bug fixes
+b9463550	julien	2013-03-06	thrift enum and list fixes; ParquetReadToWrite
+bf0bd574	Julien Le Dem	2013-03-06	Update README.md
+ca1f11a0	julien	2013-03-05	Merge branch 'master' of github.com:Parquet/parquet-mr
+25608ae6	julien	2013-03-05	cleanup
+d4a7da55	Julien Le Dem	2013-03-05	Merge pull request #3 from toddlipcon/master
+7ea3721c	Todd Lipcon	2013-03-05	Merge remote-tracking branch 'origin/master'
+962dd9e8	Todd Lipcon	2013-03-05	More cleanup/renames
+76fd1d80	julien	2013-03-05	cleanup
+591c2b9d	julien	2013-03-05	move compatibility test to the appropriate repo
+003299e4	Todd Lipcon	2013-03-05	Style cleanup and other miscellanea (javadoc, etc)
+c3c22a05	Julien Le Dem	2013-03-05	Merge pull request #1 from Parquet/parquet_thrift
+0973e7dd	julien	2013-03-05	removed outdated comment
+54dd652e	julien	2013-03-05	integrate the thrift changes
+ee8ec11a	julien	2013-03-05	javadoc; turn off the compatibility test for now
+07ea133d	julien	2013-03-05	license headers
+932695cb	julien	2013-03-05	update dependency on elephant-bird
+d35c264e	julien	2013-03-05	turn byte[] into Binary object in the api
+e8f8429e	julien	2013-03-04	populate encodings in column metadata
+ecf19dc3	julien	2013-03-04	add encoding information for the column reader; allow column writer to specify the encoding
+9c79b087	julien	2013-03-04	thrift input/output format support
+25b75595	julien	2013-03-04	thrift read protocol; fix repetition level size in little endian
+af20471a	julien	2013-03-01	javadoc; bug fixes; thrift support; refactoring
+6bf2661e	julien	2013-02-28	Merge branch 'master' of github.com:julienledem/redelm into parquet_thrift
+c5ce15e0	julien	2013-02-28	license header
+92e93b16	julien	2013-02-28	license header
+77097b63	julien	2013-02-28	ThriftParquetOutputFormat
+f2746e71	julien	2013-02-28	adding example output/input formats
+42c418c5	julien	2013-02-26	javadoc
+ad9dcbe0	julien	2013-02-26	javadoc; original type support
+bbf7932d	julien	2013-02-22	move to official pig release
+b2efb50d	julien	2013-02-22	refactor the read/write support
+9058bae1	julien	2013-02-21	improve use of summary file
+78ff38c7	julien	2013-02-21	improve logs
+f6adf0b5	julien	2013-02-21	integrate new converter; cleanup
+c5a894a1	julien	2013-02-20	split hadoop; add thrift
+cfdcdffe	julien	2013-02-20	turn off customer test
+51417227	julien	2013-02-20	integrate thrift changes
+85d8f09f	julien	2013-02-20	removed brennus dependency (for now)
+4a0bb741	julien	2013-02-20	cleanup exceptions
+51649183	Julien Le Dem	2013-02-20	Merge pull request #26 from julienledem/rename_to_parquet
+bd1fde90	julien	2013-02-20	cleanup
+ac3a8061	julien	2013-02-20	renamed to parquet
+24c85c77	julien	2013-02-20	renaming maven artifacts
+73f69973	julien	2013-02-20	rename package to parquet
+33aad25b	julien	2013-02-20	rename package to parquet
+adcab26d	Julien Le Dem	2013-02-20	Merge pull request #24 from julienledem/FSA_codegen
+951cd2f9	julien	2013-02-20	Merge branch 'master' into FSA_codegen
+08df187f	Julien Le Dem	2013-02-20	Merge pull request #25 from julienledem/integrate_format_changes
+e6ca25c0	julien	2013-02-20	adding license header
+90f027ef	julien	2013-02-20	change magic number to PAR1
+b598378e	julien	2013-02-20	removed reference to red file
+1823220d	julien	2013-02-20	rename the metadata package
+15f6bebc	julien	2013-02-19	expose schema to pig
+a62af632	julien	2013-02-19	fix bit packing
+b38de8ab	julien	2013-02-19	add allocated usage monitoring
+372b9f3e	julien	2013-02-14	fix projection using pig schema
+113f8b85	julien	2013-02-14	reworked converter framework
+4b060586	julien	2013-02-14	move compression to decode time and fix compressor init overhead
+2ea29543	julien	2013-02-13	split stores
+d8a18ce3	julien	2013-02-12	fix PrintFooter; fix string encoding; rewrite split generation; fix block reading logic
+04b60eeb	julien	2013-02-12	rework compression
+18d5082b	julien	2013-02-11	fix decompression
+9c7e5f57	julien	2013-02-11	add compression back; make page size configurable; rename children_count to num_children
+867e24b8	julien	2013-02-08	fix repetition for root
+07d7aa0f	julien	2013-02-08	change children_indices for children_count in schema representation
+1bd47c34	julien	2013-02-08	generate TPCH customer
+781f40f9	julien	2013-02-08	PLAIN encoding comformance
+f3adb6e3	julien	2013-02-08	renamed to Plain to match the Encoding name
+6cdf6aaa	julien	2013-02-08	generator for the int_test_file
+be008863	julien	2013-02-08	better support for plain encoding
+2e09b42c	julien	2013-02-06	cleanup string type
+3043e759	julien	2013-02-06	optimize buffer copy; revert parent
+cd9e8fe1	julien	2013-02-05	integrate the schema change from children to parent
+d63ded4d	julien	2013-02-05	remove string type; make schema in footer use object model; make ints little endian
+8ec8a9da	julien	2013-02-04	fix storer problem with page storage
+f25dfdcc	julien	2013-02-04	fix row count per rowgroup persistence
+17271e72	julien	2013-02-01	initial integration with the new metadata
+b89750bf	julien	2013-01-17	some cleanup based on Jco's comments
+2883f893	julien	2013-01-14	merge both switch statements to optimize
+2a3d6af0	julien	2013-01-10	make BaseRecordReader its own class
+da4b0343	julien	2013-01-10	add license headers
+d5ea0450	julien	2013-01-09	cleanup unused import
+fd93ec2d	julien	2013-01-09	Merge branch 'master' into FSA_codegen
+cd7117b6	julien	2013-01-09	some modification to understand better impact of gc
+78cff39a	Julien Le Dem	2013-01-09	Merge pull request #20 from julienledem/improve_record_consumer_interface
+d18ec375	Jonathan Coveney	2013-01-09	Merge pull request #23 from jcoveney/fix_simple_maps
+d2025609	Jonathan Coveney	2013-01-09	Incorporate Julien's comments
+ba0f9ade	Jonathan Coveney	2013-01-09	Update gitignore
+48d9105d	Jonathan Coveney	2013-01-09	Revert PigSchemaConverter to static
+b896112d	julien	2013-01-09	trigger full gc before starting
+e5dec2bf	julien	2013-01-08	optimizations;fix some bugs
+770cf4d9	julien	2013-01-08	more optimizations
+7aaf6f95	julien	2013-01-07	removed unecessary readOneRecord() method and commented out old code
+db75e0be	julien	2013-01-07	add missing base implementations
+676c471d	Jonathan Coveney	2013-01-07	Make maps work with sigle column case
+19106d07	Jonathan Coveney	2013-01-07	Fix merge conflict
+d71d754e	Jonathan Coveney	2013-01-07	Make PigSchemaConverter Static
+758bb8bb	Jonathan Coveney	2013-01-07	Merge pull request #21 from julienledem/fix_schema_passing_when_multiple_stores
+faf756e8	julien	2013-01-07	fixed visibility
+448e8c8d	julien	2013-01-07	Merge branch 'master' into FSA_codegen
+d68307e8	julien	2013-01-06	Merge branch 'master' into fix_schema_passing_when_multiple_stores
+fa4c4ba7	julien	2013-01-06	removed unnecessary whitespace
+1954277c	julien	2013-01-06	removed cheesy comment and hardcoded max depth based on jco's comment
+0c3a1d85	julien	2013-01-06	Merge branch 'master' of github.com:julienledem/redelm into improve_record_consumer_interface
+f3f02f5b	Julien Le Dem	2013-01-05	Merge pull request #18 from julienledem/better_InputFormat_logs
+eba3e211	julien	2013-01-05	Merge branch 'master' of github.com:julienledem/redelm into better_InputFormat_logs
+180222e8	julien	2013-01-05	rename RecordConsumerWrapper
+c4c6991f	julien	2013-01-05	rewrite of the code generation bit (work in progress)
+eaeff045	julien	2013-01-02	refactor reader
+11b6a8f0	julien	2012-12-22	Merge branch 'improve_record_consumer_interface' into FSA_codegen
+5334a2d7	julien	2012-12-19	add missing license headers
+e7354598	julien	2012-12-19	remove unecessary class parameter
+7dd9300a	julien	2012-12-19	remove dependency of column io on column store
+8f2c7e59	julien	2012-12-19	slight improvement to the record reader
+27c93d06	julien	2012-12-18	more use of the state class
+4e5da209	julien	2012-12-17	introduce state object
+eaf31713	julien	2012-12-17	Merge branch 'master' into improve_record_consumer_interface
+b6f0ca6b	julien	2012-12-17	remove unnecessary constructor param
+48f0e8f8	julien	2012-12-14	refactor record consumer materializer
+072db3ed	julien	2012-12-14	change record reader init lifecycle
+c4a41dd9	julien	2012-12-14	more fsa codegen
+7133e58f	Jonathan Coveney	2012-12-03	Merge pull request #19 from julienledem/remove_currentNodePath_from_reader
+104b2197	julien	2012-12-03	remove currentNodePath from reader and improve perf a lot
+0f88e292	julien	2012-12-03	simplified record reader; a little more of reader compiler
+73d4fde0	julien	2012-12-02	first stab at record reader compiler
+e186b7dc	julien	2012-11-30	fix UDFContext collision when multiple stores
+b23e1f64	julien	2012-11-29	add missing license headers
+615c23c3	julien	2012-11-29	make splits contain all data blocks starting in the same HDFS block
+817b54b4	Jonathan Coveney	2012-11-28	Merge pull request #17 from julienledem/summary_file
+9223ad51	julien	2012-11-28	Merge branch 'master' into summary_file
+ee02094f	julien	2012-11-28	better logging and perf tests
+9385a2fc	julien	2012-11-26	Merge branch 'master' of github.com:julienledem/redelm
+ea3d65e9	julien	2012-11-26	improve file format diagram
+0549961a	Jonathan Coveney	2012-11-21	Merge pull request #16 from julienledem/fix_Codec_Logging
+4c0a1f76	Jonathan Coveney	2012-11-21	Merge pull request #14 from julienledem/preprocess_pig_schema
+c73105c4	julien	2012-11-21	fix exceptions in Converters
+48ef66b4	julien	2012-11-21	fix exception handling
+6f4650ad	julien	2012-11-21	Merge branch 'master' into preprocess_pig_schema
+bce0f0d0	julien	2012-11-21	fix Codec Logging
+daea1fde	julien	2012-11-21	updated format diagram
+60ca3a31	julien	2012-11-21	add documentation images
+bdc5a6e1	julien	2012-11-21	fix compression javadoc
+0c683e1d	julien	2012-11-21	fix build warning
+40b0cb33	Jonathan Coveney	2012-11-20	Merge pull request #13 from julienledem/fix_empty_bag_equals_null_bag
+ad3b4596	julien	2012-11-20	Merge branch 'master' into preprocess_pig_schema
+4a372bce	julien	2012-11-20	Merge branch 'master' into summary_file
+af992f36	julien	2012-11-20	fixed doc based on jco's comments
+88ed7fe5	julien	2012-11-20	Support for short int columns by JCoveney  https://github.com/jcoveney/redelm rep_def_column add pig snapshot
+ffe80dde	julien	2012-11-15	add summary file
+27c02555	julien	2012-11-20	make Map work
+0094892b	julien	2012-11-19	use non spillable databag for records
+87744511	julien	2012-11-19	first stab at pregenerated Pig consumer
+fbf8333a	julien	2012-11-18	cleanup unnecessary variables
+06ab2ed6	julien	2012-11-18	implement empty bag != null bag
+1243fcc5	julien	2012-11-15	add status header
+5271080c	Julien Le Dem	2012-11-15	Merge pull request #11 from julienledem/move_hadoop_stuff_into_hadoop_package
+b507f7dd	julien	2012-11-15	make block size configurable
+fe6066bd	julien	2012-11-15	get the compression codec from Configuration properties
+4fb9a480	julien	2012-11-14	moved hadoop implementation into its own hadoop package without dependencies on pig packages
+130e213b	julien	2012-11-13	better hadoop layer decoupling
+f070939c	Julien Le Dem	2012-11-13	Merge pull request #10 from julienledem/decoupling_InputOutputFormat_from_Pig
+f9be51e8	Julien Le Dem	2012-11-13	Merge pull request #9 from julienledem/javadoc
+76ded4f9	julien	2012-11-13	store count of metadatablocks in footer
+e2e3eeb5	julien	2012-11-12	first stab a decoupling the Input/OutputFormat from Pig
+df97795a	julien	2012-11-09	javadoc
+3b8ad08b	julien	2012-11-08	cleanup logs
+fd5bd4a8	julien	2012-11-07	record uncompressed size in footer; add detailed report of size and compression per column
+33525b8c	julien	2012-11-06	add JCO
+94c10a25	julien	2012-11-06	Merge branch 'hack_week_jco' of https://github.com/jcoveney/redelm
+32bb5251	Jonathan Coveney	2012-11-06	work
+3b447a60	Julien Le Dem	2012-11-06	Merge pull request #8 from julienledem/add_column_compression
+c2ed3ee0	Jonathan Coveney	2012-11-05	work
+1d40ac2d	julien	2012-11-02	add javadoc
+94781b0e	julien	2012-11-02	VarInt for String length
+1a0284da	julien	2012-11-01	fix empty string bug
+4bfca1f1	julien	2012-11-01	make Codec configurable
+46a3458a	julien	2012-10-31	first pass at adding compression
+ba06716e	Jonathan Coveney	2012-10-31	remove a use of StringBuffer
+063486db	Jonathan Coveney	2012-10-31	work
+4cd5bc1d	Jonathan Coveney	2012-10-31	work
+525d3aec	Jonathan Coveney	2012-10-31	work
+9c34678e	Jonathan Coveney	2012-10-30	work
+9f9b23d3	Jonathan Coveney	2012-10-30	work
+da419bfe	julien	2012-10-29	fix bug regarding null values in message
+d0806980	julien	2012-10-25	adding schema validation
+e12b27f0	julien	2012-10-24	fix support for int/long and map
+194cfdb4	Jonathan Coveney	2012-10-24	work
+30e38494	Jonathan Coveney	2012-10-23	work
+f84fa278	Jonathan Coveney	2012-10-23	work
+38434c66	Jonathan Coveney	2012-10-18	work
+02b40db0	Jonathan Coveney	2012-10-18	work
+71b7b114	Jonathan Coveney	2012-10-18	work
+9da016d3	Jonathan Coveney	2012-10-18	merged
+1e7152b6	Jonathan Coveney	2012-10-18	work
+11b8190d	Julien Le Dem	2012-10-17	Merge pull request #1 from julienledem/hack_week
+527beef0	julien	2012-10-17	adding license headers
+246efae8	julien	2012-10-17	refactor of the columns
+00257682	julien	2012-10-11	fixed tests
+591da70b	julien	2012-10-11	adding support for Float and Double
+40d512bf	Jonathan Coveney	2012-10-10	work
+bdd36357	Jonathan Coveney	2012-10-08	Add some comments and tests
+575c221d	julien	2012-10-04	PrintFooter tool
+2302fe46	julien	2012-10-04	first version of the Loader/Storer
+ab7df25a	julien	2012-09-28	added build info
+cf5ba988	julien	2012-09-28	fix source encoding
+e6ecdc6c	julien	2012-09-28	fixing source version
+7b988569	julien	2012-09-27	adding travis ci conf
+0b739624	julien	2012-09-27	Merge branch 'master' of github.com:julienledem/redelm
+da7ec489	julien	2012-09-26	adding license header
+d1ceb260	Julien Le Dem	2012-09-15	Update README.md
+f2ea25f2	julien	2012-09-15	turning off logs
+5e955610	julien	2012-09-15	temporarily removing thrift stuff
+82e0324e	julien	2012-09-15	pig Tuple consumer and writer
+f689f90b	julien	2012-09-14	fix compilation issue
+c4109e21	julien	2012-09-14	fix compilation and dependency issue
+968fd551	julien	2012-09-13	remove dependency on group from the io implementation
+34124edc	julien	2012-09-11	remove depedency on Group from RecordReader
+9b68b394	julien	2012-09-11	make field started and ended only once when value is repeated, refactor out SimpleGroupRecordConsumer
+a1a04d51	julien	2012-09-10	move closing records at the begining of the loop
+741c6fd7	julien	2012-09-08	adding push parser test
+5fb63e9a	julien	2012-09-08	refactoring tuples to use indices instead of field names
+7ed95287	julien	2012-09-05	Merge branch 'master' of github.com:julienledem/redelm
+dbbf9443	julien	2012-09-05	updated name
+24028799	Julien Le Dem	2012-08-31	Update README.md
+f3cdad30	julien	2012-08-31	README.md
+a8c10efc	julien	2012-08-31	initial commit
+576c7097	Julien Le Dem	2012-08-31	Initial commit
