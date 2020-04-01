@@ -18,7 +18,6 @@ import utils.ListComparator;
 import utils.Strings;
 
 public class MainActivity {
-
    public static Date getLastDate(Date d1,Date d2) {
 	   //Comparing dates
 	   if(d1.compareTo(d2) > 0) {
