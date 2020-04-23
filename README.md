@@ -28,4 +28,4 @@ Per avviare la prima Delivery bisogna avviare la classe main inerente alla prima
 
 ## Authors
 
-* **Valentino Perrone** - *Initial work* - [Repositories](https://github.com/valentino7)
+* **Valentino Perrone** - *Progetto d'esame* - [Repositories](https://github.com/valentino7)
