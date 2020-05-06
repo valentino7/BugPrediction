@@ -9,20 +9,19 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="Web App Libraries.libraryclasspath"/>
-    <path id="Plug-in Dependencies.libraryclasspath"/>
     <path id="ProjectISW2.classpath">
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="Plug-in Dependencies.libraryclasspath"/>
         <pathelement location="bin"/>
         <pathelement location="lib/jar_files/json-20190722.jar"/>
-        <pathelement location="../../.p2/pool/plugins/oneclick-logger-plugin_1.0.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
+        <pathelement location="lib/jar_files/org.eclipse.jgit-5.7.0.202003110725-r-javadoc.jar"/>
+        <pathelement location="lib/jar_files/commons-io-0.1.jar"/>
+        <pathelement location="lib/jar_files/commons-io-2.4.jar"/>
+        <pathelement location="lib/jar_files/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -54,13 +53,8 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="MainActivity (1)">
-        <java classname="MainActivity" failonerror="true" fork="yes">
-            <classpath refid="ProjectISW2.classpath"/>
-        </java>
-    </target>
-    <target name="MyLog4J">
-        <java classname="logger.MyLog4J" failonerror="true" fork="yes">
+    <target name="MainSecondDelivery">
+        <java classname="secondelivery.main.MainSecondDelivery" failonerror="true" fork="yes">
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>

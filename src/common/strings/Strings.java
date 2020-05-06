@@ -1,0 +1,48 @@
+package common.strings;
+
+public class Strings {
+	
+	private Strings() {}
+	
+	public static final String PROJ_NAME ="PARQUET";
+	
+	
+	public static final String TOKEN = "76487d136ce4dd4f8def9fe63f0ef43000ca21d5";
+	public static final String SHA = "sha=";
+	public static final String PER_PAGE = "100";
+	public static final String URI_PER_PAGE = "&per_page=100";
+	public static final String URI_BRANCHES = "/branches";
+	public static final String URI_COMMIT = "/commits";
+	public static final String URL_SOURCE_GITHUB = "https://api.github.com/repos/apache/parquet-mr";
+	public static final String URL_SINGLE_COMMIT = "https://api.github.com/repos/apache/parquet-mr/git/commits";
+
+	
+	public static final String LOG_FILENAME = "data\\commitsParquet.txt";
+	
+	public static final String KEY = "PARQUET-";
+	
+	public static final String REST = "rest";
+	public static final String FILE = "file";
+
+	//REGEX
+	public static final String REGEX_TREE_JAVA = "\\b.java$";
+	
+	//JIRA
+	public static final String URL_SOURCE_RELEASE = "https://issues.apache.org/jira/rest/api/2/project/";
+	public static final String URL_SOURCE_BUG = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22";
+	public static final String URL_JQL = " %22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR%22status%22=%22resolved%22)AND%22resolution%22=%22fixed%22&fields=key,resolutiondate,versions,created&startAt=";
+	public static final String URL_JQL_ONLY_KEY = "%22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR%22status%22=%22resolved%22)&fields=key";
+
+	//JIRA FIELD
+	public static final String FIELD_NAME = "name";
+	public static final String FIELD_RELEASE_DATE = "releaseDate";
+	public static final String FIELD_ID = "id";
+	public static final String FIELD_VERSIONS = "versions";
+	public static final String FIELD_ISSUES = "issues";
+	public static final String FIELD_TOTAL = "total";
+	public static final String FIELD_KEY = "key";
+	public static final String FIELD_CREATED = "created";
+	public static final String FIELD_FIELDS = "fields";
+	public static final String FIELD_VERSIONS = "versions";
+
+}
