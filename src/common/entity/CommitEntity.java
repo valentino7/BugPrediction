@@ -5,12 +5,25 @@ import java.time.LocalDateTime;
 public class CommitEntity {
 	
 	private LocalDateTime date;
+	private String message;
 	private String sha;
 
-	public CommitEntity() {}
+	public CommitEntity(String sha, String message, LocalDateTime date) {
+		this.sha = sha;
+		this.message = message;
+		this.date = date;
+	}
 	
 	
 	
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getSha() {
 		return this.sha;
 	}
@@ -24,7 +37,7 @@ public class CommitEntity {
 	}
 
 	public void setDate(LocalDateTime date) {
-		this.date = this.date;
+		this.date = date;
 	}
 	
 	

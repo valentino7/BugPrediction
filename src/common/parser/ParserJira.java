@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import common.entity.Bug;
@@ -121,6 +120,8 @@ public class ParserJira {
 				fillBugList(bugsList,jsonBug);
 			}      
 		} while (i < total);
+		// order bug by date
+		Collections.sort(bugsList, (bug1,bug2)-> bug1.getOpenDate().compareTo(bug2.getOpenDate()));
 		return bugsList;
 	}
 
@@ -136,11 +137,17 @@ public class ParserJira {
 		JSONArray versions = (JSONArray) jsonBug.get(Strings.FIELD_VERSIONS);
 		List<Release> affectedReleases = new ArrayList<>();
 		for (int i = 0; i!= versions.length(); i++) {
-			String id = versions.getJSONObject(i).get(Strings.FIELD_ID).toString();
-			String name = versions.getJSONObject(i).get(Strings.FIELD_NAME).toString();
-			String releaseDate = versions.getJSONObject(i).get(Strings.FIELD_RELEASE_DATE).toString();
-			LocalDateTime date = CreatorDate.defaultParseWithoutHour(releaseDate);
-			affectedReleases.add(new Release(id,name,date));
+			String name = "";
+			String id = "";
+			if(versions.getJSONObject(i).has(Strings.FIELD_RELEASE_DATE)) {
+				if (versions.getJSONObject(i).has(Strings.FIELD_ID))
+					id = versions.getJSONObject(i).get(Strings.FIELD_ID).toString();
+				if (versions.getJSONObject(i).has(Strings.FIELD_NAME))
+					name = versions.getJSONObject(i).get(Strings.FIELD_NAME).toString();
+				String releaseDate = versions.getJSONObject(i).get(Strings.FIELD_RELEASE_DATE).toString();
+				LocalDateTime date = CreatorDate.defaultParseWithoutHour(releaseDate);
+				affectedReleases.add(new Release(id,name,date));
+			}
 		}
 
 		Bug bug = new Bug(key,openDate,affectedReleases);

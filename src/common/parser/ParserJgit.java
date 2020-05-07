@@ -2,13 +2,13 @@ package common.parser;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.LogCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffFormatter;
@@ -25,10 +25,13 @@ import org.eclipse.jgit.util.io.DisabledOutputStream;
 import common.entity.Bug;
 import common.entity.CollectBugs;
 import common.entity.CollectCommits;
+import common.entity.CommitEntity;
 import common.entity.JavaFile;
 import common.entity.Metrics;
 import common.io.ManageDirectory;
 import common.strings.Strings;
+import common.utils.CreatorDate;
+import common.utils.XSorter;
 
 public class ParserJgit {
 	private ParserJgit() {}
@@ -70,26 +73,68 @@ public class ParserJgit {
 			} catch (GitAPIException | IOException e) {
 				Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 			}
+			boolean isBugInCommit;
 			for (RevCommit commit : commits) {
+				isBugInCommit = false;
+				//creo classe commit
+				String message = commit.getFullMessage();
+				String sha = commit.getName();
+				LocalDateTime date = CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen());
+				System.out.println(date);
+				CommitEntity commitEntity = new CommitEntity(sha, message, date);
 				for (Bug bug : bugs) {
-					System.out.println(commit.getName());
-					if(Pattern.compile(bug.getId()+"\\D|"+bug.getId()+"\\b").matcher(commit.getFullMessage()).find()) {
-						//aggiungi commit, data committer, sha, autore 
-						//commit con almeno un id uguale a quello del ticket
-
-					}else if(Pattern.compile("BOOKKEEPER-9\\D|BOOKKEEPER-9\\b").matcher(commit.getFullMessage()).find()) {
-						//aggiungi a commit other id
-					}else {
-						//aggiungi commit a without id
-					}
+					if(Pattern.compile(bug.getId()+"\\D"+"|"+bug.getId()+"\\b").matcher(message).find()) {
+						isBugInCommit = true;
+						addBugIfNotExists(collectBugs.getBugsWithCommits(),bug);
+						addCommitIfNotExists(collectCommits.getMyTicketCommits(),commitEntity);
+						bug.getCommits().add(commitEntity);
+					}	
 				}
+				//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
+				if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
+					collectCommits.getOtherIdCommits().add(commitEntity);
+				else if (!isBugInCommit)
+					collectCommits.getNoTicketCommits().add(commitEntity);
+
+				collectCommits.getTotalCommits().add(commitEntity);
 
 			}
 		}
+		//serve riscorrere i bug infine per riempire i bug senza commit 
+		fillBugWithoutCommit(bugs,collectBugs);
+
+		//ordino tutte le liste
+		XSorter.orderCommitsAndBugsLists(collectCommits,collectBugs);
+		return collectCommits;
 
 	}
 
 
+	private static void addCommitIfNotExists(List<CommitEntity> myTicketCommits, CommitEntity commit) {
+		if(myTicketCommits.contains(commit))
+			return;
+		myTicketCommits.add(commit);
+	}
+
+
+	private static void addBugIfNotExists(List<Bug> bugs, Bug addBug) {
+		if(bugs.contains(addBug))
+			return;
+		bugs.add(addBug);
+	}
+	
+	private static void fillBugWithoutCommit(List<Bug> bugs, CollectBugs collectBugs) {
+		for (Bug bug : bugs) {
+			if(!collectBugs.getBugsWithCommits().contains(bug))
+				collectBugs.getBugsWithoutCommits().add(bug);			
+		}
+	}
+	
+	
+	
+	
+	
+	
 
 	public static List<JavaFile> getChangesListsByCommit(List<Git> repos, String sha){
 		List<JavaFile> lClasses = new ArrayList<>();

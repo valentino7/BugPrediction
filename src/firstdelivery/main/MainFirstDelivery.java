@@ -9,8 +9,6 @@ public class MainFirstDelivery {
 
 	
 	public static void main(String[] args) {  
-		
-
 		ControllerFirstdelivery.startDelivery(nameRepos);
 	}
 

@@ -8,7 +8,7 @@ import java.util.List;
 import common.entity.Bug;
 import common.entity.CollectCommits;
 import common.entity.Project;
-import common.parser.ParserGithubRest;
+import common.parser.ParserGithub;
 import common.parser.ParserJira;
 import common.utils.CreatorDate;
 import firstdelivery.entity.OutputFields;
@@ -30,7 +30,7 @@ public class ControllerFirstdelivery {
 
 		//all branch
 		//		CollectCommits collectCommits = ParserGithub.getCommitsAllBranches(project.getBugs(),bugs,project.getRepo());
-		CollectCommits collectCommits = ParserGithubRest.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getRepo());
+		CollectCommits collectCommits = ParserGithub.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getUrlsRepo());
 		project.setCollectCommits(collectCommits);
 		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(project.getCollectBugs().getBugsWithCommits(),bugs);
 		project.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
@@ -70,7 +70,7 @@ public class ControllerFirstdelivery {
 	private static void searchCommitInDifferentBranch(Project projectDefaultBranch, String[] repos) throws IOException {
 		Project projectAllBranches = new Project(StringsFirstDelivery.PROJ_NAME,repos);
 		List<Bug> b = ParserJira.getProjectBug(projectAllBranches.getName());
-		CollectCommits c = ParserGithubRest.getCommitsByAllBranches(projectAllBranches.getCollectBugs(),b,projectAllBranches.getRepo());
+		CollectCommits c = ParserGithub.getCommitsByAllBranches(projectAllBranches.getCollectBugs(),b,projectAllBranches.getUrlsRepo());
 		projectAllBranches.setCollectCommits(c);
 		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(projectAllBranches.getCollectBugs().getBugsWithCommits(),b);
 		projectAllBranches.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);

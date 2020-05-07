@@ -6,26 +6,34 @@ public class Strings {
 	
 	public static final String PROJ_NAME ="PARQUET";
 	
-	
+	//GITHUB	
 	public static final String TOKEN = "76487d136ce4dd4f8def9fe63f0ef43000ca21d5";
+	public static final String DEFAULT = "default";
 	public static final String SHA = "sha=";
 	public static final String PER_PAGE = "100";
 	public static final String URI_PER_PAGE = "&per_page=100";
 	public static final String URI_BRANCHES = "/branches";
 	public static final String URI_COMMIT = "/commits";
-	public static final String URL_SOURCE_GITHUB = "https://api.github.com/repos/apache/parquet-mr";
+	public static final String URL_SOURCE_GITHUB = "https://api.github.com/repos/apache/";
 	public static final String URL_SINGLE_COMMIT = "https://api.github.com/repos/apache/parquet-mr/git/commits";
 
+	public static final String FIELD_COMMIT = "commit";
+	public static final String FIELD_COMMITTER = "committer";
+	public static final String FIELD_MESSAGE = "message";
+	public static final String FIELD_DATE = "date";
+	public static final String FIELD_SHA = "sha";
+
 	
-	public static final String LOG_FILENAME = "data\\commitsParquet.txt";
+	//public static final String LOG_FILENAME = "data\\commitsParquet.txt";
 	
-	public static final String KEY = "PARQUET-";
 	
 	public static final String REST = "rest";
 	public static final String FILE = "file";
 
 	//REGEX
 	public static final String REGEX_TREE_JAVA = "\\b.java$";
+	public static final String REGEX_OTHER_ID = "([A-Z]+[-])\\d{1,4}";
+	
 	
 	//JIRA
 	public static final String URL_SOURCE_RELEASE = "https://issues.apache.org/jira/rest/api/2/project/";
@@ -37,7 +45,6 @@ public class Strings {
 	public static final String FIELD_NAME = "name";
 	public static final String FIELD_RELEASE_DATE = "releaseDate";
 	public static final String FIELD_ID = "id";
-	public static final String FIELD_VERSIONS = "versions";
 	public static final String FIELD_ISSUES = "issues";
 	public static final String FIELD_TOTAL = "total";
 	public static final String FIELD_KEY = "key";

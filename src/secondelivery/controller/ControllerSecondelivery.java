@@ -8,6 +8,7 @@ import common.entity.Bug;
 import common.entity.CollectCommits;
 import common.entity.Project;
 import common.entity.Release;
+import common.exceptions.MyException;
 import common.parser.ParserJgit;
 import org.eclipse.jgit.api.Git;
 import common.parser.ParserJira;
@@ -33,7 +34,7 @@ public class ControllerSecondelivery {
 		List<Bug> bugs = ParserJira.getProjectBug(project.getName());
 
 		//get repositories potrei avere piu repo per un progetto
-		List<Git> repos = ParserJgit.getRepo(project.getRepo(),directories);
+		List<Git> repos = ParserJgit.getRepo(project.getUrlsRepo(),directories);
 		
 		//prendo le commit e le assegno ai bug
 		CollectCommits collectCommits = ParserJgit.getCommitsDefaultBranch(project.getCollectBugs(),bugs,repos);
