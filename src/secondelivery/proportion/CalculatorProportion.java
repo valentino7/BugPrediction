@@ -22,17 +22,12 @@ public class CalculatorProportion implements ProportionMethod {
 		if (startIndex<0 )
 			startIndex=0;
 		float[] proportions = new float[percent];
-		//P = (OV-IV) / (FV-OV) 
+		//P = (FV-IV) / (FV-OV) 
 		int j=0;
 		float sum = 0;
 		for(int i=startIndex; i!= bugAVJira.size();j++, i++) {
 			Proportion p = getFactors(releases,bugAVJira,i);
 			float d = (p.getFv() - p.getOv());
-			if (d == 0) {
-				//System.out.println("DENOMINATORE 0");
-				d=1;
-			}
-
 			proportions[j] = (p.getFv() - p.getIv() ) / d;
 			sum += proportions[j];
 		}
@@ -55,10 +50,6 @@ public class CalculatorProportion implements ProportionMethod {
 		for(int i=0; i!= bugAVJira.size(); i++) {
 			Proportion p = getFactors(releases,bugAVJira,i);
 			float d = (p.getFv() - p.getOv());
-			if (d == 0) {
-				//					System.out.println("DENOMINATORE 0");
-				d=1;
-			}
 
 			proportions[i] = (p.getOv() - p.getIv() ) / d;
 			sum += proportions[i];

@@ -23,16 +23,17 @@ public class ParserGithub {
 
 	private ParserGithub() {}
 
-
 	
 	public static CollectCommits getCommitsByAllBranches(CollectBugs collectBugs, List<Bug> bugs, String[] repos) {
 
-		List<String> branchesList = getBranches();
 		CollectCommits collectCommits = new CollectCommits();
 		Integer page = 1;
-		for (Integer j=0; j< branchesList.size();j++) {
+		for (String repo : repos) {
+			List<String> branchesList = getBranches(repo);
+			System.out.println("progetto: "+repo+" "+branchesList.size());
+			for (Integer j=0; j< branchesList.size();j++) {
 
-			for (String repo : repos) {
+			
 				JSONArray json = null;
 				try {
 					json = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlCommitsPerPage(branchesList.get(j), page, repo));
@@ -64,14 +65,14 @@ public class ParserGithub {
 	
 	
 	
-	private static List<String> getBranches() {
+	private static List<String> getBranches(String repo) {
 		Integer page = 1;
 
 		List<String> branches = new ArrayList<>();
 		//branches.add("default");
 		JSONArray json = null;
 		try {
-			json = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlBranches(page));
+			json = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlBranches(page, repo));
 		} catch (IOException e1) {
 			Logger.getLogger(ParserGithub.class.getName()).log( Level.SEVERE, e1.toString(), e1);
 			return branches;
@@ -85,7 +86,7 @@ public class ParserGithub {
 			}
 			page++;
 			try {
-				json  = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlBranches(page));
+				json  = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlBranches(page, repo));
 			} catch (IOException e) {
 				break;
 			}		

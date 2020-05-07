@@ -8,15 +8,15 @@ public class CreatorUrls {
 
 	public static String createUrlCommitsPerPage(String branch, Integer page, String repoName) {
 		if(branch.equals("default")) {
-			return Strings.URL_SOURCE_GITHUB+ repoName + Strings.URI_COMMIT+"?&page="+
+			return repoName + Strings.URI_COMMIT+"?&page="+
 					page+Strings.URI_PER_PAGE;
 		}
-		return Strings.URL_SOURCE_GITHUB+ repoName + Strings.URI_COMMIT+"?"+Strings.SHA+branch+"&page="+
+		return repoName + Strings.URI_COMMIT+"?"+Strings.SHA+branch+"&page="+
 			page+Strings.URI_PER_PAGE;
 	}
 
-	public static String createUrlBranches(Integer page) {
-		return Strings.URL_SOURCE_GITHUB+Strings.URI_BRANCHES+"?&page="+page+Strings.URI_PER_PAGE;
+	public static String createUrlBranches(Integer page, String repoName) {
+		return repoName+Strings.URI_BRANCHES+"?&page="+page+Strings.URI_PER_PAGE;
 	}
 
 	public static String createUrlReleases(String projName) {

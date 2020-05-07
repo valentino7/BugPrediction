@@ -7,7 +7,7 @@ public class Strings {
 	public static final String PROJ_NAME ="PARQUET";
 	
 	//GITHUB	
-	public static final String TOKEN = "76487d136ce4dd4f8def9fe63f0ef43000ca21d5";
+	public static final String TOKEN = "fd06c873738b8853c87785441087ef574278230f";
 	public static final String DEFAULT = "default";
 	public static final String SHA = "sha=";
 	public static final String PER_PAGE = "100";
@@ -38,7 +38,7 @@ public class Strings {
 	//JIRA
 	public static final String URL_SOURCE_RELEASE = "https://issues.apache.org/jira/rest/api/2/project/";
 	public static final String URL_SOURCE_BUG = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22";
-	public static final String URL_JQL = " %22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR%22status%22=%22resolved%22)AND%22resolution%22=%22fixed%22&fields=key,resolutiondate,versions,created&startAt=";
+	public static final String URL_JQL = "%22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR%22status%22=%22resolved%22)AND%22resolution%22=%22fixed%22&fields=key,resolutiondate,versions,created&startAt=";
 	public static final String URL_JQL_ONLY_KEY = "%22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR%22status%22=%22resolved%22)&fields=key";
 
 	//JIRA FIELD

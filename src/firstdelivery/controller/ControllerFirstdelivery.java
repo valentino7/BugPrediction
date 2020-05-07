@@ -7,6 +7,7 @@ import java.util.List;
 
 import common.entity.Bug;
 import common.entity.CollectCommits;
+import common.entity.CommitEntity;
 import common.entity.Project;
 import common.parser.ParserGithub;
 import common.parser.ParserJira;
@@ -29,8 +30,8 @@ public class ControllerFirstdelivery {
 		List<Bug> bugs = ParserJira.getProjectBug(project.getName());
 
 		//all branch
-		//		CollectCommits collectCommits = ParserGithub.getCommitsAllBranches(project.getBugs(),bugs,project.getRepo());
-		CollectCommits collectCommits = ParserGithub.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getUrlsRepo());
+		CollectCommits collectCommits = ParserGithub.getCommitsByAllBranches(project.getCollectBugs(),bugs,project.getUrlsRepo());
+//		CollectCommits collectCommits = ParserGithub.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getUrlsRepo());
 		project.setCollectCommits(collectCommits);
 		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(project.getCollectBugs().getBugsWithCommits(),bugs);
 		project.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
@@ -43,6 +44,10 @@ public class ControllerFirstdelivery {
 		System.out.println("Size bugs with commit : "+Integer.toString( project.getCollectBugs().getBugsWithCommits().size()));
 		System.out.println("Size bugs without commit: "+Integer.toString( project.getCollectBugs().getBugsWithoutCommits().size()));
 
+		
+//		for (CommitEntity commit : project.getCollectCommits().getOtherIdCommits()) {
+//			System.out.println(commit.getMessage()+"\n\n\n\n");
+//		}
 
 		//verifico quali bug non sono nel branch di default
 		//		searchCommitInDifferentBranch(project, nameRepos);

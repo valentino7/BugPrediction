@@ -3,7 +3,7 @@ package secondelivery.controller;
 import java.util.List;
 import secondelivery.calculator.CalculatorLifeCycle;
 import secondelivery.calculator.CalculatorMetrics;
-import secondelivery.utils.StringsSecondDelivery;
+import secondelivery.strings.StringsSecondDelivery;
 import common.entity.Bug;
 import common.entity.CollectCommits;
 import common.entity.Project;

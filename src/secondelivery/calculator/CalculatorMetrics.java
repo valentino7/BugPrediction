@@ -22,14 +22,14 @@ public class CalculatorMetrics {
 		//per ogni commit fino a che non è maggiore della release successiva
 		//prendi le classi nella commit e calcola metriche su size
 		HashMap<String,List<JavaFile>> hRelFile = new HashMap<>();
-		List<JavaFile> lClassesNoRelease = new ArrayList<>();
+		List<JavaFile> lClassesRelease = new ArrayList<>();
 		
 		//TODO riempire una lista per sapere quante classi vengono eliminate
 		HashMap<String,List<JavaFile>> delRenClass = new HashMap<>();
 
 		
 //		initializeListWithInitialCommits(lClassesNoRelease, commits , repos, releases);
-		calculateMetrics(lClassesNoRelease, commits , repos, releases, hRelFile);
+		calculateMetrics(lClassesRelease, commits , repos, releases, hRelFile);
 		
 		// TODO CANCELLARE 50% COPPIE
 		deleteReleasesClasses(hRelFile);
@@ -41,17 +41,17 @@ public class CalculatorMetrics {
 		
 	}
 
-	private static void initializeListWithInitialCommits(List<JavaFile> lClassesNoRelease,List<CommitEntity> commits, List<Git> repos,  List<Release> releases) {
+	private static void initializeListWithInitialCommits(List<JavaFile> lClassesRelease,List<CommitEntity> commits, List<Git> repos,  List<Release> releases) {
 		for(int currentIndex = 0; currentIndex!=commits.size();currentIndex++) {
 			//if release 0 e le commit stanno prima prendi tutte le classi e inizializza una lista di classi iniziali
 			if(commits.get(currentIndex).getDate().compareTo(releases.get(0).getDate())<=0) {
 				List<JavaFile> resultCommit = ParserJgit.getChangesListsByCommit(repos,commits.get(currentIndex).getSha());	
-				fillLclasses(resultCommit,lClassesNoRelease);
+				//fillLclasses(resultCommit,lClassesNoRelease);
 			}
 		}		
 	}
 
-	private static void calculateMetrics(List<JavaFile> lClassesNoRelease,List<CommitEntity> commits, List<Git> repos,  List<Release> releases, HashMap<String,List<JavaFile>> hRelFile)  {
+	private static void calculateMetrics(List<JavaFile> lClassesRelease,List<CommitEntity> commits, List<Git> repos,  List<Release> releases, HashMap<String,List<JavaFile>> hRelFile)  {
 		int startIndex = 0;
 		Iterator<Release> iterator = releases.iterator();
 		
@@ -67,9 +67,9 @@ public class CalculatorMetrics {
 				if(commits.get(currentIndex).getDate().compareTo(newRelease.getDate())>0 && iterator.hasNext()) {
 					startIndex = currentIndex;
 					//aggiorno l hashmap
-					hRelFile.put(currentRelease.getName(), lClassesNoRelease);
+					hRelFile.put(currentRelease.getName(), lClassesRelease);
 					//azzero le metriche
-					initializeMetrics(lClassesNoRelease);	
+					initializeMetrics(lClassesRelease);	
 					break;
 				}
 				
@@ -78,12 +78,12 @@ public class CalculatorMetrics {
 				if(commits.get(currentIndex).getDate().compareTo(currentRelease.getDate())>0) {
 					List<JavaFile> resultCommit = ParserJgit.getChangesListsByCommit(repos,commits.get(currentIndex).getSha());	
 					//setto la classe buggy se viene modificata e se la release è affetta
-					fillLclasses(resultCommit,lClassesNoRelease,currentRelease);
+					fillLclasses(resultCommit,lClassesRelease,currentRelease);
 				}
 				
 				
 				if(currentIndex==commits.size()-1)
-					hRelFile.put(currentRelease.getName(), lClassesNoRelease);
+					hRelFile.put(currentRelease.getName(), lClassesRelease);
 				
 			
 			}
@@ -94,69 +94,69 @@ public class CalculatorMetrics {
 		
 	}
 
-	private static void initializeMetrics(List<JavaFile> lClassesNoRelease) {
-		lClassesNoRelease.forEach(file-> file.getMetrics().setBuggy(Boolean.FALSE));
+	private static void initializeMetrics(List<JavaFile> lClassesRelease) {
+		lClassesRelease.forEach(file-> file.getMetrics().setBuggy(Boolean.FALSE));
 	}
 
-	private static void fillLclasses(List<JavaFile> resultCommit, List<JavaFile> lClassesNoRelease, Release release) {
+	private static void fillLclasses(List<JavaFile> resultCommit, List<JavaFile> lClassesRelease, Release release) {
 		for (JavaFile file : resultCommit) {
 			
 			switch (file.getStatus()) {
 			case "DELETE": 
-				deleteFileByPath(lClassesNoRelease,file.getFilename());
+				deleteFileByPath(lClassesRelease,file.getFilename());
 				break;
 			case "RENAME":
-				renameFileByPath(lClassesNoRelease,file);
+				renameFileByPath(lClassesRelease,file);
 				break;
 			case "ADD":
 				file.getMetrics().setLoc(file.getNumCreatedLines());
-				lClassesNoRelease.add(file);
+				lClassesRelease.add(file);
 				break;
 			case "COPY":
-				copyFileByPath(lClassesNoRelease,file);
+				copyFileByPath(lClassesRelease,file);
 				break;
 			case "MODIFY":
-				JavaFile oldFile = getFileByPath(lClassesNoRelease, file.getFilename());
+				JavaFile oldFile = getFileByPath(lClassesRelease, file.getFilename());
 				if(oldFile!=null)
 					updateJavaFile(oldFile,file,release);
-					updateList(file,lClassesNoRelease);
+					updateList(file,lClassesRelease);
 				break;
 			default:
 				return;
 	
 			}
 		}
-		lClassesNoRelease.forEach(file-> System.out.println(file.getFilename()));
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//		lClassesNoRelease.forEach(file-> System.out.println(file.getFilename()));
+//		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 
 
 
-	private static boolean copyFileByPath(List<JavaFile> lClassesNoRelease, JavaFile file) {
+	private static boolean copyFileByPath(List<JavaFile> lClassesRelease, JavaFile file) {
 		//assegno al nuovo file copiato tutte le metriche del file java precedente
-		for (JavaFile javaFile : lClassesNoRelease) {
+		for (JavaFile javaFile : lClassesRelease) {
 			if (javaFile.getFilename().equals(file.getOldPath())) {
 				file.setMetrics(javaFile.getMetrics());
-				lClassesNoRelease.add(file);
+				lClassesRelease.add(file);
 				return true;
 			}
 		}
 		return false;		
 	}
 
-	private static boolean renameFileByPath(List<JavaFile> lClassesNoRelease, JavaFile file) {
+	private static boolean renameFileByPath(List<JavaFile> lClassesRelease, JavaFile file) {
 		//cambio filename al vecchio file ed incremento le statistiche?
-		for (JavaFile javaFile : lClassesNoRelease) {
+		for (JavaFile javaFile : lClassesRelease) {
 			if (javaFile.getFilename().equals(file.getOldPath())) {
-				lClassesNoRelease.get(lClassesNoRelease.indexOf(javaFile)).setFilename(file.getFilename());
+				lClassesRelease.get(lClassesRelease.indexOf(javaFile)).setFilename(file.getFilename());
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private static boolean deleteFileByPath(List<JavaFile> lClassesNoRelease, String filename) {
-		ListIterator<JavaFile> listIterator = lClassesNoRelease.listIterator();
+	private static boolean deleteFileByPath(List<JavaFile> lClassesRelease, String filename) {
+		ListIterator<JavaFile> listIterator = lClassesRelease.listIterator();
 		while(listIterator.hasNext()){
 			JavaFile javaFile = listIterator.next();
 			if (javaFile.getFilename().equals(filename)) {
@@ -167,17 +167,17 @@ public class CalculatorMetrics {
 		return false;
 	}
 
-	private static JavaFile getFileByPath(List<JavaFile> lClassesNoRelease, String filename) {
-		System.out.println("\n\n\n\n\n------------------"+ filename);
-		for (JavaFile javaFile : lClassesNoRelease) {
+	private static JavaFile getFileByPath(List<JavaFile> lClassesRelease, String filename) {
+//		System.out.println("\n\n\n\n\n------------------"+ filename);
+		for (JavaFile javaFile : lClassesRelease) {
 			if (javaFile.getFilename().equals(filename))
 				return javaFile;
 		}
 		return null;
 	}
 
-	private static boolean updateList(JavaFile updatedFile, List<JavaFile> lClassesNoRelease) {
-		ListIterator<JavaFile> listIterator = lClassesNoRelease.listIterator();
+	private static boolean updateList(JavaFile updatedFile, List<JavaFile> lClassesRelease) {
+		ListIterator<JavaFile> listIterator = lClassesRelease.listIterator();
 		while(listIterator.hasNext()){
 			JavaFile javaFile = listIterator.next();
 			if (javaFile.getFilename().equals(updatedFile.getFilename())) {

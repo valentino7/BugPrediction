@@ -133,8 +133,7 @@ public class ParserJira {
 		String strOpenDate = fields.get(Strings.FIELD_CREATED).toString();
 		LocalDateTime openDate = CreatorDate.defaultParseDate(strOpenDate);
 
-		
-		JSONArray versions = (JSONArray) jsonBug.get(Strings.FIELD_VERSIONS);
+		JSONArray versions = (JSONArray) fields.get(Strings.FIELD_VERSIONS);
 		List<Release> affectedReleases = new ArrayList<>();
 		for (int i = 0; i!= versions.length(); i++) {
 			String name = "";

@@ -13,9 +13,10 @@
         <pathelement location="bin"/>
         <pathelement location="lib/jar_files/json-20190722.jar"/>
         <pathelement location="lib/jar_files/org.eclipse.jgit-5.7.0.202003110725-r-javadoc.jar"/>
-        <pathelement location="lib/jar_files/commons-io-0.1.jar"/>
         <pathelement location="lib/jar_files/commons-io-2.4.jar"/>
         <pathelement location="lib/jar_files/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
+        <pathelement location="lib/jar_files/slf4j-api-1.7.25.jar"/>
+        <pathelement location="lib/jar_files/slf4j-simple-1.7.25.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -55,6 +56,11 @@
     </target>
     <target name="MainSecondDelivery">
         <java classname="secondelivery.main.MainSecondDelivery" failonerror="true" fork="yes">
+            <classpath refid="ProjectISW2.classpath"/>
+        </java>
+    </target>
+    <target name="MainFirstDelivery">
+        <java classname="firstdelivery.main.MainFirstDelivery" failonerror="true" fork="yes">
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>

@@ -25,7 +25,6 @@ public class CreatorDate {
 	}
 
 	public static LocalDateTime getLocalDateTimeByDate(Date date) {
-		System.out.println(date);
 		return LocalDateTime.ofInstant(date.toInstant(), ZoneId.of("Z"));
 	}
 

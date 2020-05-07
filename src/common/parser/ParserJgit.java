@@ -43,7 +43,7 @@ public class ParserJgit {
 		List<Git> gits = new ArrayList<>(); 
 		for (String repo : urlsRepos) {
 			try {
-				ManageDirectory.deleteDirectory(new File(directories[i]));
+				ManageDirectory.deleteDirectory(new File("repos/"+directories[i]));
 			} catch (IOException e1) {
 				Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e1.toString(), e1);
 			}
@@ -73,32 +73,7 @@ public class ParserJgit {
 			} catch (GitAPIException | IOException e) {
 				Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 			}
-			boolean isBugInCommit;
-			for (RevCommit commit : commits) {
-				isBugInCommit = false;
-				//creo classe commit
-				String message = commit.getFullMessage();
-				String sha = commit.getName();
-				LocalDateTime date = CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen());
-				System.out.println(date);
-				CommitEntity commitEntity = new CommitEntity(sha, message, date);
-				for (Bug bug : bugs) {
-					if(Pattern.compile(bug.getId()+"\\D"+"|"+bug.getId()+"\\b").matcher(message).find()) {
-						isBugInCommit = true;
-						addBugIfNotExists(collectBugs.getBugsWithCommits(),bug);
-						addCommitIfNotExists(collectCommits.getMyTicketCommits(),commitEntity);
-						bug.getCommits().add(commitEntity);
-					}	
-				}
-				//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
-				if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
-					collectCommits.getOtherIdCommits().add(commitEntity);
-				else if (!isBugInCommit)
-					collectCommits.getNoTicketCommits().add(commitEntity);
-
-				collectCommits.getTotalCommits().add(commitEntity);
-
-			}
+			fillCommitList(commits,bugs,collectBugs,collectCommits);
 		}
 		//serve riscorrere i bug infine per riempire i bug senza commit 
 		fillBugWithoutCommit(bugs,collectBugs);
@@ -109,6 +84,33 @@ public class ParserJgit {
 
 	}
 
+	private static void fillCommitList(Iterable<RevCommit> commits, List<Bug> bugs, CollectBugs collectBugs, CollectCommits collectCommits) {
+		boolean isBugInCommit;
+		for (RevCommit commit : commits) {
+			isBugInCommit = false;
+			//creo classe commit
+			String message = commit.getFullMessage();
+			String sha = commit.getName();
+			LocalDateTime date = CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen());
+			CommitEntity commitEntity = new CommitEntity(sha, message, date);
+			for (Bug bug : bugs) {
+				if(Pattern.compile(bug.getId()+"\\D"+"|"+bug.getId()+"\\b").matcher(message).find()) {
+					isBugInCommit = true;
+					addBugIfNotExists(collectBugs,bug);
+					addCommitIfNotExists(collectCommits.getMyTicketCommits(),commitEntity);
+					bug.getCommits().add(commitEntity);
+				}	
+			}
+			//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
+			if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
+				collectCommits.getOtherIdCommits().add(commitEntity);
+			else if (!isBugInCommit)
+				collectCommits.getNoTicketCommits().add(commitEntity);
+
+			collectCommits.getTotalCommits().add(commitEntity);
+
+		}
+	}
 
 	private static void addCommitIfNotExists(List<CommitEntity> myTicketCommits, CommitEntity commit) {
 		if(myTicketCommits.contains(commit))
@@ -117,10 +119,10 @@ public class ParserJgit {
 	}
 
 
-	private static void addBugIfNotExists(List<Bug> bugs, Bug addBug) {
-		if(bugs.contains(addBug))
+	private static void addBugIfNotExists(CollectBugs bugs, Bug addBug) {
+		if(bugs.getBugsWithCommits().contains(addBug))
 			return;
-		bugs.add(addBug);
+		bugs.getBugsWithCommits().add(addBug);
 	}
 	
 	private static void fillBugWithoutCommit(List<Bug> bugs, CollectBugs collectBugs) {
@@ -171,9 +173,10 @@ public class ParserJgit {
 
 		//creo diff
 		try {
-			if(parent == null)
+			if(parent == null) {
 				diffs = df.scan(new EmptyTreeIterator(), new CanonicalTreeParser(null, rw.getObjectReader(),commit.getTree()));
-			else
+				System.out.println(commit.getFullMessage() +"\nNOME: "+commit.getName()+ "\n\n\n\n");
+			}else
 				diffs = df.scan(parent.getTree(), commit.getTree());
 		}catch(IOException e){
 			Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
@@ -204,8 +207,8 @@ public class ParserJgit {
 
 			try {
 				for (Edit edit : df.toFileHeader(diff).toEditList()) {
-					System.out.println("created B: "+ edit.getLengthB());
-					System.out.println("deleted A: "+ edit.getLengthA());					
+//					System.out.println("created B: "+ edit.getLengthB());
+//					System.out.println("deleted A: "+ edit.getLengthA());					
 					createdLines+=edit.getLengthB();
 					deletedLines+=edit.getLengthA();
 				}

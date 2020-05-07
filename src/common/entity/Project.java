@@ -15,6 +15,7 @@ public class Project {
 		this.projName = projName;
 		this.releases = new ArrayList<>();
 		this.urlsRepos = urlsRepos;
+		this.collectBugs = new CollectBugs();
 	}
 
 	public List<Release> getReleases() {
