@@ -20,6 +20,7 @@ public class XSorter {
 		Collections.sort(collectCommits.getMyTicketCommits(), (commit1,commit2) -> commit1.getDate().compareTo(commit2.getDate()));
 		Collections.sort(collectCommits.getNoTicketCommits(), (commit1,commit2) -> commit1.getDate().compareTo(commit2.getDate()));
 		Collections.sort(collectCommits.getOtherIdCommits(), (commit1,commit2) -> commit1.getDate().compareTo(commit2.getDate()));
+		Collections.sort(collectCommits.getTotalCommits(), (commit1,commit2) -> commit1.getDate().compareTo(commit2.getDate()));
 	}
 
 	public static void sortBugsByFixedRelease(List<Bug> bugsWithCommits) {

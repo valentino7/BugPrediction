@@ -20,6 +20,8 @@ public class ParserJira {
 
 	private ParserJira() {}
 
+	
+	//Questo metodo restituisce una lista di release prese con funzione REST get da jira
 	public static List<Release> getRelease(String projName) throws MyException {
 		//Fills the arraylist with releases dates and orders them
 		//Ignores releases with missing dates
@@ -41,7 +43,7 @@ public class ParserJira {
 		return releases;
 	}
 
-
+	//Questo metodo fa parsing dei campi del json restituito
 	private static void fillList(JSONArray versions, List<Release> releases) {
 		for (int i = 0; i < versions.length(); i++ ) {
 
@@ -58,7 +60,7 @@ public class ParserJira {
 		}
 	}
 
-
+	//Funzione add in list
 	private static void addRelease(List<Release> releases, String strDate, String name, String id) {
 		LocalDateTime dateTime = CreatorDate.defaultParseWithoutHour(strDate);
 		Release newRelease = new Release(id,name,dateTime);
@@ -68,6 +70,7 @@ public class ParserJira {
 	}
 
 
+	//Se la data della release è gia presente nella lista, mantengo la data e sostituisco la release precedente
 	private static Boolean modifyReleaseList(List<Release> releases, LocalDateTime dateTime , String name, String id) {
 		//check se la lista contiene gia una release in quella data
 		for (Release release : releases) {
@@ -80,6 +83,7 @@ public class ParserJira {
 		return Boolean.FALSE;
 	}
 	
+	//questo metodo restituisce una lista di bug dopo aver fatto una chiamata get a jira
 	public static List<Bug> getProjectBug(String projectName) {
 		/*fields 
         	versions: [
@@ -125,6 +129,7 @@ public class ParserJira {
 		return bugsList;
 	}
 
+	//Questo metodo riempie una lista di bug inserendo come campi del bug: nomeid,data di apertura e versioni affette
 	private static void fillBugList(List<Bug> bugsList, JSONObject jsonBug) {
 		//Iterate through each bug
 		String key = jsonBug.get(Strings.FIELD_KEY).toString();
@@ -147,6 +152,7 @@ public class ParserJira {
 				LocalDateTime date = CreatorDate.defaultParseWithoutHour(releaseDate);
 				affectedReleases.add(new Release(id,name,date));
 			}
+		
 		}
 
 		Bug bug = new Bug(key,openDate,affectedReleases);

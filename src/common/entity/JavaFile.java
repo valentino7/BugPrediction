@@ -1,5 +1,8 @@
 package common.entity;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class JavaFile {
 
 	private String status;
@@ -10,15 +13,42 @@ public class JavaFile {
 	private Integer numCreatedLines;
 	private Integer numDeletedLines;
 	private Boolean isDeleted;
-
+	private List<String> authors;
+	private LocalDateTime creationDate;
+	private LocalDateTime commitDate;
 	
-	public JavaFile(String filename, Metrics metrics, Integer createdLines, Integer deletedLines, String status) {
+	public JavaFile(String filename, Metrics metrics, Integer createdLines, Integer deletedLines, String status, LocalDateTime commitDate) {
 		this.isDeleted = Boolean.FALSE;
 		this.filename = filename;
 		this.status = status;
 		this.metrics = metrics;
 		this.numCreatedLines = createdLines;
 		this.numDeletedLines = deletedLines;
+		this.commitDate = commitDate;
+	}
+
+	public List<String> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<String> authors) {
+		this.authors = authors;
+	}
+
+	public LocalDateTime getCommitDate() {
+		return commitDate;
+	}
+
+	public void setCommitDate(LocalDateTime commitDate) {
+		this.commitDate = commitDate;
+	}
+
+	public LocalDateTime getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDateTime creationDate) {
+		this.creationDate = creationDate;
 	}
 
 	public String getOldPath() {

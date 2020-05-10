@@ -4,6 +4,10 @@ public class StringsSecondDelivery {
 
 	private StringsSecondDelivery() {}
 
+	//Parametri iniziali
+//	public static final String PROPORTION_METHOD = "increment";
+	public static final String PROPORTION_METHOD = "movingWindow";
+
 	
 	
 	//JIRA	

@@ -171,11 +171,13 @@ public class ParserGithub {
 			}
 			//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
 			if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
-				collectCommits.getOtherIdCommits().add(commit);
+				//negli altri branch potrei avere commit uguali
+				addCommitIfNotExists(collectCommits.getOtherIdCommits(),commit);
 			else if (!isBugInCommit)
-				collectCommits.getNoTicketCommits().add(commit);
+				addCommitIfNotExists(collectCommits.getNoTicketCommits(),commit);
 			
-			collectCommits.getTotalCommits().add(commit);
+			addCommitIfNotExists(collectCommits.getTotalCommits(),commit);
+
 		}
 	
 	}

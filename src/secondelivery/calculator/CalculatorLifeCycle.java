@@ -1,5 +1,6 @@
 package secondelivery.calculator;
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,9 +18,8 @@ public class CalculatorLifeCycle {
 
 	private CalculatorLifeCycle() {}
 
-	public static void calculateLifeCycle(Project project, List<Git> repos) {
+	public static void calculateLifeCycle(Project project, List<Git> repos, String proportionMethod) {
 
-		int percent = project.getCollectBugs().getBugsWithCommits().size() *1 /100;
 		System.out.println("Bugs con commit: "+String.valueOf(project.getCollectBugs().getBugsWithCommits().size()));
 		//set fixed version per tutti i bug
 		setFixedAndOpenVersion(project.getCollectBugs().getBugsWithCommits(),project.getReleases());
@@ -43,9 +43,13 @@ public class CalculatorLifeCycle {
 //		}
 		
 		XSorter.sortBugsByFixedRelease(project.getCollectBugs().getBugsWithCommits());
-
+		int percent = project.getCollectBugs().getBugsWithCommits().size() *1 /100;
+		if(percent==0)
+			percent=1;
+		System.out.println("percent "+ percent);
+		System.out.println("size BUG dopo il filtro "+project.getCollectBugs().getBugsWithCommits().size() );
 		//calcolare injected version e affected version
-		setInjectedAndAffectedVersion(percent,project);
+		setInjectedAndAffectedVersion(percent,project,proportionMethod);
 		
 		//setta le release affette
 		setAffectedRelease(project.getCollectBugs().getBugsWithCommits(),project.getReleases());
@@ -118,11 +122,19 @@ public class CalculatorLifeCycle {
 		for (Release release : releases) {
 			if(release.getDate().compareTo(bug.getOpenDate())>0 ) {
 				//caso in cui il bug ha AV jira e la versione dopo l'open è minore AV Jira
-				if(!bug.getAffectedReleases().isEmpty() && release.getDate().compareTo(bug.getAffectedReleases().get(0).getDate()) < 0 )
-					bug.setOpenRelease(bug.getAffectedReleases().get(0));
-				else
-					bug.setOpenRelease(release);
-
+//				if(!bug.getAffectedReleases().isEmpty() && release.getDate().compareTo(bug.getAffectedReleases().get(0).getDate()) < 0 )
+//					bug.setOpenRelease(bug.getAffectedReleases().get(0));
+//				else
+				bug.setOpenRelease(release);
+				//caso in cui il bug ha AV jira e la versione dopo l'open è minore AV Jira
+				//creo una lista con affette le versioni dall'opening in poi
+				if(!bug.getAffectedReleases().isEmpty() && release.getDate().compareTo(bug.getAffectedReleases().get(0).getDate()) < 0 ) {
+					//bug.setAffectedReleases(addOVtoAV(releases,release,bug.getAffectedReleases()));
+					bug.setAffectedReleases(releases.subList(releases.indexOf(release),
+							releases.indexOf(bug.getAffectedReleases().get(bug.getAffectedReleases().size()-1))+1));
+					bug.getAffectedReleases().stream().forEach(r->r.setAffected(Boolean.TRUE));
+				}
+				
 				//rimuovo il bug se open version = o > fixed version
 				if(bug.getFixedRelease().getDate().compareTo(bug.getOpenRelease().getDate())<=0) {
 					iter.remove();
@@ -139,7 +151,9 @@ public class CalculatorLifeCycle {
 	}
 
 	
-	private static void setInjectedAndAffectedVersion(int percent,Project project) {
+	
+
+	private static void setInjectedAndAffectedVersion(int percent,Project project, String proportionMethod) {
 		boolean seenAffectedRelease = false;
 		Iterator<Bug> iter = project.getCollectBugs().getBugsWithCommits().iterator();
 		ProportionMethod calculator = new CalculatorProportion();
@@ -153,9 +167,7 @@ public class CalculatorLifeCycle {
 					bug.setInjectedRelease(bug.getOpenRelease());
 				else {
 					//calcola P 
-					calculator.calculateProportionMovingWindow(project.getReleases(),project.getCollectBugs().getBugsJiraAV(), bug,percent);
-					//TODO vedere varianza e media dei metodi per calcolare P
-
+					calculateProportion(proportionMethod,calculator,project.getReleases(),project.getCollectBugs().getBugsJiraAV(), bug,percent);
 					//calcola injection version
 					CalculatorProportion.setInjectionVersion( project.getReleases(), bug);
 				}
@@ -172,5 +184,11 @@ public class CalculatorLifeCycle {
 		}		
 	}
 
+	public static void calculateProportion(String proportionMethod, ProportionMethod calculator ,List<Release> releases,List<Bug> bugsAVJira,Bug bug,int percent) {
+		if(proportionMethod.equals("movingWindow"))
+			calculator.calculateProportionMovingWindow(releases,bugsAVJira, bug,percent);
+		else if(proportionMethod.equals("increment") )
+			calculator.calculateProportionIncrement(releases,bugsAVJira, bug);
+	}
 	
 }

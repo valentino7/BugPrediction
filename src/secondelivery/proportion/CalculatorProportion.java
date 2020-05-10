@@ -10,6 +10,8 @@ import common.entity.Release;
 
 public class CalculatorProportion implements ProportionMethod {
 
+
+	
 	@Override
 	public void calculateProportionMovingWindow(List<Release> releases, List<Bug> bugAVJira, Bug bug, int percent) {
 		//calcolo proportion su 1% dei ticket precedenti
@@ -51,7 +53,7 @@ public class CalculatorProportion implements ProportionMethod {
 			Proportion p = getFactors(releases,bugAVJira,i);
 			float d = (p.getFv() - p.getOv());
 
-			proportions[i] = (p.getOv() - p.getIv() ) / d;
+			proportions[i] = (p.getFv() - p.getIv() ) / d;
 			sum += proportions[i];
 		}
 		//calcolo la media
@@ -120,6 +122,7 @@ public class CalculatorProportion implements ProportionMethod {
 			//aggiungo tutte le versioni da IV a FV esclusa, tanto per essere sicuri controllo che IV è ha anche id uguale
 			if((release.getDate().compareTo(injectionRelease.getDate())>0 && release.getDate().compareTo(fixedDate)<0 ) ||
 					(release.getDate().compareTo(injectionRelease.getDate())==0 && release.getId().equals(injectionRelease.getId()))  ) {
+				release.setAffected(Boolean.TRUE);
 				listAffected.add(release);
 			}
 		}
@@ -130,7 +133,4 @@ public class CalculatorProportion implements ProportionMethod {
 		addReleaseAffected(listAffected,releases,bug.getInjectedRelease(),bug.getFixedRelease().getDate());
 		bug.setAffectedReleases(listAffected);
 	}
-
-
-
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class CreatorDate {
@@ -32,5 +33,8 @@ public class CreatorDate {
 		return LocalDate.of(year, month, 1).atStartOfDay();	
 	}
 
+	public static Integer getNumeWeek(LocalDateTime startDate, LocalDateTime endDate) {
+		return (int) ChronoUnit.WEEKS.between(endDate, startDate);
+	}
 
 }
