@@ -314,7 +314,7 @@ public class ParserJgit {
 			if(!Pattern.compile(Strings.REGEX_TREE_JAVA).matcher(path).find())
 				continue;
 
-			JavaFile javaFile = getJavaFile(path, diff, commit, df, instantChangeSet);
+			JavaFile javaFile = getJavaFile(path, diff, commit, df, instantChangeSet, commit.getAuthorIdent().getName());
 			lClasses.add(javaFile);
 
 		}
@@ -331,7 +331,7 @@ public class ParserJgit {
 
 
 
-	private static JavaFile getJavaFile(String path, DiffEntry diff, RevCommit commit, DiffFormatter df, Integer instantChangeSet) {
+	private static JavaFile getJavaFile(String path, DiffEntry diff, RevCommit commit, DiffFormatter df, Integer instantChangeSet, String author) {
 		//incremento change set solo in commit add o modify
 		int nfix=0;
 		if((diff.getChangeType().name().equals("ADD") || diff.getChangeType().name().equals("MODIFY")) && Pattern.compile("\\bfix\\b").matcher(commit.getFullMessage()).find()) {
@@ -353,7 +353,8 @@ public class ParserJgit {
 		}
 		
 		Metrics metrics	 = new Metrics(nfix,instantChangeSet);
-		JavaFile javaFile = new JavaFile(path,metrics,createdLines,deletedLines,diff.getChangeType().name(),CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen()));
+		JavaFile javaFile = new JavaFile(path,metrics,createdLines,deletedLines,diff.getChangeType().name(),
+				CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen()), author);
 		if(diff.getChangeType().name().equals("COPY"))
 			javaFile.setOldPath(diff.getOldPath());
 		return javaFile;

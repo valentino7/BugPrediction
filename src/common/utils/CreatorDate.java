@@ -34,7 +34,7 @@ public class CreatorDate {
 	}
 
 	public static Integer getNumeWeek(LocalDateTime startDate, LocalDateTime endDate) {
-		return (int) ChronoUnit.WEEKS.between(endDate, startDate);
+		return (int) ChronoUnit.WEEKS.between(startDate, endDate);
 	}
 
 }

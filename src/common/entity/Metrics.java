@@ -14,7 +14,6 @@ public class Metrics {
 	private Integer maxLocAdded;
 	private Float avgLocAdded;
 	private Integer locTouched;
-	private Integer nAuth;
 	private Integer churn;
 	private Integer maxChurn;
 	private Float avgChurn;
@@ -22,7 +21,7 @@ public class Metrics {
 	
 	private Integer ageDotLoc;
 	private Integer age;
-	private Integer weightedAge;
+	private float weightedAge;
 	
 	private List<Integer> listChgset;
 	private Integer instantChgset;
@@ -35,10 +34,21 @@ public class Metrics {
 		this.buggy = Boolean.FALSE;
 		this.nfix = nfix;
 		this.instantChgset = instantChgset;
-		this.nr = 1;
+		this.nr = 0;
 		this.listLocAdded = new ArrayList<>();
 		this.listChurn = new ArrayList<>();
 		this.listChgset = new ArrayList<>();
+		this.locAdded = 0;
+		this.locTouched = 0;
+		this.maxLocAdded = 0;
+		this.avgLocAdded = 0f;
+		this.churn = 0;
+		this.maxChurn = 0;
+		this.avgChurn = 0f;
+		this.chgset = 0;
+		this.maxChgset = 0;
+		this.avgChgset = 0f;
+		this.weightedAge = 0f;
 	}
 
 	public Integer getNumAuth() {
@@ -105,11 +115,11 @@ public class Metrics {
 		this.age = age;
 	}
 
-	public Integer getWeightedAge() {
+	public Float getWeightedAge() {
 		return weightedAge;
 	}
 
-	public void setWeightedAge(Integer weightedAge) {
+	public void setWeightedAge(Float weightedAge) {
 		this.weightedAge = weightedAge;
 	}
 
@@ -183,14 +193,6 @@ public class Metrics {
 
 	public void setLocTouched(Integer locTouched) {
 		this.locTouched = locTouched;
-	}
-
-	public Integer getnAuth() {
-		return nAuth;
-	}
-
-	public void setnAuth(Integer nAuth) {
-		this.nAuth = nAuth;
 	}
 
 	public Integer getLoc() {

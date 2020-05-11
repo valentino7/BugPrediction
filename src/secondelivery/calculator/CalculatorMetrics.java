@@ -5,11 +5,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.stream.Collectors;
 import org.eclipse.jgit.api.Git;
 import common.entity.CollectCommits;
 import common.entity.CommitEntity;
 import common.entity.JavaFile;
+import common.entity.Metrics;
 import common.entity.Release;
 import common.parser.ParserJgit;
 import common.utils.CreatorDate;
@@ -18,7 +20,7 @@ public class CalculatorMetrics {
 
 	private CalculatorMetrics() {}
 
-	public static HashMap<String,List<JavaFile>> calculateMetrics(List<Git> repos, List<Release> releases, CollectCommits commits) {
+	public static Map<String,List<JavaFile>> calculateMetrics(List<Git> repos, List<Release> releases, CollectCommits commits) {
 		//per ogni release
 		//per ogni commit fino a che non è maggiore della release successiva
 		//prendi le classi nella commit e calcola metriche su size
@@ -32,9 +34,9 @@ public class CalculatorMetrics {
 		//		initializeListWithInitialCommits(lClassesNoRelease, commits , repos, releases);
 		calculateMetrics(lClassesRelease, commits , repos, releases, hRelFile);
 
-		// TODO CANCELLARE 50% COPPIE
+
 		deleteReleasesClasses(hRelFile, releases);
-		
+
 		return hRelFile;
 	}
 
@@ -42,26 +44,15 @@ public class CalculatorMetrics {
 
 	private static void deleteReleasesClasses(HashMap<String, List<JavaFile>> hRelFile, List<Release> releases ) {
 		Integer halfIndex = releases.size()/2;
-
-		for (Iterator<String> it = hRelFile.keySet().iterator(); it.hasNext();) {
-			String key = it.next();
-			for (Release release : releases) {
-				if(release.getName().equals(key) && releases.indexOf(release) > halfIndex) {
-						it.remove();
-				}		
-			}
+		int size = hRelFile.size();
+		for (int i=0; i!= size ; i++) {
+			if(i > halfIndex)
+				hRelFile.remove(String.valueOf(i));
 		}
+
 	}
 
-	//	private static void initializeListWithInitialCommits(List<JavaFile> lClassesRelease,List<CommitEntity> commits, List<Git> repos,  List<Release> releases) {
-	//		for(int currentIndex = 0; currentIndex!=commits.size();currentIndex++) {
-	//			//if release 0 e le commit stanno prima prendi tutte le classi e inizializza una lista di classi iniziali
-	//			if(commits.get(currentIndex).getDate().compareTo(releases.get(0).getDate())<=0) {
-	//				List<JavaFile> resultCommit = ParserJgit.getChangesListsByCommit(repos,commits.get(currentIndex).getSha());	
-	//				//fillLclasses(resultCommit,lClassesNoRelease);
-	//			}
-	//		}		
-	//	}
+
 
 	private static void calculateMetrics(List<JavaFile> lClassesRelease,CollectCommits commits, List<Git> repos,  List<Release> releases, HashMap<String,List<JavaFile>> hRelFile)  {
 		int startIndex = 0;
@@ -77,9 +68,11 @@ public class CalculatorMetrics {
 					startIndex = currentIndex;
 
 					//aggiorno l hashmap
-					hRelFile.put(currentRelease.getName(), lClassesRelease);
+					hRelFile.put(String.valueOf(releases.indexOf(currentRelease)), lClassesRelease);
+
+
 					//azzero le metriche
-					initializeMetrics(lClassesRelease);	
+					lClassesRelease = resetList(lClassesRelease);	
 					break;
 				}
 
@@ -93,36 +86,32 @@ public class CalculatorMetrics {
 
 	}
 
+
+
 	private static Boolean commitIsBuggy(CommitEntity commitEntity,List<CommitEntity> commitsWithId) {
 		return commitsWithId.contains(commitEntity);
 	}
 
-	private static void initializeMetrics(List<JavaFile> lClassesRelease) {
-		
-		lClassesRelease.forEach(file-> {
-			file.getMetrics().setBuggy(Boolean.FALSE);
+	private static List<JavaFile> resetList(List<JavaFile> lClassesRelease) {
+		List<JavaFile> clonedList = new ArrayList<>();
+		for (JavaFile javaFile : lClassesRelease) {
+			Metrics metrics = new Metrics(0, 0);
+			//metriche incrementali
+			metrics.setLoc(javaFile.getMetrics().getLoc());
+			metrics.setAgeDotLoc(javaFile.getMetrics().getAgeDotLoc());
+			metrics.setNumAuth(javaFile.getMetrics().getNumAuth());
+			metrics.setAge(javaFile.getMetrics().getAge());
+			metrics.setAgeDotLoc(0);
+			JavaFile file = new JavaFile(javaFile.getFilename(), metrics, javaFile.getNumCreatedLines(), javaFile.getNumDeletedLines(),
+					javaFile.getStatus(), javaFile.getCommitDate(),null);
+			file.setAuthors(javaFile.getAuthors());
+			
+			file.setCreationDate(javaFile.getCreationDate());
+			clonedList.add(file);
 
-			file.getMetrics().setLoc(0);
-			file.getMetrics().setLocTouched(0);
-			//loc added
-			file.getMetrics().setLocAdded(0);
-			file.getMetrics().setMaxLocAdded(0);
-			file.getMetrics().setAvgLocAdded(0f);
-			file.getMetrics().getListLocAdded().clear();
 
-			//churn
-			file.getMetrics().setChurn(0);
-			file.getMetrics().getListChurn().clear();
-			file.getMetrics().setAvgLocAdded(0f);
-			file.getMetrics().setMaxChurn(0);
-
-			//change set size
-			file.getMetrics().getListChgset().clear();
-			file.getMetrics().setChgset(0);
-			file.getMetrics().setMaxChgset(0);
-			file.getMetrics().setAvgChgset(0f);
-
-		});
+		}
+		return clonedList;
 	}
 
 	private static void fillLclasses(List<JavaFile> resultCommit, List<JavaFile> lClassesRelease, Release release, Boolean commitIsBuggy) {
@@ -154,8 +143,6 @@ public class CalculatorMetrics {
 
 			}
 		}
-		//		lClassesNoRelease.forEach(file-> System.out.println(file.getFilename()));
-		//		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 
 
@@ -196,7 +183,6 @@ public class CalculatorMetrics {
 	}
 
 	private static JavaFile getFileByPath(List<JavaFile> lClassesRelease, String filename) {
-		//		System.out.println("\n\n\n\n\n------------------"+ filename);
 		for (JavaFile javaFile : lClassesRelease) {
 			if (javaFile.getFilename().equals(filename))
 				return javaFile;
@@ -218,7 +204,11 @@ public class CalculatorMetrics {
 	}
 
 	private static void updateJavaFile(JavaFile oldFile, JavaFile newFile, Release release, Boolean commitIsBuggy) {
-		newFile.getMetrics().setBuggy(release.getAffected().equals(Boolean.TRUE) && commitIsBuggy.equals(Boolean.TRUE) ? Boolean.TRUE : Boolean.FALSE );
+
+		if((release.getAffected() && commitIsBuggy) || oldFile.getMetrics().getBuggy().equals(Boolean.TRUE)) 
+			newFile.getMetrics().setBuggy(Boolean.TRUE);
+		
+		
 		newFile.getMetrics().setLoc(oldFile.getMetrics().getLoc()-newFile.getNumDeletedLines()+newFile.getNumCreatedLines());
 		newFile.getMetrics().setNfix(oldFile.getMetrics().getNfix()+ newFile.getMetrics().getNfix());
 		newFile.getMetrics().setNr(oldFile.getMetrics().getNr()+ newFile.getMetrics().getNr());
@@ -231,25 +221,24 @@ public class CalculatorMetrics {
 		newFile.getMetrics().setAvgLocAdded(getAvg( newFile.getMetrics().getListLocAdded() ));
 
 		//metriche churn
-		newFile.getMetrics().setLocAdded(oldFile.getMetrics().getChurn()+newFile.getNumCreatedLines()-newFile.getNumDeletedLines());
-		newFile.getMetrics().setMaxLocAdded(getMax(oldFile.getMetrics().getMaxLocAdded(),newFile.getMetrics().getChurn()));
-		newFile.getMetrics().setListLocAdded(oldFile.getMetrics().getListChurn());
-		newFile.getMetrics().getListLocAdded().add(newFile.getMetrics().getChurn());
-		newFile.getMetrics().setAvgLocAdded(getAvg( newFile.getMetrics().getListChurn() ));
+		newFile.getMetrics().setChurn(oldFile.getMetrics().getChurn()+newFile.getNumCreatedLines()-newFile.getNumDeletedLines());
+		newFile.getMetrics().setMaxChurn(getMax(oldFile.getMetrics().getMaxLocAdded(),newFile.getMetrics().getChurn()));
+		newFile.getMetrics().setListChurn(oldFile.getMetrics().getListChurn());
+		newFile.getMetrics().getListChurn().add(newFile.getMetrics().getChurn());
+		newFile.getMetrics().setAvgChurn(getAvg( newFile.getMetrics().getListChurn() ));
 
 		//change set size
 		newFile.getMetrics().setChgset(oldFile.getMetrics().getChgset()+ newFile.getMetrics().getInstantChgset());
-		newFile.getMetrics().setChgset(getMax(oldFile.getMetrics().getMaxChgset(),newFile.getMetrics().getInstantChgset()));
+		newFile.getMetrics().setMaxChgset(getMax(oldFile.getMetrics().getMaxChgset(),newFile.getMetrics().getInstantChgset()));
 		newFile.getMetrics().setListChgset(oldFile.getMetrics().getListChgset());
 		newFile.getMetrics().getListChgset().add(newFile.getMetrics().getInstantChgset());
 		newFile.getMetrics().setAvgChgset(getAvg(oldFile.getMetrics().getListChgset()));
 
 		//age
 		newFile.setCreationDate(oldFile.getCreationDate());
-		System.out.println("inizio date: "+ newFile.getCreationDate()+ "fine date"+ newFile.getCommitDate());
 		newFile.getMetrics().setAge(CreatorDate.getNumeWeek(newFile.getCreationDate(),newFile.getCommitDate()));
 		newFile.getMetrics().setAgeDotLoc(oldFile.getMetrics().getAgeDotLoc() + newFile.getMetrics().getAge()*newFile.getMetrics().getLocAdded());
-		newFile.getMetrics().setWeightedAge(newFile.getMetrics().getAgeDotLoc()/getSumLocAdded(newFile.getMetrics().getListLocAdded()));
+		newFile.getMetrics().setWeightedAge(newFile.getMetrics().getAgeDotLoc().floatValue()/getSumLocAdded(newFile.getMetrics().getListLocAdded()));
 
 		//num autori
 		addIfNotExists(oldFile.getAuthors(),newFile.getAuthors());
@@ -266,7 +255,12 @@ public class CalculatorMetrics {
 	}
 
 	private static Integer getSumLocAdded( List<Integer> listLocAdded) {
-		return listLocAdded.stream().collect(Collectors.summingInt(Integer::intValue));
+		Integer sum = listLocAdded.stream().collect(Collectors.summingInt(Integer::intValue));
+		if (sum==0) {
+			return 1;
+		}
+		return sum;
+
 
 	}
 
@@ -285,10 +279,12 @@ public class CalculatorMetrics {
 	}
 
 	private static void initializeMetrics(JavaFile file) {
+		file.getMetrics().setNr(file.getMetrics().getNr()+1);
 		//age
 		file.setCreationDate(file.getCommitDate());
 		file.getMetrics().setAge(0);
-		file.getMetrics().setWeightedAge(0);
+		file.getMetrics().setAgeDotLoc(0);
+		file.getMetrics().setWeightedAge(0f);
 
 		file.getMetrics().setLoc(file.getNumCreatedLines());
 		file.getMetrics().setLocTouched(file.getNumCreatedLines());

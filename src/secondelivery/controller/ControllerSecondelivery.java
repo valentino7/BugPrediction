@@ -1,8 +1,9 @@
 package secondelivery.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import secondelivery.calculator.CalculatorLifeCycle;
 import secondelivery.calculator.CalculatorMetrics;
 import secondelivery.io.WriteDataset;
@@ -50,9 +51,9 @@ public class ControllerSecondelivery {
 		//calcolo le classi buggy
 		CalculatorLifeCycle.calculateLifeCycle(project,repos,proportionMethod);
 		
-		HashMap<String,List<JavaFile>> hRelFile = CalculatorMetrics.calculateMetrics(repos, project.getReleases(),project.getCollectCommits());
+		Map<String,List<JavaFile>> hRelFile = CalculatorMetrics.calculateMetrics(repos, project.getReleases(),project.getCollectCommits());
 		
-		WriteDataset.writeCSVOnFile(hRelFile);
+		WriteDataset.writeCSVOnFile(project.getName(), hRelFile);
 
 	}
 

@@ -1,6 +1,7 @@
 package common.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JavaFile {
@@ -17,7 +18,7 @@ public class JavaFile {
 	private LocalDateTime creationDate;
 	private LocalDateTime commitDate;
 	
-	public JavaFile(String filename, Metrics metrics, Integer createdLines, Integer deletedLines, String status, LocalDateTime commitDate) {
+	public JavaFile(String filename, Metrics metrics, Integer createdLines, Integer deletedLines, String status, LocalDateTime commitDate, String author) {
 		this.isDeleted = Boolean.FALSE;
 		this.filename = filename;
 		this.status = status;
@@ -25,7 +26,11 @@ public class JavaFile {
 		this.numCreatedLines = createdLines;
 		this.numDeletedLines = deletedLines;
 		this.commitDate = commitDate;
+		this.authors = new ArrayList<>();
+		this.authors.add(author);
 	}
+
+
 
 	public List<String> getAuthors() {
 		return authors;

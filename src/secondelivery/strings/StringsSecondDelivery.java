@@ -8,7 +8,7 @@ public class StringsSecondDelivery {
 //	public static final String PROPORTION_METHOD = "increment";
 	public static final String PROPORTION_METHOD = "movingWindow";
 
-	
+	public static final String OUTPUTFILE = "dataset.csv";
 	
 	//JIRA	
 	public static final String PROJECT_NAME = "BOOKKEEPER";
