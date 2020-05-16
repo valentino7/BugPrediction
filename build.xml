@@ -17,6 +17,40 @@
         <pathelement location="lib/jar_files/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
         <pathelement location="lib/jar_files/slf4j-api-1.7.25.jar"/>
         <pathelement location="lib/jar_files/slf4j-simple-1.7.25.jar"/>
+        <pathelement location="lib/jar_files/weka-stable-3.8.4.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/bounce-0.18.jar"/>
+        <pathelement location="lib/jar_files/core-1.1.jar"/>
+        <pathelement location="lib/jar_files/arpack_combined_all-0.1.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-win-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/native_system-java-1.1.jar"/>
+        <pathelement location="lib/jar_files/native_ref-java-1.1.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-linux-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-linux-armhf-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-linux-i686-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-linux-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-osx-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_ref-win-i686-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-linux-armhf-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-linux-i686-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-osx-x86_64-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
+        <pathelement location="lib/jar_files/stax-ex-1.8.1.jar"/>
+        <pathelement location="lib/jar_files/txw2-2.3.2.jar"/>
+        <pathelement location="lib/jar_files/FastInfoset-1.2.16.jar"/>
+        <pathelement location="lib/jar_files/istack-commons-runtime-3.0.8.jar"/>
+        <pathelement location="lib/jar_files/jakarta.activation-api-1.2.1.jar"/>
+        <pathelement location="lib/jar_files/jakarta.xml.bind-api-2.3.2.jar"/>
+        <pathelement location="lib/jar_files/java-cup-11b-20160615.jar"/>
+        <pathelement location="lib/jar_files/java-cup-runtime-11b-20160615.jar"/>
+        <pathelement location="lib/jar_files/jaxb-runtime-2.3.2.jar"/>
+        <pathelement location="lib/jar_files/jclipboardhelper-0.1.0.jar"/>
+        <pathelement location="lib/jar_files/jfilechooser-bookmarks-0.1.6.jar"/>
+        <pathelement location="lib/jar_files/jniloader-1.1.jar"/>
+        <pathelement location="lib/jar_files/jsch-0.1.38.jar"/>
+        <pathelement location="lib/jar_files/jsch-0.1.44-1.jar"/>
+        <pathelement location="lib/jar_files/mtj-1.0.4.jar"/>
+        <pathelement location="lib/jar_files/netlib-java-1.1.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -54,13 +88,18 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="MainFirstDelivery">
+        <java classname="firstdelivery.main.MainFirstDelivery" failonerror="true" fork="yes">
+            <classpath refid="ProjectISW2.classpath"/>
+        </java>
+    </target>
     <target name="MainSecondDelivery">
         <java classname="secondelivery.main.MainSecondDelivery" failonerror="true" fork="yes">
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>
-    <target name="MainFirstDelivery">
-        <java classname="firstdelivery.main.MainFirstDelivery" failonerror="true" fork="yes">
+    <target name="Model">
+        <java classname="secondelivery.ml.Model" failonerror="true" fork="yes">
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>

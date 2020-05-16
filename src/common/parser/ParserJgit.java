@@ -77,10 +77,11 @@ public class ParserJgit {
 					head = walk.parseCommit(git.getRepository().exactRef("HEAD" ).getObjectId());
 				} catch (IOException e) {
 					Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
-
+					return null;
 				}
 				//System.out.println(head.getName());
 				int cont=0;
+				
 				while (head.getParentCount() != 0) {
 					try {
 						head = walk.parseCommit(head.getParent(0));
@@ -351,7 +352,7 @@ public class ParserJgit {
 		} catch (IOException e) {
 			Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 		}
-		
+		System.out.println(diff.getChangeType().name());
 		Metrics metrics	 = new Metrics(nfix,instantChangeSet);
 		JavaFile javaFile = new JavaFile(path,metrics,createdLines,deletedLines,diff.getChangeType().name(),
 				CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen()), author);
