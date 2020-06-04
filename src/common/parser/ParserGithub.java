@@ -30,7 +30,6 @@ public class ParserGithub {
 		Integer page = 1;
 		for (String repo : repos) {
 			List<String> branchesList = getBranches(repo);
-			System.out.println("progetto: "+repo+" "+branchesList.size());
 			for (Integer j=0; j< branchesList.size();j++) {
 
 			
@@ -69,7 +68,6 @@ public class ParserGithub {
 		Integer page = 1;
 
 		List<String> branches = new ArrayList<>();
-		//branches.add("default");
 		JSONArray json = null;
 		try {
 			json = JsonRest.readJsonArrayFromUrl(CreatorUrls.createUrlBranches(page, repo));

@@ -4,8 +4,7 @@ public class StringsSecondDelivery {
 
 	private StringsSecondDelivery() {}
 
-	//Parametri iniziali
-//	public static final String PROPORTION_METHOD = "increment";
+	//Parametri iniziali increment - movingWindow
 	public static final String PROPORTION_METHOD = "movingWindow";
 
 	public static final String OUTPUTFILE = "dataset.csv";

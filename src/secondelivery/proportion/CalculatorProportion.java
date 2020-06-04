@@ -35,8 +35,6 @@ public class CalculatorProportion implements ProportionMethod {
 		}
 		//calcolo la media
 		bug.setProportion(new Proportion(sum/(j+1)));
-		//			if(Math.round(sum/percent)==0)
-		//				System.out.println("P è 0");
 	}
 
 	@Override
@@ -80,9 +78,6 @@ public class CalculatorProportion implements ProportionMethod {
 				fv = i;		
 			i++;
 		}
-		System.out.println("iv "+ iv);
-		System.out.println("fv "+fv);
-		System.out.println("ov "+ov);
 		return new Proportion(iv,fv,ov);
 	}
 
@@ -98,15 +93,9 @@ public class CalculatorProportion implements ProportionMethod {
 				fv = i;		
 			i++;
 		}
-		float proportion = bug.getProportion().getP();
-		System.out.println("prop  "+ proportion);
 		int iv = Math.round( (fv - ov)*bug.getProportion().getP() );
 
 		iv = checkSimpleMethod(iv,Math.round( ov ));
-		//		System.out.println("iv "+ iv);
-		//		System.out.println("fv "+fv);
-		//		System.out.println("ov "+ov);
-
 
 		bug.setInjectedRelease(releases.get(iv));
 	}

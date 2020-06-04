@@ -6,11 +6,11 @@ public final class StringsFirstDelivery {
 	private StringsFirstDelivery(){}
 	
 //	//window commits
-//	public static final Integer BEGIN_YEAR = 2014;
-//	public static final Integer FINAL_YEAR = 2020;
+//	BEGIN_YEAR: 2014
+//	FINAL_YEAR: 2020
 //	//agosto
-//	public static final Integer BEGIN_MONTH = 8;
-//	public static final Integer FINAL_MONTH = 4;
+//	BEGIN_MONTH: 8
+//	FINAL_MONTH: 4
 
 	//REGEX
 	public static final String REGEX_PARQUET = "PARQUET-\\d{1,4}";

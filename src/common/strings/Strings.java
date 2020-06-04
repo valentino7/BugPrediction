@@ -24,8 +24,6 @@ public class Strings {
 	public static final String FIELD_SHA = "sha";
 
 	
-	//public static final String LOG_FILENAME = "data\\commitsParquet.txt";
-	
 	
 	public static final String REST = "rest";
 	public static final String FILE = "file";

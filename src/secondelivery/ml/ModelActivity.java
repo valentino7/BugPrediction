@@ -31,11 +31,6 @@ public class ModelActivity {
 
 
 	public static Instances loadData() throws IOException  {
-		//load dataset
-		//		DataSource source = new DataSource("prova.arff");
-		//		return source.getDataSet();
-		//trainingSet.setClassIndex(trainingSet.numAttributes()-1);
-
 		CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(StringsSecondDelivery.PROJECT_NAME+StringsSecondDelivery.OUTPUTFILE));
 		return loader.getDataSet();//get instances object		
@@ -53,8 +48,6 @@ public class ModelActivity {
 		remove.setInputFormat(dataset);
 		//apply the filter
 		dataset = Filter.useFilter(dataset, remove);
-		System.out.println(dataset.get(0));
-		System.out.println("num attributi iniziali: " + dataset.numAttributes());
 		return dataset;
 	}
 
@@ -67,23 +60,17 @@ public class ModelActivity {
 		int i = 1;
 		double releaseIndex = 1.0;
 
-		System.out.println("prima riga" +dataset.get(0));
-		System.out.println(dataset.size());
 		while(true) {
 			traingIndex=testIndex;
-			if(i==(dataset.size()-1))
+			if(i==dataset.size()-1)
 				break;
 			while(true) {
-				if(dataset.get(i).value(0) > releaseIndex + 1.0 || i==(dataset.size()-1)) {
-					System.out.println("ciao "+dataset.get(i).value(0));
-					System.out.println("ciao1  "+releaseIndex);
+				if(dataset.get(i).value(0) > releaseIndex + 1.0 || i==dataset.size()-1) {
 					break;
 				}
-				//				System.out.println("release "+ dataset.get(i).value(0));
 				if(dataset.get(i).value(0) <= releaseIndex) {
 					traingIndex++;
 				}
-
 				testIndex++;
 				i++;
 			}
@@ -92,52 +79,57 @@ public class ModelActivity {
 			Instances testSet = new Instances(dataset, traingIndex, testIndex-traingIndex);
 
 
-			TypeFilter pcaFilter = new PcaSelection();
-			TypeFilter filter = new FilterSelection();
-			TypeFilter wrapperFilter = new WrapperSelection();
+			
 
-			//Feature selections PCA
+			
 
-			//rimuovo attributo stringa
-			Instances rmtrainingSet = preprocessing(trainingSet);
-			Instances rmtestset = preprocessing(testSet);
-
-			Filter pcafilter = pcaFilter.getFilter(rmtrainingSet);
-			Instances pcaTrainingSet = Filter.useFilter(rmtrainingSet, pcafilter);
-			Instances pcaTestSet = Filter.useFilter(rmtestset, pcafilter);
-
-			//normalizzazione dei dati, pca la fa in automatico
-			trainingSet = normalization(trainingSet);
-			testSet = normalization(testSet);
-
-			//filter selection
-			Filter filterSelection = filter.getFilter(trainingSet);
-			Instances filteredTrainingSet = Filter.useFilter(trainingSet, filterSelection);
-			Instances filterTestSet = Filter.useFilter(testSet, filterSelection);
-
-			System.out.println("num attributi training e test: " + filteredTrainingSet.numAttributes()+" "+filterTestSet.numAttributes());
-			System.out.println("dopo filtro "+filteredTrainingSet.get(0));
-
-
-			//wrapper filter con nayve bayes
-			Filter wrapperSelection = wrapperFilter.getFilter(trainingSet);
-			Instances wrapperedTrainingSet = Filter.useFilter(trainingSet, wrapperSelection);
-			Instances wrapperTestSet = Filter.useFilter(testSet, wrapperSelection);
-
-			System.out.println("num attributi training e test: " + wrapperedTrainingSet.numAttributes()+" "+wrapperTestSet.numAttributes());
-			System.out.println("dopo wrappo "+wrapperedTrainingSet.get(0));
-
-			if(pcaTrainingSet.numAttributes() > 1)
-				trainModel(pcaTrainingSet, "pca", pcaTestSet, releaseIndex, listOutput);
-			if(filteredTrainingSet.numAttributes() > 1)
-				trainModel(filteredTrainingSet, "filter", filterTestSet, releaseIndex, listOutput);
-			if(wrapperedTrainingSet.numAttributes() > 1)
-				trainModel(wrapperedTrainingSet, "wrapper", wrapperTestSet, releaseIndex, listOutput);
-			trainModel(trainingSet, "no fs", testSet, releaseIndex, listOutput);
+			
+			launchModelsFs(trainingSet, testSet, releaseIndex, listOutput);
+			trainModel(trainingSet, "no fs", testSet, releaseIndex, listOutput);		
 
 			releaseIndex = releaseIndex + 1.0;
 		}
 	}
+
+	
+	private static void launchModelsFs(Instances trainingSet, Instances testSet, double releaseIndex, List<OutputMl> listOutput) throws Exception {
+		
+		TypeFilter pcaFilter = new PcaSelection();
+		TypeFilter filter = new FilterSelection();
+		TypeFilter wrapperFilter = new WrapperSelection();
+		
+		//Feature selections PCA
+
+		//rimuovo attributo stringa
+		Instances rmtrainingSet = preprocessing(trainingSet);
+		Instances rmtestset = preprocessing(testSet);
+
+		Filter pcafilter = pcaFilter.getFilter(rmtrainingSet);
+		Instances pcaTrainingSet = Filter.useFilter(rmtrainingSet, pcafilter);
+		Instances pcaTestSet = Filter.useFilter(rmtestset, pcafilter);
+
+		//normalizzazione dei dati, pca la fa in automatico
+		trainingSet = normalization(trainingSet);
+		testSet = normalization(testSet);
+
+		//filter selection
+		Filter filterSelection = filter.getFilter(trainingSet);
+		Instances filteredTrainingSet = Filter.useFilter(trainingSet, filterSelection);
+		Instances filterTestSet = Filter.useFilter(testSet, filterSelection);
+
+		//wrapper filter con nayve bayes
+		Filter wrapperSelection = wrapperFilter.getFilter(trainingSet);
+		Instances wrapperedTrainingSet = Filter.useFilter(trainingSet, wrapperSelection);
+		Instances wrapperTestSet = Filter.useFilter(testSet, wrapperSelection);
+		
+		if(pcaTrainingSet.numAttributes() > 1)
+			trainModel(pcaTrainingSet, "pca", pcaTestSet, releaseIndex, listOutput);
+		if(filteredTrainingSet.numAttributes() > 1)
+			trainModel(filteredTrainingSet, "filter", filterTestSet, releaseIndex, listOutput);
+		if(wrapperedTrainingSet.numAttributes() > 1)
+			trainModel(wrapperedTrainingSet, "wrapper", wrapperTestSet, releaseIndex, listOutput);
+	}
+
 
 	private static Instances normalization(Instances dataset) throws Exception {
 		//normalizzazione
@@ -235,15 +227,7 @@ public class ModelActivity {
 
 	private static void evaluation(Classifier classifier, Instances test, OutputMl o, List<OutputMl> listOutput) throws Exception {
 		Evaluation eval = new Evaluation(test);	
-		eval.evaluateModel(classifier, test); 
-		//		
-		//		System.out.println("Correct% = "+eval.pctCorrect());
-		//		System.out.println("Precision = "+eval.precision(1));
-		//		System.out.println("Recall = "+eval.recall(1));
-		//		System.out.println("AUC = "+eval.areaUnderROC(1));
-		//	
-		//		System.out.println("kappa = "+eval.kappa());	
-		//		
+		eval.evaluateModel(classifier, test); 	
 		o.setAuc(eval.areaUnderROC(1));
 		o.setKappa(eval.kappa());
 		o.setPrecision(eval.precision(1));

@@ -7,7 +7,6 @@ import java.util.List;
 
 import common.entity.Bug;
 import common.entity.CollectCommits;
-import common.entity.CommitEntity;
 import common.entity.Project;
 import common.parser.ParserGithub;
 import common.parser.ParserJira;
@@ -121,7 +120,6 @@ public class ControllerFirstdelivery {
 	private static void initializeList(List<OutputFields> listDateNum,LocalDateTime beginDate,LocalDateTime endDate) {
 		//i mesi iniziano da 1
 		Integer beginMonth = beginDate.getMonthValue();
-		//Integer beginMonth=StringsFirstDelivery.BEGIN_MONTH;
 		for(Integer i = beginDate.getYear(); i<= endDate.getYear() ;i++) {
 			if(!i.equals(beginDate.getYear())) 
 				beginMonth=1;
@@ -158,23 +156,4 @@ public class ControllerFirstdelivery {
 	}
 
 
-
-
-
-
-
-
-
-	//	//rimosso
-	//	public static void removeDuplicateElement(List<String> lBugs) {
-	//		lBugs.stream().distinct().collect(Collectors.toList());
-	//	}
-	//	//rimosso
-	//	public static void filterFile(List<String> lCommits) {
-	//		lCommits.removeIf((String n) -> (n==null || !n.contains(StringsFirstDelivery.KEY)   )   ); 
-	//	}
-
-	//	 public static void configureLogger() {
-	//		 MyLog4J.setProperties();
-	//	 }
 }

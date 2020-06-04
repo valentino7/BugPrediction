@@ -36,10 +36,6 @@ public class WrapperSelection implements TypeFilter {
 			Logger.getLogger(WrapperSelection.class.getName()).log( Level.SEVERE, e.toString(), e );
 		}
 		
-		//num attributi selezionati
-//		int [] setAttribwrpnbc = bFWrpNbc.search(wrapperEvalnbc, dataset);
-//		System.out.println(Utils.arrayToString(setAttribwrpnbc));
-
 		AttributeSelection fs = new AttributeSelection();
 		fs.setEvaluator(wrapperEvalnbc);
 		fs.setSearch(bFWrpNbc);

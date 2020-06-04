@@ -17,22 +17,7 @@ public class ManageFile {
 		
 	}
 	
-//	public static List<CommitEntity> readFile() throws IOException {
-//		ArrayList<CommitEntity> lCommits = new ArrayList<>();
-//		FileReader fr= new FileReader(StringsFirstDelivery.LOG_FILENAME);
-//		try(BufferedReader reader = new BufferedReader(fr)){
-//			
-//			String line = reader.readLine();
-//			while(line!=null) {
-//		        line = reader.readLine();
-//		        String[] s=line.split("\t");
-//		        lCommits.add(new CommitEntity(CreatorDate.parseDateTimeFormat(s[0]),s[1],"id"));
-//			}
-//		} 
-//		return lCommits;
-//	}
-	
-	
+
 	public static void writeCSVOnFile(List<OutputFields> list) {
 		   try(FileWriter csvWriter = new FileWriter(StringsFirstDelivery.OUTPUTFILE)){
 			   csvWriter.append("Date");
@@ -41,8 +26,6 @@ public class ManageFile {
 			   csvWriter.append("\n");
 			   
 			   for(int i = 0 ; i!= list.size();i++) {
-				   //String year= Integer.toString( list.get(i).getDate().get(Calendar.YEAR) );
-				   //String month= Integer.toString( list.get(i).getDate().get(Calendar.MONTH));
 				   csvWriter.append(list.get(i).getDate().getMonth().getDisplayName(TextStyle.SHORT,Locale.ITALIAN)+"/"+list.get(i).getDate().getYear());
 				   csvWriter.append(",");
 				   csvWriter.append(Integer.toString(list.get(i).getCount()));

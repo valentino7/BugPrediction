@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import common.entity.JavaFile;
 import common.entity.Metrics;
-import firstdelivery.io.ManageFile;
 import secondelivery.strings.StringsSecondDelivery;
 
 public class WriteDataset {
