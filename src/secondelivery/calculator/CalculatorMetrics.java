@@ -99,7 +99,7 @@ public class CalculatorMetrics {
 			//metriche incrementali
 			metrics.setLoc(javaFile.getMetrics().getLoc());
 			metrics.setAgeDotLoc(javaFile.getMetrics().getAgeDotLoc());
-			metrics.setNumAuth(javaFile.getMetrics().getNumAuth());
+			metrics.setNumAuth(0);
 			metrics.setAge(javaFile.getMetrics().getAge());
 			metrics.setAgeDotLoc(0);
 			JavaFile file = new JavaFile(javaFile.getFilename(), metrics, javaFile.getNumCreatedLines(), javaFile.getNumDeletedLines(),

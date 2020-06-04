@@ -106,7 +106,7 @@ public class WriteDataset {
 				}
 			}
 		} catch (Exception e) {
-			Logger.getLogger(ManageFile.class.getName()).log( Level.SEVERE, e.toString(), e );
+			Logger.getLogger(WriteDataset.class.getName()).log( Level.SEVERE, e.toString(), e );
 		} 
 	}
 

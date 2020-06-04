@@ -51,6 +51,9 @@
         <pathelement location="lib/jar_files/jsch-0.1.44-1.jar"/>
         <pathelement location="lib/jar_files/mtj-1.0.4.jar"/>
         <pathelement location="lib/jar_files/netlib-java-1.1.jar"/>
+        <pathelement location="lib/jar_files/SMOTE.jar"/>
+        <pathelement location="lib/jar_files/LibSVM-1.0.10.jar"/>
+        <pathelement location="lib/svm/libsvm-3.24.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -98,8 +101,8 @@
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>
-    <target name="Model">
-        <java classname="secondelivery.ml.Model" failonerror="true" fork="yes">
+    <target name="ModelActivity">
+        <java classname="secondelivery.ml.ModelActivity" failonerror="true" fork="yes">
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>
