@@ -49,8 +49,6 @@ public class CalculatorBugginess {
 		int keyIV, int keyFV) {
 		
 		for(int i = keyIV; i!=keyFV+1; i++) {
-			if(i==20 || i==21 || i==22)
-				System.out.println("i "+ i +" "+ file.getFilename());
 			//keyFV puo essere maggiore del 50% delle release
 			iterateOnFilesInRelease(oldFiles, hRelFile, file, keyIV, keyFV, i);
 		}		

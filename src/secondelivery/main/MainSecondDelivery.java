@@ -13,9 +13,8 @@ public class MainSecondDelivery {
 
 	public static void main(String[] args) throws Exception   {
 		for(int i = 0; i!= 4; i++) {	
-//			System.out.println(proportionMethod[propIndexs[j]]);
 			ControllerSecondelivery.createMetrics(projectName[i%2], new String[] {directories[i%2]}, new String[] {nameRepos[i%2]}, proportionMethod[propIndexs[i]]);
-//			ControllerSecondelivery.startModelActivity(proportionMethod[propIndexs[i]], directories[i%2], projectName[i%2]);
+			ControllerSecondelivery.startModelActivity(proportionMethod[propIndexs[i]], directories[i%2], projectName[i%2]);
 		}
 	}
 

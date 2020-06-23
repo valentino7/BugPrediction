@@ -1,6 +1,5 @@
 package firstdelivery.controller;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +52,7 @@ public class ControllerFirstdelivery {
 			List<Bug> bugsWithoutCommits = getBugsWithoutCommit(project.getCollectBugs().getBugsWithCommits(),bugs);
 			project.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
 
-			//verifico quali bug non sono nel branch di default
-			//		searchCommitInDifferentBranch(project, nameRepos);
-
+			
 			//Create ArrayList of Date,NumTicket in 1 Month
 			//intervallo finestra di studio, inizio data primo bug, fine data ultima commit
 			LocalDateTime beginDate = project.getCollectBugs().getBugsWithCommits().get(0).getOpenDate();
@@ -66,32 +63,6 @@ public class ControllerFirstdelivery {
 			ManageFile.writeCSVOnFile(StringsFirstDelivery.OUTPUTFILE+outputFile, listDateNum, project.getCollectCommits().getMyTicketCommits().size(), project.getCollectCommits().getNoTicketCommits().size(),
 					project.getCollectCommits().getOtherIdCommits().size(), project.getCollectBugs().getBugsWithCommits().size(), project.getCollectBugs().getBugsWithoutCommits().size());  
 		}
-	}
-
-
-
-	private static void searchCommitInDifferentBranch(Project projectDefaultBranch, String[] repos) throws IOException {
-		Project projectAllBranches = new Project(StringsFirstDelivery.PROJ_NAME,repos);
-		List<Bug> b = ParserJira.getProjectBug(projectAllBranches.getName());
-		CollectCommits c = ParserGithub.getCommitsByAllBranches(projectAllBranches.getCollectBugs(),b,projectAllBranches.getUrlsRepo());
-		projectAllBranches.setCollectCommits(c);
-		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(projectAllBranches.getCollectBugs().getBugsWithCommits(),b);
-		projectAllBranches.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
-
-		//bug che sono negli altri branch e non in quello di default
-		boolean present;
-		for (Bug bugAll : projectAllBranches.getCollectBugs().getBugsWithCommits()) {
-			present=false;
-			for (Bug bugDefault : projectDefaultBranch.getCollectBugs().getBugsWithCommits()) {
-				if(bugDefault.getId().equals(bugAll.getId())) {
-					present=true;
-					break;
-				}
-			}
-			if(!present)
-				System.out.println(bugAll.getId());
-		}
-
 	}
 
 

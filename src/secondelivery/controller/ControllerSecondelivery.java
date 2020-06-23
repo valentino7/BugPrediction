@@ -53,11 +53,6 @@ public class ControllerSecondelivery {
 		//calcolo IV FV OV AV ed elimino i bug senza FV e senza OV oppure OV>FV
 		CalculatorLifeCycle.calculateLifeCycle(project, proportionMethod);
 		
-		for(int i=0;i!= project.getReleases().size();i++) {
-			if(project.getReleases().get(i).getAffected().equals(Boolean.TRUE))
-				System.out.println(project.getReleases().get(i).getIndex());
-		}
-
 		Map<String,List<JavaFile>> hRelFile = CalculatorMetrics.startCalculator(repos, project.getReleases(), project.getCollectCommits(), project.getCollectBugs());
 
 		CalculatorBugginess.startBugginess(project, hRelFile, repos);

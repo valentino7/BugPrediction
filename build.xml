@@ -59,7 +59,6 @@
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -90,20 +89,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="MainFirstDelivery">
-        <java classname="firstdelivery.main.MainFirstDelivery" failonerror="true" fork="yes">
-            <classpath refid="ProjectISW2.classpath"/>
-        </java>
-    </target>
-    <target name="MainSecondDelivery">
-        <java classname="secondelivery.main.MainSecondDelivery" failonerror="true" fork="yes">
-            <classpath refid="ProjectISW2.classpath"/>
-        </java>
-    </target>
-    <target name="ModelActivity">
-        <java classname="secondelivery.ml.ModelActivity" failonerror="true" fork="yes">
-            <classpath refid="ProjectISW2.classpath"/>
-        </java>
     </target>
 </project>

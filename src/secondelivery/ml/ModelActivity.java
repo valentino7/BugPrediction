@@ -13,7 +13,6 @@ import weka.filters.unsupervised.attribute.Remove;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.LibSVM;
 import weka.classifiers.functions.Logistic;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.FilteredClassifier;
@@ -74,7 +73,6 @@ public class ModelActivity {
 				i++;
 			}
 
-			System.out.println("relax Index "+ releaseIndex);
 			Instances trainingSet = new Instances(dataset, 0, traingIndex);
 			Instances testSet = new Instances(dataset, traingIndex, testIndex-traingIndex);
 
@@ -150,10 +148,6 @@ public class ModelActivity {
 		IBk ibk = new IBk();
 		NaiveBayes naiveBayes = new NaiveBayes();
 		Logistic logistic = new Logistic();
-		
-		
-//		LibSVM svm = new LibSVM();
-//		svm.setOptions(new String[]{"-K", "0"});
 
 		
 
@@ -208,27 +202,6 @@ public class ModelActivity {
 		output.setPercentDefectiveTraining(percentSmoteData);
 		fc = sampling(trainingSet, randomForest, smote);
 		evaluation(fc, testSet,  output, listOutput);
-
-
-//		String m2 = "svm";
-//		output.setModel(m2);
-//		output.setkParam(0);
-//
-//		output.setNameSampling(strOversampling);
-//		output.setPercentDefectiveTraining(percentResampleData);
-//		fc = sampling(trainingSet, svm, resample);
-//		evaluation(fc, testSet, output, listOutput);
-//
-//		output.setNameSampling(strUndersampling);
-//		output.setPercentDefectiveTraining(percentSpreadData);
-//		fc = sampling(trainingSet, svm, spreadSubsample);
-//		evaluation(fc, testSet, output, listOutput);
-//
-//		output.setNameSampling(strSmote);
-//		output.setPercentDefectiveTraining(percentSmoteData);
-//		fc = sampling(trainingSet, svm, smote);
-//		evaluation(fc, testSet, output, listOutput);
-
 
 		//LOGISTIC
 		String m3 = "logistic";
@@ -318,11 +291,6 @@ public class ModelActivity {
 		c = noSamplingEvaluation(randomForest, trainingSet);
 		evaluation(c, testSet, output, listOutput);
 
-//		output.setkParam(0);
-//		output.setModel(m2);
-//		c = noSamplingEvaluation(svm, trainingSet);
-//		evaluation(c, testSet, output, listOutput);
-
 		output = getOutputFileWithParam(m3, percentTesting, percentTrainingOnDataset, releaseIndex, olNumAttr, trainingSet.numAttributes(), nameFs);
 		output.setNameSampling(noSampling);
 		output.setPercentDefectiveTraining(percentTraining);
@@ -411,8 +379,5 @@ public class ModelActivity {
 		o.setFp(eval.numFalsePositives(1));
 		o.setRecall(eval.recall(1));
 		listOutput.add(o);	
-
 	}
-
-
 }

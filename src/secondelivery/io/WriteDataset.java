@@ -142,8 +142,6 @@ public class WriteDataset {
 			if(list.get(i).getMetrics().getBuggy().equals(Boolean.TRUE))
 				somm+=1;
 		}
-		System.out.println(somm+" somma");
-		System.out.println((double)somm/list.size()+" somm/size");
 		return (double)somm/list.size()*100;
 	}
 

@@ -15,36 +15,17 @@ public class CalculatorLifeCycle {
 
 	public static void calculateLifeCycle(Project project, String proportionMethod) {
 
-		System.out.println("size BUG prima del filtro "+project.getCollectBugs().getBugsWithCommits().size() );
 		//set fixed version per tutti i bug
 		
 		setFixedAndOpenVersion(project.getCollectBugs().getBugsWithCommits(),project.getReleases());
 		
 		//ordino per fixed version
 		
-//		for (Bug bug : project.getCollectBugs().getBugsWithCommits()) {
-//			for (Release affectedRelease : bug.getAffectedReleases()) {
-//				int i=0;
-//				for (Release release : project.getReleases()) {
-//
-//					if(release.equals(bug.getOpenRelease())) {
-//						System.out.println("indice versione open " + i);
-//					}
-//					if(release.getId().equals(affectedRelease.getId())) {
-//						System.out.println("indice versione affetta " + i);
-//					}
-//					i++;
-//				}
-//			}
-//			
-//		}
-		
 		XSorter.sortBugsByFixedRelease(project.getCollectBugs().getBugsWithCommits());
 		int percent = project.getCollectBugs().getBugsWithCommits().size() *1 /100;
 		if(percent==0)
 			percent=1;
-		System.out.println("percent "+ percent);
-		System.out.println("size BUG dopo il filtro "+project.getCollectBugs().getBugsWithCommits().size() );
+	
 		//calcolare injected version e affected version
 		setInjectedAndAffectedVersion(percent, project, proportionMethod);
 		
@@ -99,7 +80,6 @@ public class CalculatorLifeCycle {
 		}
 		//CANCELLO BUG SENZA FIXEDVERSION
 		if(!isFixed) {
-			System.out.println("Non esiste relase fixed RIMUOVO-bug: "+ String.valueOf(bug.getId())+ " commit id: "+lastCommits.getDate().toString());
 			iter.remove();
 			return -1;
 		}
@@ -112,15 +92,11 @@ public class CalculatorLifeCycle {
 		boolean isOpening = false;
 		for (Release release : releases) {
 			if(release.getDate().compareTo(bug.getOpenDate())>0 ) {
-				//caso in cui il bug ha AV jira e la versione dopo l'open è minore AV Jira
-//				if(!bug.getAffectedReleases().isEmpty() && release.getDate().compareTo(bug.getAffectedReleases().get(0).getDate()) < 0 )
-//					bug.setOpenRelease(bug.getAffectedReleases().get(0));
-//				else
+
 				bug.setOpenRelease(release);
 				//caso in cui il bug ha AV jira e la versione dopo l'open è minore AV Jira
 				//creo una lista con affette le versioni dall'opening in poi
 				if(!bug.getAffectedReleases().isEmpty() && release.getDate().compareTo(bug.getAffectedReleases().get(0).getDate()) < 0 ) {
-					//bug.setAffectedReleases(addOVtoAV(releases,release,bug.getAffectedReleases()));
 					bug.setAffectedReleases(releases.subList(releases.indexOf(release),
 							releases.indexOf(bug.getAffectedReleases().get(bug.getAffectedReleases().size()-1))+1));
 					bug.getAffectedReleases().stream().forEach(r->r.setAffected(Boolean.TRUE));
@@ -136,7 +112,6 @@ public class CalculatorLifeCycle {
 		}
 		//CANCELLO VERSIONI SENZA OPEN VERSION
 		if(!isOpening) {
-			System.out.println("RIMUOVO VERSIONE SENZA OPENING, SONO AFFECTED? :"+ bug.getAffectedReleases().size()+" BUG ID: "+bug.getId()+" openDate: "+bug.getOpenDate().toString());
 			iter.remove();
 		}
 	}
@@ -177,10 +152,8 @@ public class CalculatorLifeCycle {
 
 	public static void calculateProportion(String proportionMethod, ProportionMethod calculator ,List<Release> releases,List<Bug> bugsAVJira, Bug bug,int percent) {
 		if(proportionMethod.equals("movingWindow")) {
-			System.out.println(proportionMethod);
 			calculator.calculateProportionMovingWindow(releases,bugsAVJira, bug,percent);
 		}else if(proportionMethod.equals("increment") ) {
-			System.out.println(proportionMethod);
 			calculator.calculateProportionIncrement(releases,bugsAVJira, bug);
 		}
 	}
