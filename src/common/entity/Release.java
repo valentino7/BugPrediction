@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class Release {
 	private String id;
 	private String name;
+	private int index;
 	private LocalDateTime date;
 	private Boolean affected;
 	
@@ -15,6 +16,14 @@ public class Release {
 		this.affected = Boolean.FALSE;
 	}
 	
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 	public Boolean getAffected() {
 		return this.affected;
 	}

@@ -6,16 +6,117 @@ public class OutputMl {
 	private String nameSampling;
 	private double nRelease;
 	private String model;
+	private double percentDefectiveTraining;
+	private double percentDefectiveTesting;
+	private double percentTrainingOnTotal;
+	private int kParam;
+	private int epvBefore;
+	private int epvAfter;	
 	private double precision;
+	private double tp;
+	private double fp;
+	private double tn;
+	private double fn;
 	private double recall;
+	private double fMeasure;
 	private double auc;
 	private double kappa;
 	
-	public OutputMl(String nameFs, String nameSampling, double nRelease, String model) {
+	
+	public OutputMl(double percentTrainingOnDataset, double nRelease, int epvBefore, int epvAfter, String nameFs) {
 		this.nameFs = nameFs;
-		this.nameSampling = nameSampling;
 		this.nRelease = nRelease;
-		this.model = model;
+		this.epvAfter = epvAfter;
+		this.epvBefore = epvBefore;
+		this.percentTrainingOnTotal = percentTrainingOnDataset;
+	}
+
+	public int getEpvBefore() {
+		return epvBefore;
+	}
+
+	public void setEpvBefore(int epvBefore) {
+		this.epvBefore = epvBefore;
+	}
+
+	public int getEpvAfter() {
+		return epvAfter;
+	}
+
+	public void setEpvAfter(int epvAfter) {
+		this.epvAfter = epvAfter;
+	}
+
+	public double getPercentDefectiveTraining() {
+		return percentDefectiveTraining;
+	}
+
+	public void setPercentDefectiveTraining(double percentDefectiveTraining) {
+		this.percentDefectiveTraining = percentDefectiveTraining;
+	}
+
+	public double getPercentDefectiveTesting() {
+		return percentDefectiveTesting;
+	}
+
+	public void setPercentDefectiveTesting(double percentDefectiveTesting) {
+		this.percentDefectiveTesting = percentDefectiveTesting;
+	}
+
+	public double getPercentTrainingOnTotal() {
+		return percentTrainingOnTotal;
+	}
+
+	public void setPercentTrainingOnTotal(double percentTrainingOnTotal) {
+		this.percentTrainingOnTotal = percentTrainingOnTotal;
+	}
+
+	public double getTp() {
+		return tp;
+	}
+
+	public void setTp(double tp) {
+		this.tp = tp;
+	}
+
+	public double getFp() {
+		return fp;
+	}
+
+	public void setFp(double fp) {
+		this.fp = fp;
+	}
+
+	public double getTn() {
+		return tn;
+	}
+
+	public void setTn(double tn) {
+		this.tn = tn;
+	}
+
+	public double getFn() {
+		return fn;
+	}
+
+	public void setFn(double fn) {
+		this.fn = fn;
+	}
+
+	public int getkParam() {
+		return kParam;
+	}
+
+	public void setkParam(int kParam) {
+		this.kParam = kParam;
+	}
+
+	public double getfMeasure() {
+		return fMeasure;
+	}
+
+	public void setfMeasure(double fMeasure) {
+		this.fMeasure = fMeasure;
 	}
 
 	public String getNameFs() {

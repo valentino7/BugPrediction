@@ -1,11 +1,6 @@
 package secondelivery.calculator;
-import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.eclipse.jgit.api.Git;
-
 import common.entity.Bug;
 import common.entity.CommitEntity;
 import common.entity.Project;
@@ -18,11 +13,13 @@ public class CalculatorLifeCycle {
 
 	private CalculatorLifeCycle() {}
 
-	public static void calculateLifeCycle(Project project, List<Git> repos, String proportionMethod) {
+	public static void calculateLifeCycle(Project project, String proportionMethod) {
 
-		System.out.println("Bugs con commit: "+String.valueOf(project.getCollectBugs().getBugsWithCommits().size()));
+		System.out.println("size BUG prima del filtro "+project.getCollectBugs().getBugsWithCommits().size() );
 		//set fixed version per tutti i bug
+		
 		setFixedAndOpenVersion(project.getCollectBugs().getBugsWithCommits(),project.getReleases());
+		
 		//ordino per fixed version
 		
 //		for (Bug bug : project.getCollectBugs().getBugsWithCommits()) {
@@ -49,16 +46,10 @@ public class CalculatorLifeCycle {
 		System.out.println("percent "+ percent);
 		System.out.println("size BUG dopo il filtro "+project.getCollectBugs().getBugsWithCommits().size() );
 		//calcolare injected version e affected version
-		setInjectedAndAffectedVersion(percent,project,proportionMethod);
+		setInjectedAndAffectedVersion(percent, project, proportionMethod);
 		
 		//setta le release affette
-		setAffectedRelease(project.getCollectBugs().getBugsWithCommits(),project.getReleases());
-		
-		
-		for (Release release : project.getReleases()) {
-
-			System.out.println(MessageFormat.format("{0} {1} {2}",release.getId(),release.getDate(),release.getAffected()));
-		}
+		setAffectedRelease(project.getCollectBugs().getBugsWithCommits(), project.getReleases());
 	}
 
 
@@ -167,9 +158,9 @@ public class CalculatorLifeCycle {
 					bug.setInjectedRelease(bug.getOpenRelease());
 				else {
 					//calcola P 
-					calculateProportion(proportionMethod,calculator,project.getReleases(),project.getCollectBugs().getBugsJiraAV(), bug,percent);
+					calculateProportion(proportionMethod, calculator, project.getReleases(), project.getCollectBugs().getBugsJiraAV(), bug, percent);
 					//calcola injection version
-					CalculatorProportion.setInjectionVersion( project.getReleases(), bug);
+					CalculatorProportion.setInjectionVersion(project.getReleases(), bug);
 				}
 
 				//calcola affected version, sono affette tutte le versioni dall opening alla fixed
@@ -184,11 +175,14 @@ public class CalculatorLifeCycle {
 		}		
 	}
 
-	public static void calculateProportion(String proportionMethod, ProportionMethod calculator ,List<Release> releases,List<Bug> bugsAVJira,Bug bug,int percent) {
-		if(proportionMethod.equals("movingWindow"))
+	public static void calculateProportion(String proportionMethod, ProportionMethod calculator ,List<Release> releases,List<Bug> bugsAVJira, Bug bug,int percent) {
+		if(proportionMethod.equals("movingWindow")) {
+			System.out.println(proportionMethod);
 			calculator.calculateProportionMovingWindow(releases,bugsAVJira, bug,percent);
-		else if(proportionMethod.equals("increment") )
+		}else if(proportionMethod.equals("increment") ) {
+			System.out.println(proportionMethod);
 			calculator.calculateProportionIncrement(releases,bugsAVJira, bug);
+		}
 	}
 	
 }

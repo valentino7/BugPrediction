@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import common.entity.Bug;
 import common.entity.CollectCommits;
 import common.entity.Project;
@@ -20,53 +19,53 @@ public class ControllerFirstdelivery {
 
 	private ControllerFirstdelivery() {
 	}
-	
-	
+
+
 	public static void startDelivery( String[] nameRepos)  {
-		Project project = new Project(StringsFirstDelivery.PROJ_NAME,nameRepos);
+		Project project = new Project(StringsFirstDelivery.PROJ_NAME, nameRepos);
 
 		//Get bugsX
 		List<Bug> bugs = ParserJira.getProjectBug(project.getName());
 
-		//all branch
-		CollectCommits collectCommits = ParserGithub.getCommitsByAllBranches(project.getCollectBugs(),bugs,project.getUrlsRepo());
-//		CollectCommits collectCommits = ParserGithub.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getUrlsRepo());
-		project.setCollectCommits(collectCommits);
-		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(project.getCollectBugs().getBugsWithCommits(),bugs);
-		project.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
-
-		System.out.println("Size PARQUET commits: "+Integer.toString(project.getCollectCommits().getMyTicketCommits().size()));
-		System.out.println("Size WITHOUT TICKET commits: "+Integer.toString(project.getCollectCommits().getNoTicketCommits().size()));
-		System.out.println("Size OTHER TICKET commits: "+Integer.toString(project.getCollectCommits().getOtherIdCommits().size()));
-
-
-		System.out.println("Size bugs with commit : "+Integer.toString( project.getCollectBugs().getBugsWithCommits().size()));
-		System.out.println("Size bugs without commit: "+Integer.toString( project.getCollectBugs().getBugsWithoutCommits().size()));
-
-		
-//		for (CommitEntity commit : project.getCollectCommits().getOtherIdCommits()) {
-//			System.out.println(commit.getMessage()+"\n\n\n\n");
-//		}
-
-		//verifico quali bug non sono nel branch di default
-		//		searchCommitInDifferentBranch(project, nameRepos);
-
-		//Create ArrayList of Date,NumTicket in 1 Month
-		//intervallo finestra di studio, inizio data primo bug, fine data ultima commit
-		LocalDateTime beginDate = project.getCollectBugs().getBugsWithCommits().get(0).getOpenDate();
-		LocalDateTime endDate = project.getCollectCommits().getMyTicketCommits().get(project.getCollectCommits().getMyTicketCommits().size()-1).getDate();
-		ArrayList<OutputFields> listDateNum = (ArrayList<OutputFields>)sumTicket(project.getCollectBugs().getBugsWithCommits(),beginDate,endDate);
-		System.out.println("Numero mesi " + listDateNum.size());
+		StringBuilder outputFile = new StringBuilder();
+		for(int i=0; i!=4; i++) {
+			if(i%2==0) {
+				outputFile.append("Parquet");
+				project.setUrlsRepo(new String[] { nameRepos[0] });
+			}else {
+				outputFile.append("3Project"); 
+				project.setUrlsRepo(nameRepos);
+			}
+				
 
 
+			CollectCommits collectCommits = null;
+			if(i>1) {
+				//all branch
+				outputFile.append("allBranch.csv");
+				collectCommits = ParserGithub.getCommitsByAllBranches(project.getCollectBugs(),bugs,project.getUrlsRepo());
+			}else {
+				outputFile.append("oneBranch.csv");
+				collectCommits = ParserGithub.getCommitsDefaultBranch(project.getCollectBugs(),bugs,project.getUrlsRepo());
+			}
+			
+			project.setCollectCommits(collectCommits);
+			List<Bug> bugsWithoutCommits = getBugsWithoutCommit(project.getCollectBugs().getBugsWithCommits(),bugs);
+			project.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
 
-		//numero ticket totali
-		Integer sum=listDateNum.stream().mapToInt(i -> i.getCount()).sum();
-		System.out.println("somma dei ticket presenti in ogni mese: "+sum);
+			//verifico quali bug non sono nel branch di default
+			//		searchCommitInDifferentBranch(project, nameRepos);
 
-		//Write on csv
-		ManageFile.writeCSVOnFile(listDateNum);  
+			//Create ArrayList of Date,NumTicket in 1 Month
+			//intervallo finestra di studio, inizio data primo bug, fine data ultima commit
+			LocalDateTime beginDate = project.getCollectBugs().getBugsWithCommits().get(0).getOpenDate();
+			LocalDateTime endDate = project.getCollectCommits().getMyTicketCommits().get(project.getCollectCommits().getMyTicketCommits().size()-1).getDate();
+			ArrayList<OutputFields> listDateNum = (ArrayList<OutputFields>)sumTicket(project.getCollectBugs().getBugsWithCommits(),beginDate,endDate);
 
+			//Write on csv
+			ManageFile.writeCSVOnFile(StringsFirstDelivery.OUTPUTFILE+outputFile, listDateNum, project.getCollectCommits().getMyTicketCommits().size(), project.getCollectCommits().getNoTicketCommits().size(),
+					project.getCollectCommits().getOtherIdCommits().size(), project.getCollectBugs().getBugsWithCommits().size(), project.getCollectBugs().getBugsWithoutCommits().size());  
+		}
 	}
 
 
@@ -78,16 +77,6 @@ public class ControllerFirstdelivery {
 		projectAllBranches.setCollectCommits(c);
 		List<Bug> bugsWithoutCommits = getBugsWithoutCommit(projectAllBranches.getCollectBugs().getBugsWithCommits(),b);
 		projectAllBranches.getCollectBugs().setBugsWithoutCommits(bugsWithoutCommits);
-
-
-		System.out.println("Size PARQUET commits: "+Integer.toString(projectAllBranches.getCollectCommits().getMyTicketCommits().size()));
-		System.out.println("Size WITHOUT TICKET commits: "+Integer.toString(projectAllBranches.getCollectCommits().getNoTicketCommits().size()));
-		System.out.println("Size OTHER TICKET commits: "+Integer.toString(projectAllBranches.getCollectCommits().getOtherIdCommits().size()));
-
-
-		System.out.println("Size bugs with commit : "+Integer.toString( projectAllBranches.getCollectBugs().getBugsWithCommits().size()));
-		System.out.println("Size bugs without commit: "+Integer.toString( projectAllBranches.getCollectBugs().getBugsWithoutCommits().size()));
-
 
 		//bug che sono negli altri branch e non in quello di default
 		boolean present;

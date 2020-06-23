@@ -7,7 +7,7 @@ public class Strings {
 	public static final String PROJ_NAME ="PARQUET";
 	
 	//GITHUB	
-	public static final String TOKEN = "fd06c873738b8853c87785441087ef574278230f";
+	public static final String TOKEN = "dbc75da65078476bdb9029322fa42082c360e03a";
 	public static final String DEFAULT = "default";
 	public static final String SHA = "sha=";
 	public static final String PER_PAGE = "100";

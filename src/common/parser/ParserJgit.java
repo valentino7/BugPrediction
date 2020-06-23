@@ -79,9 +79,6 @@ public class ParserJgit {
 					Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 					return null;
 				}
-				//System.out.println(head.getName());
-				int cont=0;
-				
 				while (head.getParentCount() != 0) {
 					try {
 						head = walk.parseCommit(head.getParent(0));
@@ -90,26 +87,19 @@ public class ParserJgit {
 					} catch (IOException e) {
 						Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 					}
-
-					cont++;
-
 				}
-				System.out.println(head.getName());
-				System.out.println(cont);
-
 			}
 			revWalk.close();
 
 		}
 
+	
 		//serve riscorrere i bug infine per riempire i bug senza commit 
 		fillBugWithoutCommit(bugs,collectBugs);
 
 		//ordino tutte le liste
 		XSorter.orderCommitsAndBugsLists(collectCommits,collectBugs);
-
-		System.out.println("Size all commit: "+collectCommits.getTotalCommits().size());
-
+		
 		return collectCommits;
 
 	}
@@ -127,9 +117,9 @@ public class ParserJgit {
 		for (Bug bug : bugs) {
 			if(Pattern.compile(bug.getId()+"\\D"+"|"+bug.getId()+"\\b").matcher(message).find()) {
 				isBugInCommit = true;
-				addBugIfNotExists(collectBugs,bug);
-				addCommitIfNotExists(collectCommits.getMyTicketCommits(),commitEntity);
+				addCommitIfNotExists(collectCommits.getMyTicketCommits(), commitEntity);
 				bug.getCommits().add(commitEntity);
+				addBugIfNotExists(collectBugs,bug);
 			}	
 		}
 		//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
@@ -139,7 +129,7 @@ public class ParserJgit {
 			collectCommits.getNoTicketCommits().add(commitEntity);
 
 		collectCommits.getTotalCommits().add(commitEntity);
-
+		
 	}
 
 
@@ -160,11 +150,6 @@ public class ParserJgit {
 		for (Git git : gits) {
 			Iterable<RevCommit> commits = null;
 			try {
-				//commits = git.log().addRange(since, until)
-				//						.addPath("bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalAsyncLedgerOpsTest.java").call();
-
-				//commits = git.log().all().call();
-
 				commits = git.log().
 						add(git.getRepository().resolve("master"))
 						//	.setRevFilter(RevFilter.NO_MERGES)
@@ -173,9 +158,6 @@ public class ParserJgit {
 			} catch (GitAPIException | IOException e) {
 				Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 			}
-			//			} catch (GitAPIException e) {
-			//				Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
-			//			}
 			fillCommitListAllCommits(commits,bugs,collectBugs,collectCommits);
 		}
 
@@ -184,9 +166,6 @@ public class ParserJgit {
 
 		//ordino tutte le liste
 		XSorter.orderCommitsAndBugsLists(collectCommits,collectBugs);
-
-		System.out.println("Size all commit: "+collectCommits.getTotalCommits().size());
-
 		return collectCommits;
 
 	}
@@ -208,9 +187,9 @@ public class ParserJgit {
 			for (Bug bug : bugs) {
 				if(Pattern.compile(bug.getId()+"\\D"+"|"+bug.getId()+"\\b").matcher(message).find()) {
 					isBugInCommit = true;
-					addBugIfNotExists(collectBugs,bug);
-					addCommitIfNotExists(collectCommits.getMyTicketCommits(),commitEntity);
+					addCommitIfNotExists(collectCommits.getMyTicketCommits(), commitEntity);
 					bug.getCommits().add(commitEntity);
+					addBugIfNotExists(collectBugs, bug);
 				}	
 			}
 			//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
@@ -222,6 +201,7 @@ public class ParserJgit {
 			collectCommits.getTotalCommits().add(commitEntity);
 
 		}
+		
 	}
 
 	private static void addCommitIfNotExists(List<CommitEntity> myTicketCommits, CommitEntity commit) {
@@ -232,8 +212,9 @@ public class ParserJgit {
 
 
 	private static void addBugIfNotExists(CollectBugs bugs, Bug addBug) {
-		if(bugs.getBugsWithCommits().contains(addBug))
-			return;
+		if(bugs.getBugsWithCommits().contains(addBug)) {
+			bugs.getBugsWithCommits().remove(addBug);
+		}
 		bugs.getBugsWithCommits().add(addBug);
 	}
 
@@ -250,7 +231,7 @@ public class ParserJgit {
 
 
 
-	public static List<JavaFile> getChangesListsByCommit(List<Git> repos, String sha){
+	public static List<JavaFile> getChangesListsByCommit(CollectBugs collectBugs, List<Git> repos, String sha){
 		List<JavaFile> lClasses = new ArrayList<>();
 		Repository repository = repos.get(0).getRepository();
 		RevWalk rw = new RevWalk(repository);
@@ -287,7 +268,6 @@ public class ParserJgit {
 		try {
 			if(parent == null) {
 				diffs = df.scan(new EmptyTreeIterator(), new CanonicalTreeParser(null, rw.getObjectReader(),commit.getTree()));
-				System.out.println(commit.getFullMessage() +"\nNOME: "+commit.getName()+ "\n\n\n\n");
 			}else {
 				diffs = df.scan(parent.getTree(), commit.getTree());
 			}
@@ -295,13 +275,13 @@ public class ParserJgit {
 			Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 		}
 		//riempio la lista con le classi
-		fillListWithJavaClasses(df, lClasses, diffs, commit);
+		fillListWithJavaClasses(df, lClasses, diffs, commit, collectBugs);
 		df.close();
 		rw.close();
 		return lClasses;
 	}
 
-	private static void fillListWithJavaClasses(DiffFormatter df, List<JavaFile> lClasses, List<DiffEntry> diffs, RevCommit commit) {
+	private static void fillListWithJavaClasses(DiffFormatter df, List<JavaFile> lClasses, List<DiffEntry> diffs, RevCommit commit, CollectBugs collectBugs) {
 		Integer instantChangeSet = getInstantChgset(diffs);
 		for (DiffEntry diff : diffs) {
 			String path = null;
@@ -310,12 +290,12 @@ public class ParserJgit {
 				path = diff.getOldPath();
 			else
 				path = diff.getNewPath();
-				
+			
 			//processo solo i file java con un espressione regolare
 			if(!Pattern.compile(Strings.REGEX_TREE_JAVA).matcher(path).find())
 				continue;
 
-			JavaFile javaFile = getJavaFile(path, diff, commit, df, instantChangeSet, commit.getAuthorIdent().getName());
+			JavaFile javaFile = getJavaFile(path, diff, commit, df, instantChangeSet, commit.getAuthorIdent().getName(), collectBugs);
 			lClasses.add(javaFile);
 
 		}
@@ -332,35 +312,43 @@ public class ParserJgit {
 
 
 
-	private static JavaFile getJavaFile(String path, DiffEntry diff, RevCommit commit, DiffFormatter df, Integer instantChangeSet, String author) {
+	private static JavaFile getJavaFile(String path, DiffEntry diff, RevCommit commit, DiffFormatter df, Integer instantChangeSet, String author, CollectBugs collectBugs) {
 		//incremento change set solo in commit add o modify
-		int nfix=0;
-		if((diff.getChangeType().name().equals("ADD") || diff.getChangeType().name().equals("MODIFY")) && Pattern.compile("\\bfix\\b").matcher(commit.getFullMessage()).find()) {
-			nfix=1;
-		}
+		
+		//incremento nfix solo per operazioni di add e modify quando la commit è l'ultima per quel bug
+		int nfix = calculateNfix(diff, commit, collectBugs);
 			
 		int deletedLines = 0;
 		int createdLines = 0;
 
 		try {
-			for (Edit edit : df.toFileHeader(diff).toEditList()) {
-				//					System.out.println("created B: "+ edit.getLengthB());
-				//					System.out.println("deleted A: "+ edit.getLengthA());					
+			for (Edit edit : df.toFileHeader(diff).toEditList()) {				
 				createdLines+=edit.getLengthB();
 				deletedLines+=edit.getLengthA();
 			}
 		} catch (IOException e) {
 			Logger.getLogger(ParserJgit.class.getName()).log( Level.SEVERE, e.toString(), e);
 		}
-		System.out.println(diff.getChangeType().name());
-		Metrics metrics	 = new Metrics(nfix,instantChangeSet);
-		JavaFile javaFile = new JavaFile(path,metrics,createdLines,deletedLines,diff.getChangeType().name(),
+		Metrics metrics	 = new Metrics(nfix, instantChangeSet);
+		JavaFile javaFile = new JavaFile(path, metrics, createdLines, deletedLines, diff.getChangeType().name(),
 				CreatorDate.getLocalDateTimeByDate(commit.getCommitterIdent().getWhen()), author);
 		if(diff.getChangeType().name().equals("COPY"))
 			javaFile.setOldPath(diff.getOldPath());
 		return javaFile;
 	}
 	
+	private static int calculateNfix(DiffEntry diff, RevCommit commit, CollectBugs collectBugs) {
+		for(int i=0; i!= collectBugs.getBugsWithCommits().size(); i++) {
+			int last = collectBugs.getBugsWithCommits().get(i).getCommits().size();
+			if((diff.getChangeType().name().equals("ADD") || diff.getChangeType().name().equals("MODIFY")) 
+					&& commit.getName().equals(collectBugs.getBugsWithCommits().get(i).getCommits().get(last-1).getSha()))
+				return 1;
+		}
+		return 0;
+	}
+
+
+
 	private static DiffFormatter getDiffFormatter(Repository repository) {
 		DiffFormatter df = new DiffFormatter(DisabledOutputStream.INSTANCE);
 		df.setRepository(repository);

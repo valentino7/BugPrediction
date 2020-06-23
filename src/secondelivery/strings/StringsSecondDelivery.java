@@ -4,11 +4,15 @@ public class StringsSecondDelivery {
 
 	private StringsSecondDelivery() {}
 
-	//Parametri iniziali increment - movingWindow
-	public static final String PROPORTION_METHOD = "movingWindow";
 
+
+	public static final String OUTPUTFILE_PERCENT = "percentBug.csv";
 	public static final String OUTPUTFILE = "dataset.csv";
 	public static final String OUTPUTFILE_ML = "outputML.csv";
+	public static final String DIRECTORY_ML = "MLResult\\";
+	public static final String DIRECTORY_DATASET = "Dataset\\";
+	public static final String RESULTS_ROOT = "results\\";
+	
 	
 	//JIRA	
 	public static final String PROJECT_NAME = "BOOKKEEPER";

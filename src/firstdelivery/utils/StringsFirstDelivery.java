@@ -30,7 +30,7 @@ public final class StringsFirstDelivery {
 	
 	//files string
 	public static final String LOG_FILENAME = "data\\commitsParquet.txt";
-	public static final String OUTPUTFILE = "fixedBug.csv";
+	public static final String OUTPUTFILE = "Tabelle\\fixedBug";
 
 	
 	//not used
