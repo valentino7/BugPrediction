@@ -14,7 +14,7 @@ public class SmoteBalancing {
 		try {
 			smote.setInputFormat(data);
 		} catch (Exception e) {
-			   Logger.getLogger(SmoteBalancing.class.getName()).log( Level.SEVERE, e.toString(), e );
+			Logger.getLogger(SmoteBalancing.class.getName()).log( Level.SEVERE, e.toString(), e );
 		}
 		return smote;
 	}

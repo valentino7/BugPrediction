@@ -18,7 +18,7 @@ public class ResampleBalancing {
 		try {
 			resample.setInputFormat(data);
 		} catch (Exception e) {
-			   Logger.getLogger(ResampleBalancing.class.getName()).log( Level.SEVERE, e.toString(), e );
+			Logger.getLogger(ResampleBalancing.class.getName()).log( Level.SEVERE, e.toString(), e );
 		}
 		return resample;
 	}

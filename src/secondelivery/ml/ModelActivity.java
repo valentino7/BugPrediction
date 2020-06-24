@@ -5,6 +5,8 @@ import weka.core.Instances;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import secondelivery.entity.OutputMl;
 import secondelivery.strings.StringsSecondDelivery;
 import weka.filters.Filter;
@@ -34,18 +36,30 @@ public class ModelActivity {
 		return loader.getDataSet();//get instances object		
 	}
 
-	private static Instances removeFileNameAttribute(Instances dataset) throws Exception{
+	private static Instances removeFileNameAttribute(Instances dataset) {
 		//use a simple filter to remove a certain attribute	
 		//set up options to remove 1st attribute	
 		String[] opts = new String[]{ "-R", "2"};
 		//create a Remove object (this is the filter class)
 		Remove remove = new Remove();
 		//set the filter options
-		remove.setOptions(opts);
+		try {
+			remove.setOptions(opts);
+		} catch (Exception e) {
+			   Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		//pass the dataset to the filter
-		remove.setInputFormat(dataset);
+		try {
+			remove.setInputFormat(dataset);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		//apply the filter
-		dataset = Filter.useFilter(dataset, remove);
+		try {
+			dataset = Filter.useFilter(dataset, remove);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		return dataset;
 	}
 
@@ -139,11 +153,21 @@ public class ModelActivity {
 	}
 
 
-	private static Instances normalization(Instances dataset) throws Exception {
+	private static Instances normalization(Instances dataset) {
 		//normalizzazione
 		Normalize filterNorm = new Normalize();
-		filterNorm.setInputFormat(dataset);
-		return Filter.useFilter(dataset, filterNorm);
+		try {
+			filterNorm.setInputFormat(dataset);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
+		Instances data = null;
+		try {
+			data = Filter.useFilter(dataset, filterNorm);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
+		return data;
 	}
 
 	private static void trainModel(int olNumAttr, Instances trainingSet, String nameFs, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) throws Exception {
@@ -354,26 +378,43 @@ public class ModelActivity {
 	}
 
 
-	private static Classifier noSamplingEvaluation(Classifier classifier, Instances train) throws Exception {
-		classifier.buildClassifier(train);
+	private static Classifier noSamplingEvaluation(Classifier classifier, Instances train) {
+		try {
+			classifier.buildClassifier(train);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		return classifier;
 	}
 
-	private static FilteredClassifier sampling(Instances train, Classifier classifier, Filter filter) throws Exception {
+	private static FilteredClassifier sampling(Instances train, Classifier classifier, Filter filter) {
 
 		FilteredClassifier fc = new FilteredClassifier();
 		fc.setFilter(filter);
 		fc.setClassifier(classifier);
-		fc.buildClassifier(train);
+		try {
+			fc.buildClassifier(train);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 
 		return fc;
 	}
 
 
-	private static void evaluation(Classifier classifier, Instances test, OutputMl o, List<OutputMl> listOutput) throws Exception {
-		Evaluation eval = new Evaluation(test);	
+	private static void evaluation(Classifier classifier, Instances test, OutputMl o, List<OutputMl> listOutput) {
+		Evaluation eval = null;
+		try {
+			eval = new Evaluation(test);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}	
 
-		eval.evaluateModel(classifier, test); 	
+		try {
+			eval.evaluateModel(classifier, test);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		} 	
 		o.setAuc(eval.areaUnderROC(1));
 		o.setKappa(eval.kappa());
 		o.setfMeasure(eval.fMeasure(1));
