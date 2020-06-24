@@ -96,4 +96,9 @@
             <classpath refid="ProjectISW2.classpath"/>
         </java>
     </target>
+    <target name="MainSecondDelivery">
+        <java classname="secondelivery.main.MainSecondDelivery" failonerror="true" fork="yes">
+            <classpath refid="ProjectISW2.classpath"/>
+        </java>
+    </target>
 </project>
