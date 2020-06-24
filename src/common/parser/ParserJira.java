@@ -70,7 +70,7 @@ public class ParserJira {
 	}
 
 
-	//Se la data della release è gia presente nella lista, mantengo la data e sostituisco la release precedente
+	//Se la data della release e gia presente nella lista, mantengo la data e sostituisco la release precedente
 	private static Boolean modifyReleaseList(List<Release> releases, LocalDateTime dateTime , String name, String id) {
 		//check se la lista contiene gia una release in quella data
 		for (Release release : releases) {

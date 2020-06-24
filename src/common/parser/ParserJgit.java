@@ -122,7 +122,7 @@ public class ParserJgit {
 				addBugIfNotExists(collectBugs,bug);
 			}	
 		}
-		//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
+		//se la commit non e stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
 		if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
 			collectCommits.getOtherIdCommits().add(commitEntity);
 		else if (!isBugInCommit)
@@ -175,7 +175,8 @@ public class ParserJgit {
 
 
 		for (RevCommit commit : commits) {
-			//salto la commit se ha 2 parent e quindi è di merge
+			//salto la commit se ha 2 parent
+			//tale commit si definisce di merge
 			if(commit.getParentCount()>1)
 				continue;
 			isBugInCommit = false;
@@ -192,7 +193,7 @@ public class ParserJgit {
 					addBugIfNotExists(collectBugs, bug);
 				}	
 			}
-			//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
+			//se la commit non e stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
 			if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
 				collectCommits.getOtherIdCommits().add(commitEntity);
 			else if (!isBugInCommit)
@@ -285,7 +286,7 @@ public class ParserJgit {
 		Integer instantChangeSet = getInstantChgset(diffs);
 		for (DiffEntry diff : diffs) {
 			String path = null;
-			//se il type è delete prendo il path della commit padre
+			//se il type e delete prendo il path della commit padre
 			if(diff.getChangeType().name().equals("DELETE")) 
 				path = diff.getOldPath();
 			else
@@ -315,7 +316,7 @@ public class ParserJgit {
 	private static JavaFile getJavaFile(String path, DiffEntry diff, RevCommit commit, DiffFormatter df, Integer instantChangeSet, String author, CollectBugs collectBugs) {
 		//incremento change set solo in commit add o modify
 		
-		//incremento nfix solo per operazioni di add e modify quando la commit è l'ultima per quel bug
+		//incremento nfix solo per operazioni di add e modify quando la commit e l'ultima per quel bug
 		int nfix = calculateNfix(diff, commit, collectBugs);
 			
 		int deletedLines = 0;

@@ -167,7 +167,7 @@ public class ParserGithub {
 					bug.getCommits().add(commit);
 				}	
 			}
-			//se la commit non è stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
+			//se la commit non e stata aggiunta a nessun bug e matcha con un altro Ticket di un altro progetto, aggiungo nella seconda lista
 			if(!isBugInCommit && Pattern.compile(Strings.REGEX_OTHER_ID).matcher(message).find())
 				//negli altri branch potrei avere commit uguali
 				addCommitIfNotExists(collectCommits.getOtherIdCommits(),commit);
@@ -193,7 +193,5 @@ public class ParserGithub {
 			return;
 		bugs.add(addBug);
 	}
-
-
 
 }
