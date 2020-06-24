@@ -171,7 +171,7 @@ public class ModelActivity {
 		return data;
 	}
 
-	private static void trainModel(int olNumAttr, Instances trainingSet, String nameFs, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) throws Exception {
+	private static void trainModel(int olNumAttr, Instances trainingSet, String nameFs, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) {
 		//definizione dei modelli		
 		RandomForest randomForest = new RandomForest();
 		IBk ibk = new IBk();
@@ -185,20 +185,36 @@ public class ModelActivity {
 
 		//RESAMPLE
 		Resample resample = ResampleBalancing.getResample(trainingSet, getTotalNumDefect(trainingSet));
-		Instances resampleData = Filter.useFilter(trainingSet, resample); 
+		Instances resampleData = null;
+		try {
+			resampleData = Filter.useFilter(trainingSet, resample);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		} 
 		double percentResampleData = (double) getTotalNumDefect(resampleData)/resampleData.size()*100;
 
 
 		//UNDERSAMPLE
 		SpreadSubsample spreadSubsample = Undersampling.getSpreadSubsample(trainingSet);
-		Instances undersampleData = Filter.useFilter(trainingSet, spreadSubsample);
+		Instances undersampleData = null;
+		try {
+			undersampleData = Filter.useFilter(trainingSet, spreadSubsample);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		double percentSpreadData = (double) getTotalNumDefect(undersampleData)/undersampleData.size()*100;
 
 		
 	
 		//SMOTe
 		SMOTE smote = SmoteBalancing.getSmote(trainingSet);
-		Instances smoteData = Filter.useFilter(trainingSet, smote); 
+		Instances smoteData = null;
+		try {
+			smoteData = Filter.useFilter(trainingSet, smote);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		} 
 		double percentSmoteData = (double) getTotalNumDefect(smoteData)/smoteData.size()*100;
 
 		String strUndersampling = "undersampling";
