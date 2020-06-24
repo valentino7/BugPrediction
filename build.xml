@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 <!-- WARNING: Eclipse auto-generated file.
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
@@ -9,7 +9,6 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <property name="java.encoding" value="ISO-8859-1" />
     <path id="ProjectISW2.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/jar_files/json-20190722.jar"/>
