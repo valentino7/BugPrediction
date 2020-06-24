@@ -166,6 +166,7 @@ public class ModelActivity {
 			data = Filter.useFilter(dataset, filterNorm);
 		} catch (Exception e) {
 			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
 		}
 		return data;
 	}
@@ -354,19 +355,33 @@ public class ModelActivity {
 
 
 	//per il tuning viene scelta la metrica ROC e viene posto il vincolo che kappa debba essere diversa da 0
-	private static int miniTuningKNN(Instances trainingSet, Instances testSet, IBk ibk, Filter filter, Boolean isSampling) throws Exception {
+	private static Integer miniTuningKNN(Instances trainingSet, Instances testSet, IBk ibk, Filter filter, Boolean isSampling){
 		int[] kValues = {1, 3, 9, 19};
 		double max = 0.0;
 		int k = 1;
 		for (int j : kValues) {
 			ibk.setKNN(j);
-			Evaluation eval = new Evaluation(testSet);
+			Evaluation eval = null;
+			try {
+				eval = new Evaluation(testSet);
+			} catch (Exception e) {
+				Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+				return null;
+			}
 			if(isSampling.equals(Boolean.TRUE)) {
 				FilteredClassifier fc = sampling(trainingSet, ibk, filter);
-				eval.evaluateModel(fc, testSet); 	
+				try {
+					eval.evaluateModel(fc, testSet);
+				} catch (Exception e) {
+					Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+				} 	
 			}else {
 				Classifier c = noSamplingEvaluation(ibk, trainingSet);
-				eval.evaluateModel(c, testSet); 	
+				try {
+					eval.evaluateModel(c, testSet);
+				} catch (Exception e) {
+					Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+				} 	
 			}
 			double currentEvaluation = eval.areaUnderROC(1);
 			if(currentEvaluation > max && eval.kappa()!=0.0) {
@@ -408,6 +423,7 @@ public class ModelActivity {
 			eval = new Evaluation(test);
 		} catch (Exception e) {
 			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
 		}	
 
 		try {

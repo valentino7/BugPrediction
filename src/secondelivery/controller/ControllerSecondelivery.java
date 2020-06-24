@@ -1,8 +1,11 @@
 package secondelivery.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import secondelivery.calculator.CalculatorBugginess;
 import secondelivery.calculator.CalculatorLifeCycle;
@@ -101,9 +104,15 @@ public class ControllerSecondelivery {
 	}
 
 
-	public static void startModelActivity(String method, String output, String projectName) throws Exception {
+	public static void startModelActivity(String method, String output, String projectName) {
 		//carico i dati dal csv 
-		Instances dataset = ModelActivity.loadData(method, projectName);
+		Instances dataset = null;
+		try {
+			dataset = ModelActivity.loadData(method, projectName);
+		} catch (IOException e) {
+			Logger.getLogger(ControllerSecondelivery.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
 		//variabile numero attributi stampata nel csv di output
 		int numAttr = dataset.numAttributes();
 		//setto la classe target da predirre
@@ -111,7 +120,11 @@ public class ControllerSecondelivery {
 		//lista utilizzata per accumulare gli output da scrivere su csv alla fine
 		List<OutputMl> listOutput = new ArrayList<>();
 		//implemento il metodo walk forward
-		ModelActivity.walkForward(dataset, listOutput);
+		try {
+			ModelActivity.walkForward(dataset, listOutput);
+		} catch (Exception e) {
+			Logger.getLogger(ControllerSecondelivery.class.getName()).log( Level.SEVERE, e.toString(), e );
+		}
 		//scrivo i risultati
 		WriteResultMl.writeResultMlOnFile(method, listOutput, output);
 	}
