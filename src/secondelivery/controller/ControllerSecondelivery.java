@@ -55,12 +55,16 @@ public class ControllerSecondelivery {
 		
 		Map<String,List<JavaFile>> hRelFile = CalculatorMetrics.startCalculator(repos, project.getReleases(), project.getCollectCommits(), project.getCollectBugs());
 
+		//avvio il calcolo della bugginess
 		CalculatorBugginess.startBugginess(project, hRelFile, repos);
 
+		//si scrive l'output delle metriche su file
 		WriteDataset.writeCSVOnFile(proportionMethod, project.getName(), hRelFile);
 		
+		//si scrive su file la percentuale bug per release
 		WriteDataset.writeBugPercent(proportionMethod, project.getName(), hRelFile);
 
+		//si scrive su file il lifecycle per bug
 		WriteDataset.writeBugIVOVAV(proportionMethod, project.getName(), project.getCollectBugs());
 	}
 
@@ -98,11 +102,17 @@ public class ControllerSecondelivery {
 
 
 	public static void startModelActivity(String method, String output, String projectName) throws Exception {
+		//carico i dati dal csv 
 		Instances dataset = ModelActivity.loadData(method, projectName);
+		//variabile numero attributi stampata nel csv di output
 		int numAttr = dataset.numAttributes();
+		//setto la classe target da predirre
 		dataset.setClassIndex(numAttr - 1);
+		//lista utilizzata per accumulare gli output da scrivere su csv alla fine
 		List<OutputMl> listOutput = new ArrayList<>();
+		//implemento il metodo walk forward
 		ModelActivity.walkForward(dataset, listOutput);
+		//scrivo i risultati
 		WriteResultMl.writeResultMlOnFile(method, listOutput, output);
 	}
 

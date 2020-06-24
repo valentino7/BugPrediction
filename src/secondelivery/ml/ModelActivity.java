@@ -34,7 +34,7 @@ public class ModelActivity {
 		return loader.getDataSet();//get instances object		
 	}
 
-	private static Instances preprocessing(Instances dataset) throws Exception {
+	private static Instances removeFileNameAttribute(Instances dataset) throws Exception{
 		//use a simple filter to remove a certain attribute	
 		//set up options to remove 1st attribute	
 		String[] opts = new String[]{ "-R", "2"};
@@ -78,7 +78,9 @@ public class ModelActivity {
 
 			double percentTrainingOnDataset = (double) trainingSet.size()/dataset.size()*100;
 
+			//lanciatore dei modelli con feature selection e combinazioni di balancing
 			launchModelsFs(trainingSet, testSet, releaseIndex, listOutput, percentTrainingOnDataset);
+			//train modelli senza feature selection con combinazioni di balancing
 			trainModel(trainingSet.numAttributes(), trainingSet, "no fs", testSet, releaseIndex, listOutput, percentTrainingOnDataset);		
 
 			releaseIndex = releaseIndex + 1.0;
@@ -96,6 +98,7 @@ public class ModelActivity {
 	}
 
 
+	//lanciatore dei modelli applicando i filtri di feature selection
 	private static void launchModelsFs(Instances trainingSet, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) throws Exception {
 
 		TypeFilter pcaFilter = new PcaSelection();
@@ -105,8 +108,8 @@ public class ModelActivity {
 		//Feature selections PCA
 
 		//rimuovo attributo stringa
-		Instances rmtrainingSet = preprocessing(trainingSet);
-		Instances rmtestset = preprocessing(testSet);
+		Instances rmtrainingSet = removeFileNameAttribute(trainingSet);
+		Instances rmtestset = removeFileNameAttribute(testSet);
 
 		Filter pcafilter = pcaFilter.getFilter(rmtrainingSet);
 		Instances pcaTrainingSet = Filter.useFilter(rmtrainingSet, pcafilter);
@@ -126,6 +129,7 @@ public class ModelActivity {
 		Instances wrapperedTrainingSet = Filter.useFilter(trainingSet, wrapperSelection);
 		Instances wrapperTestSet = Filter.useFilter(testSet, wrapperSelection);
 
+		//avvio il training solo se il numero di attributi prodotti da feature selection e maggiore di 1
 		if(pcaTrainingSet.numAttributes() > 1)
 			trainModel(trainingSet.numAttributes(), pcaTrainingSet, "pca", pcaTestSet, releaseIndex, listOutput, percentTrainingOnDataset);
 		if(filteredTrainingSet.numAttributes() > 1) 				
@@ -143,7 +147,7 @@ public class ModelActivity {
 	}
 
 	private static void trainModel(int olNumAttr, Instances trainingSet, String nameFs, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) throws Exception {
-		//MODELLO		
+		//definizione dei modelli		
 		RandomForest randomForest = new RandomForest();
 		IBk ibk = new IBk();
 		NaiveBayes naiveBayes = new NaiveBayes();
@@ -325,6 +329,7 @@ public class ModelActivity {
 	}
 
 
+	//per il tuning viene scelta la metrica ROC e viene posto il vincolo che kappa debba essere diversa da 0
 	private static int miniTuningKNN(Instances trainingSet, Instances testSet, IBk ibk, Filter filter, Boolean isSampling) throws Exception {
 		int[] kValues = {1, 3, 9, 19};
 		double max = 0.0;

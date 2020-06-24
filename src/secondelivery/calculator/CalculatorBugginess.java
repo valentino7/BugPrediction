@@ -60,7 +60,7 @@ public class CalculatorBugginess {
 		for (JavaFile javaFile : hRelFile.get(String.valueOf(i))) {
 			if(javaFile.getFilename().equals(file.getFilename()) ) {
 				javaFile.getMetrics().setBuggy(Boolean.TRUE);
-				//check if not in list
+			
 				if(javaFile.getOldPath()!=null ) {
 					String oldPath = javaFile.getOldPath();
 					oldFiles.add(oldPath);
@@ -77,7 +77,7 @@ public class CalculatorBugginess {
 	}
 
 	
-	//GESTISCO I CASI DI RENAME, vado a cercare i file che hanno sia il nome vecchio che il nuovo
+	//GESTISCO I CASI DI RENAME, vado a cercare iterativamente i file che hanno come vecchio nome il nome che sto cercando
 	private static void markOldFile(String oldPath, List<String> oldFiles, int keyIV, int keyFV, Map<String, List<JavaFile>> hRelFile) {
 		//ITERATIVAMENTE CERCA I VECCHI NOMI E METTILI TRUE
 
