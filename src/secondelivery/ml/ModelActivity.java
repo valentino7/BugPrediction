@@ -64,7 +64,7 @@ public class ModelActivity {
 	}
 
 
-	public static void walkForward(Instances dataset, List<OutputMl> listOutput) throws Exception {
+	public static void walkForward(Instances dataset, List<OutputMl> listOutput) {
 
 		//get porzione del dataset come versione
 		int traingIndex = 1;
@@ -113,7 +113,7 @@ public class ModelActivity {
 
 
 	//lanciatore dei modelli applicando i filtri di feature selection
-	private static void launchModelsFs(Instances trainingSet, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset) throws Exception {
+	private static void launchModelsFs(Instances trainingSet, Instances testSet, double releaseIndex, List<OutputMl> listOutput, double percentTrainingOnDataset){
 
 		TypeFilter pcaFilter = new PcaSelection();
 		TypeFilter filter = new FilterSelection();
@@ -126,8 +126,20 @@ public class ModelActivity {
 		Instances rmtestset = removeFileNameAttribute(testSet);
 
 		Filter pcafilter = pcaFilter.getFilter(rmtrainingSet);
-		Instances pcaTrainingSet = Filter.useFilter(rmtrainingSet, pcafilter);
-		Instances pcaTestSet = Filter.useFilter(rmtestset, pcafilter);
+		Instances pcaTrainingSet = null;
+		try {
+			pcaTrainingSet = Filter.useFilter(rmtrainingSet, pcafilter);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
+		Instances pcaTestSet = null;
+		try {
+			pcaTestSet = Filter.useFilter(rmtestset, pcafilter);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
 
 		//normalizzazione dei dati, pca la fa in automatico
 		trainingSet = normalization(trainingSet);
@@ -135,13 +147,37 @@ public class ModelActivity {
 
 		//filter selection
 		Filter filterSelection = filter.getFilter(trainingSet);
-		Instances filteredTrainingSet = Filter.useFilter(trainingSet, filterSelection);
-		Instances filterTestSet = Filter.useFilter(testSet, filterSelection);
+		Instances filteredTrainingSet = null;
+		try {
+			filteredTrainingSet = Filter.useFilter(trainingSet, filterSelection);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
+		Instances filterTestSet = null;
+		try {
+			filterTestSet = Filter.useFilter(testSet, filterSelection);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
 
 		//wrapper filter con nayve bayes
 		Filter wrapperSelection = wrapperFilter.getFilter(trainingSet);
-		Instances wrapperedTrainingSet = Filter.useFilter(trainingSet, wrapperSelection);
-		Instances wrapperTestSet = Filter.useFilter(testSet, wrapperSelection);
+		Instances wrapperedTrainingSet = null;
+		try {
+			wrapperedTrainingSet = Filter.useFilter(trainingSet, wrapperSelection);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
+		Instances wrapperTestSet = null;
+		try {
+			wrapperTestSet = Filter.useFilter(testSet, wrapperSelection);
+		} catch (Exception e) {
+			Logger.getLogger(ModelActivity.class.getName()).log( Level.SEVERE, e.toString(), e );
+			System.exit(-1);
+		}
 
 		//avvio il training solo se il numero di attributi prodotti da feature selection e maggiore di 1
 		if(pcaTrainingSet.numAttributes() > 1)
