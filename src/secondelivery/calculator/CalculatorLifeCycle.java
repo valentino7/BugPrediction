@@ -88,7 +88,7 @@ public class CalculatorLifeCycle {
 
 
 	private static void setOpeningVersion(List<Release> releases,Bug bug, Iterator<Bug> iter) {
-		//get release tra quelle affette che ha data >= data della commit dopo l'apertura		
+		//get release tra quelle affette che ha data >= data dopo l'apertura		
 		boolean isOpening = false;
 		for (Release release : releases) {
 			if(release.getDate().compareTo(bug.getOpenDate())>0 ) {

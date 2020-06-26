@@ -86,14 +86,11 @@ public class CalculatorMetrics {
 			metrics.setAgeDotLoc(javaFile.getMetrics().getAgeDotLoc());
 			metrics.setNumAuth(0);
 			metrics.setAge(javaFile.getMetrics().getAge());
-			metrics.setAgeDotLoc(0);
 			JavaFile file = new JavaFile(javaFile.getFilename(), metrics, javaFile.getNumCreatedLines(), javaFile.getNumDeletedLines(),
-					javaFile.getStatus(), javaFile.getCommitDate(),null);
+					javaFile.getStatus(), javaFile.getCommitDate(), null);
 			file.setAuthors(javaFile.getAuthors());
-			
 			file.setCreationDate(javaFile.getCreationDate());
 			clonedList.add(file);
-
 		}
 		return clonedList;
 	}

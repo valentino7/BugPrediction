@@ -307,8 +307,6 @@ public class ModelActivity {
 		//mini tuning parameter knn con 1,3,9,19
 		//IBK
 		String m4 = "Ibk";
-		output.setModel(m4);
-
 		int k= miniTuningKNN(trainingSet, testSet, ibk, resample, Boolean.TRUE);
 		ibk.setKNN(k);
 		output = new OutputMl(percentTrainingOnDataset, releaseIndex, olNumAttr, trainingSet.numAttributes(), nameFs);		

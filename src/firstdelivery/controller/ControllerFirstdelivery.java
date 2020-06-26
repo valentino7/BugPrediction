@@ -62,6 +62,8 @@ public class ControllerFirstdelivery {
 			//Write on csv
 			ManageFile.writeCSVOnFile(StringsFirstDelivery.OUTPUTFILE+outputFile, listDateNum, project.getCollectCommits().getMyTicketCommits().size(), project.getCollectCommits().getNoTicketCommits().size(),
 					project.getCollectCommits().getOtherIdCommits().size(), project.getCollectBugs().getBugsWithCommits().size(), project.getCollectBugs().getBugsWithoutCommits().size());  
+		
+			outputFile = new StringBuilder();
 		}
 	}
 
