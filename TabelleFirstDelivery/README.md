@@ -1,16 +1,15 @@
 # Tabelle prodotte prima delivery
 
 
+I file .xlsx contengono i grafici prodotti. 
 
-
-File con grafico richiesto (parquet con branch di defaulta/master):
+File con grafico richiesto (commit repository github parquet-mr contenente bugs Jira Parquet con branch di defaulta/master):
 - fixedBugParquetoneBranch.xlsx
 
-I file .xlsx contengono i grafici prodotti. 
-E' stato poi studiato Parquet considerando tutti branch:
+E' stato poi studiato parquet-mr considerando tutti branch:
 - fixedBugParquetallBranch.xlsx
 
-Sono stati studiati insieme i 3 repository che contengono Bug di Jira PARQUET-####:
+Sono stati studiati insieme altri 2 repository insieme a parquet-mr che contengono Bug di Jira PARQUET-####:
 - arrow
 - arrow-testing
 - parquet-mr
