@@ -6,7 +6,18 @@
 File con grafico richiesto (parquet con branch di defaulta/master):
 - fixedBugParquetoneBranch.xlsx
 
-I file .xlsx contengono i grafici prodotti. Sono stati studiati anche i grafici con altri branch oltre a quello di default, leggere la relazione per una spiegazione ulteriore.
+I file .xlsx contengono i grafici prodotti. 
+E' stato poi studiato Parquet considerando tutti branch:
+- fixedBugParquetallBranch.xlsx
+
+Sono stati studiati insieme i 3 repository che contengono Bug di Jira PARQUET-####:
+- arrow
+- arrow-testing
+- parquet-mr
+
+I file di tali studi sono:
+- fixedBug3ProjectallBranch.xlsx
+- fixedBug3ProjectoneBranch.xlsx
 
 ## Authors
 
