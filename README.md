@@ -4,7 +4,7 @@
 
 
 Il progetto è composto da due delivery.
-La prima Delivery ha lo scopo di creare un grafico dimostrando che il numero di commit totali mensili in un periodo rimane stabile. Si procede quindi calcolare un upper bound, lower bound e la media sulla serie storica del progetto. Il secondo delivery si pone l'obiettivo di fare una stima sulle classi affette un bug utilizzando alcune metriche che misurano la difettosità di una classe sotto vari punti di vista.
+La prima Delivery ha lo scopo di creare un grafico dimostrando che il numero di commit totali mensili in un periodo rimane stabile. Si procede quindi calcolando un upper bound, lower bound e la media sulla serie storica del progetto. Il secondo delivery si pone l'obiettivo di fare una stima sulle classi affette un bug utilizzando alcune metriche che misurano la difettosità di una classe sotto vari punti di vista.
 
 
 ## Casi di studio
