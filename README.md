@@ -10,7 +10,7 @@ La prima Delivery ha lo scopo di creare un grafico dimostrando che il numero di 
 ## Casi di studio
 
 Il sistema da cui vengono prelevati i Bug è Jira. Il sistema da cui vengono analizzate le classi dei vari progetti è Github.
-La prima delivery prende in considerazione lo studio del progetto PARQUET. La seconda delivery invece studia i progetti BOOKKEEPER e .
+La prima delivery prende in considerazione lo studio del progetto PARQUET. La seconda delivery invece studia i progetti BOOKKEEPER e SYNCOPE.
 
 
 ## Avvio del progetto
